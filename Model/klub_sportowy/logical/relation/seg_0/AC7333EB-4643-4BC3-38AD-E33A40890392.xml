@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_25" directorySegmentName="seg_0" id="AC7333EB-4643-4BC3-38AD-E33A40890392">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-26 16:29:10 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<sourcePk>CC69AFA5-EEC0-A14E-8C22-26D10EDE760B</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>nawiazywac</nameOnSource>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>76D588C4-BD84-EFD2-DE12-195FBD79A530</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C836A42D-BAD9-50F1-2CCA-47A99FD5E2DA</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

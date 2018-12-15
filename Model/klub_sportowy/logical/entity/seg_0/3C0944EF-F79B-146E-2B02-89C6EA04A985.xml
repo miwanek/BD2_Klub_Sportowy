@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3C0944EF-F79B-146E-2B02-89C6EA04A985" name="Adres">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:45:18 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_adresu" id="1EAC6476-01AD-1D3F-BC36-99F8EFD3865F">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:45:45 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="miasto" id="14DDF049-85CB-70FE-E836-B60D0F6206E0">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:45:24 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ulica" id="45C08410-616A-7DCC-225E-A40CF977F337">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:45:28 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nr_budynku" id="BAC3A2F4-5D5A-09C2-92B7-1A2F3F3AAE83">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:45:31 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_obiektu" id="63EDB239-EE47-590F-8B3E-02F43D7A156F">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:46:06 UTC</createdTime>
+<generatorID>1F8F05C9-D77B-83CA-0C42-2683C9479F3A</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<referedAttribute>6081EED8-6C16-B6A9-78A4-B41A07FE2E7C</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E510E596-AA8F-1920-F683-2992E781F04C" name="Adres PK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:45:54 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1EAC6476-01AD-1D3F-BC36-99F8EFD3865F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

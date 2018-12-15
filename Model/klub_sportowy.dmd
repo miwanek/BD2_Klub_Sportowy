@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="klub_sportowy" id="67B969EB-0DD7-6C39-0FDF-5A661D89BA17" version="3.5">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 09:03:42 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>67B969EB-0DD7-6C39-0FDF-5A661D89BA17</designId>
+</OSDM_Design>

@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7153FECF-5805-FDE3-4C88-B38B4162C348" name="Zawodnik">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:51:46 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>C9F118FC-D5A0-AE96-DB60-F5D03A92936A</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_zawodnika" id="E9C9972C-E163-447D-B064-65C1753CF1C8">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:51:55 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="imie" id="95389DE3-A189-F584-33FA-F4789A378CD4">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:52:00 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nazwisko" id="B8908280-BFD6-B3B4-7C7D-E43C77DB7896">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:52:05 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="plec" id="63ED6004-8439-E1FC-B954-BC8A4D8365BF">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 12:19:15 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_urodzenia" id="07B64095-CFB3-B95F-EF04-E5B1BFADCA1B">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 12:19:18 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="07066B7D-1935-1B3A-58D7-815D0EF1EC80" name="Zawodnik PK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 12:06:27 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E9C9972C-E163-447D-B064-65C1753CF1C8</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

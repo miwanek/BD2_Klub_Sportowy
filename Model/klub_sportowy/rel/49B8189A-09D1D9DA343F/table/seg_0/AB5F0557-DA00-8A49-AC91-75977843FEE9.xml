@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AB5F0557-DA00-8A49-AC91-75977843FEE9" name="Sala">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>5FEC8893-57BD-5174-2640-7DB2CE454589</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_sali" id="1C9AF024-2E75-AF65-CBE6-9E912C2308A2">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>C426A41D-6B6D-7504-F9F1-1E4079EF6942</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rodzaj_sali" id="6BDE3B29-5123-B59B-4AF9-4C0CF449C5BE">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>7985AD32-E260-3909-E877-6365B2A1F2E2</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ilosc_miejsc_trening" id="A6D26160-BFBB-F1FE-D6CC-0E8B41817549">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>4AE27461-9A14-34D9-636B-7AEDE534B0C9</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ilosc_miejsc_kibice" id="BB6CF71F-BD1D-6972-2577-BA317610E02B">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>67A77B64-4A7F-5D06-F039-0C2F7CC5424C</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_poczatkowa" id="BC9812E6-43CB-428D-9940-F24B55191AB3">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>25A50F63-DAE5-95D2-9A24-827F81147F1F</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="koszt_wynajmu" id="02BA0B64-2709-B417-3668-37F26E4A0B22">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>26540604-7EDB-8A45-8281-CA93330EA027</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Obiekt_sportowy_id_obiektu" id="3AF955FC-DCA7-A546-6D0E-9119D5F5CB1B">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>AE0158A2-9697-1476-5A5A-82E9409C2DB5</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="019910C1-5424-28B2-3642-C2B418867D01" referredColumn="3BE6CB03-6294-9B4D-51F0-4162C4F53041"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D0DC4E05-FA0E-5B33-0E1B-7D5BBA53A67E" name="Sala_PK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>5361985C-ABE8-A93C-A843-520F70D5140E</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C9AF024-2E75-AF65-CBE6-9E912C2308A2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C3F6614C-D84B-D4E0-0C78-07BFD756E5F3" name="Sala_Obiekt_sportowy_FK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>E7B9EA21-380B-F9F6-93F0-7ED6CBBFDA9B</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3AF955FC-DCA7-A546-6D0E-9119D5F5CB1B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

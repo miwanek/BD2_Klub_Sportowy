@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="16D77B19-1752-E1D0-44CF-26A9711810B7" name="Reprezentacja">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 13:17:40 UTC</createdTime>
+<generatorID>E15FCE19-5B79-C849-1BF0-32AA36BD02FE</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_reprezentacji" id="92D10225-F8C9-59DD-4A5E-96CD9171D515">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 13:17:40 UTC</createdTime>
+<generatorID>233C9414-E770-C2F5-D572-BB587A5C5ABF</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BFBD6934-3DFE-3DF1-84E4-3A9B61428748" name="Reprezentacja_PK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 13:17:40 UTC</createdTime>
+<generatorID>4DBFAFAA-DFA4-F284-6F28-A25DAF641620</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="92D10225-F8C9-59DD-4A5E-96CD9171D515"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

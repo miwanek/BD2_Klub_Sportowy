@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_1" id="49B8189A-DB17-7593-AC8F-09D1D9DA343F" mainViewID="147851D8-1A50-2615-31CB-1911A7709952">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 09:03:46 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+<selectedRDBMSSite>32076570-2523-435C-2E92-BF29817DFF70</selectedRDBMSSite>
+</relationalModel>

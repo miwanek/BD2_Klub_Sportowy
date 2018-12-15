@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5FEC8893-57BD-5174-2640-7DB2CE454589" name="Sala">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:38:52 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_sali" id="C426A41D-6B6D-7504-F9F1-1E4079EF6942">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:38:58 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rodzaj_sali" id="7985AD32-E260-3909-E877-6365B2A1F2E2">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:39:06 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ilosc_miejsc_trening" id="4AE27461-9A14-34D9-636B-7AEDE534B0C9">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:39:22 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ilosc_miejsc_kibice" id="67A77B64-4A7F-5D06-F039-0C2F7CC5424C">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:39:33 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_poczatkowa" id="25A50F63-DAE5-95D2-9A24-827F81147F1F">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:39:55 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_koncowa" id="B72341C4-6B73-1A07-987D-1A24571A03ED">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 14:41:06 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="koszt_wynajmu" id="26540604-7EDB-8A45-8281-CA93330EA027">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:40:09 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_obiektu" id="AE0158A2-9697-1476-5A5A-82E9409C2DB5">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:46:00 UTC</createdTime>
+<generatorID>E7B9EA21-380B-F9F6-93F0-7ED6CBBFDA9B</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<referedAttribute>6081EED8-6C16-B6A9-78A4-B41A07FE2E7C</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5361985C-ABE8-A93C-A843-520F70D5140E" name="Sala PK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 10:40:18 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C426A41D-6B6D-7504-F9F1-1E4079EF6942</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

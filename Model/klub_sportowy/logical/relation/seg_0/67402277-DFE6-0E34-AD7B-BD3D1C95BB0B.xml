@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_36" directorySegmentName="seg_0" id="67402277-DFE6-0E34-AD7B-BD3D1C95BB0B">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-07 01:09:17 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<sourcePk>21BF2909-3C2C-F27A-B955-E3AF597DCA64</sourcePk>
+<targetPk>B7E502B3-F462-CE97-5539-CF80EB364BA2</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>9D9C135E-C986-6CE4-2E9C-3372D25075C7</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>EA2CA131-1D17-1452-07B3-1C2A9BCA2CEB</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

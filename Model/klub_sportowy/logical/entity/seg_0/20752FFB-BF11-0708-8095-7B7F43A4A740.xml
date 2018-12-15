@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="20752FFB-BF11-0708-8095-7B7F43A4A740" name="Udzial_w_rozgrywce">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-07 00:47:34 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_rozgrywki" id="8664BEDE-2C41-F060-3871-4E06085DE5F3">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-07 00:47:56 UTC</createdTime>
+<generatorID>C86FFD62-68A5-BB3E-2C00-554A7E7A4C67</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<referedAttribute>653C6AE5-721A-4A34-4A03-06B7041542DD</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_wyniku" id="FAEB6963-D9D8-B5C5-FF6C-29E60D942DF1">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-07 00:52:09 UTC</createdTime>
+<generatorID>D9E8A6B8-7B4E-E357-7EC1-8F76E0228A2F</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<engineerTo>
+<item key="49B8189A-DB17-7593-AC8F-09D1D9DA343F" value="true"/>
+</engineerTo>
+<referedAttribute>6BF628A5-5220-799B-9180-D8DB9E5A18F2</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

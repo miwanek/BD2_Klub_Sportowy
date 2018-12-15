@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8CCC1D6D-384A-C48D-0FAC-03881D660DE6" name="Obiekt_sportowy">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>F3DF08F4-3FB7-FBAE-2C3C-D353D37E87C7</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_obiektu" id="3BE6CB03-6294-9B4D-51F0-4162C4F53041">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>6081EED8-6C16-B6A9-78A4-B41A07FE2E7C</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazwa_obiektu" id="A51BDDEA-1794-9614-CB03-5C2878777B4B">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>126275CF-A4CD-8ABD-474A-DDA11E13AA41</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="typ_obiektu" id="3CB82E04-BE24-CCB9-7164-B001F2FA6B47">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>26FBB579-A263-CC93-06FF-9E7A6860061E</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Adres_id_adresu" id="74A885BB-3B2C-975C-6B11-270C0CEC9E9E">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>05303C47-AEB3-D1E0-8057-12A46538760A</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FF09829A-695B-B6D4-4250-5C4DD54F18D1" name="Obiekt_sportowy_PK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<generatorID>E1C78D12-B108-09EC-7C05-3E6F97D28690</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3BE6CB03-6294-9B4D-51F0-4162C4F53041"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FA574EA2-0C4F-07CC-7569-16B740D75E63" name="Obiekt_sportowy__IDX">
+<createdBy>yelki</createdBy>
+<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>1F8F05C9-D77B-83CA-0C42-2683C9479F3A</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="74A885BB-3B2C-975C-6B11-270C0CEC9E9E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
