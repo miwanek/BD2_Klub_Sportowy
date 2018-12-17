@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3FD3EF80-33BF-11C3-FB12-7D6EC182CA73" name="Zawody">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3FD3EF80-33BF-11C3-FB12-7D6EC182CA73" name="Turniej">
 <createdBy>yelki</createdBy>
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>899B2C71-5B1D-4F6D-9BA4-BB5B2A70DE79</generatorID>
@@ -8,12 +8,14 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="id_zawodów" id="63E2FCB5-A9FF-5002-ACB9-CCD427D4CD68">
+<Column name="id_turnieju" id="63E2FCB5-A9FF-5002-ACB9-CCD427D4CD68">
 <createdBy>yelki</createdBy>
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>CF31F4EF-49E0-F596-E691-CAA9965A49E9</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -23,7 +25,9 @@
 <generatorID>1965D8D1-A4A1-5E43-D087-24039F743B60</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -33,42 +37,35 @@
 <generatorID>ADE290FE-6488-3F5F-3197-50EEAA23CF4C</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="data" id="9A1D9D98-B149-C641-7D32-FCA6BEA7C1A7">
+<Column name="data_rozpoczecia" id="9A1D9D98-B149-C641-7D32-FCA6BEA7C1A7">
 <createdBy>yelki</createdBy>
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>585984EE-71B3-FEF3-539A-BBEAFC15338C</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="godzina" id="C65D867C-3EA9-C73F-2604-1608D3DB2BA1">
+<Column name="data_zakonczenia" id="C65D867C-3EA9-C73F-2604-1608D3DB2BA1">
 <createdBy>yelki</createdBy>
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>C8D23D51-0185-4E65-684E-A89135FA6F6D</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Sala_id_sali" id="846131DA-133D-936F-35C1-30E5166BABFB">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>66F045FE-8439-D8EA-C437-3FD2D5F03EDB</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="5ADCF88D-5906-E85C-1A4F-2FBE6797F05D" referredColumn="1C9AF024-2E75-AF65-CBE6-9E912C2308A2"/>
-</associations>
 </Column>
 <Column name="sedzia" id="907280B2-4CBE-8F78-B334-75375911574E">
 <createdBy>yelki</createdBy>
@@ -76,23 +73,15 @@
 <generatorID>CAEA3631-8CE6-5C82-5203-D252C1C0832C</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Koszt_id" id="66852659-1B58-4C36-D163-EB6C234E3613">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>4C63E25B-7E37-2B99-FA6B-172E56E1188D</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="B2FDB0CC-44E2-53EF-5272-B3C18703F4CF" name="Zawod_PK">
+<ind_PK_UK id="B2FDB0CC-44E2-53EF-5272-B3C18703F4CF" name="Turnej_PK">
 <createdBy>yelki</createdBy>
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>8E2B0054-1913-3F87-E124-DDEC5BB0FDC5</generatorID>
@@ -102,28 +91,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="63E2FCB5-A9FF-5002-ACB9-CCD427D4CD68"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="22998031-7621-2288-A4D5-E621ED26CCBC" name="Zawod__IDX">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>2AE009D1-4507-E4F5-8148-D68D37F70318</relationGeneratorID>
-<indexColumnUsage>
-<colUsage columnID="66852659-1B58-4C36-D163-EB6C234E3613"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="6A791363-AE21-6650-9CB0-FD3C6C599D67" name="Zawod_Sala_FK">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>568C0723-A391-5B98-28B3-4F3CD6C13CD2</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="846131DA-133D-936F-35C1-30E5166BABFB"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="02743963-3B7F-7B68-F2E4-7C45BA3B65FD" name="udzial_w_druzynie">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>CC7EE8ED-26D8-3362-E16F-74F5CEA8A24B</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<isEngineerToRelation>true</isEngineerToRelation>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Druzyna_id_druzyny" id="C4AC0171-B2D9-D0D5-8AEC-27B3FCD677A5">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>531D46B5-9BED-4CDA-55B8-79BF651787E3</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E224FAAE-D966-3F6F-B767-0E21C243A36E" referredColumn="20CDDFFF-2B23-3437-57F4-A984A5A4C411"/>
+</associations>
+</Column>
+<Column name="Zawodnik_id_zawodnika" id="1451B01C-0EB0-BEED-9989-8913CEB2E421">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>D1E6CFC7-9F7B-F706-D270-43FC6180E996</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="71B82EBF-2C39-7751-2FF1-FBFAB7F45CA8" name="udzial_w_druzynie_Druzyna_FK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>E1BA85ED-8E64-7377-A59F-355B093A85C6</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C4AC0171-B2D9-D0D5-8AEC-27B3FCD677A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

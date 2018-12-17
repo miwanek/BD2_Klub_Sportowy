@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DAFE210F-6FA6-D909-A3E9-0145431E8650" name="dyscypliny_turnieju">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>939C7093-1BCB-872D-7482-95C9E809F12D</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Dyscyplina_id" id="A990911E-486A-A8FE-73C7-0CE569E1ED4E">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>53568DB7-F82B-79DA-A096-46DF0E39B286</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7371281C-BDF8-5A58-3CB3-46C51BA25A91" referredColumn="CC49377D-E1AF-30A5-0A7A-4AEA7CC6EF30"/>
+</associations>
+</Column>
+<Column name="Turniej_id" id="1EB3C190-7926-6EBD-18BA-CCFDCDB26DB3">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>0DC2E6E9-44AA-F863-DA76-BB0BC73BE87D</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="954AC0EC-2D12-BD2C-E9EA-FB0369FAE7FB" referredColumn="63E2FCB5-A9FF-5002-ACB9-CCD427D4CD68"/>
+</associations>
+</Column>
+<Column name="dyscypliny_turnieju_ID" id="F22BB095-C994-2F47-A641-CDC39F0FBFDC">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FF7123DF-4D13-E18D-4D67-723FB4772437" name="dyscypliny_turnieju_PK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="F22BB095-C994-2F47-A641-CDC39F0FBFDC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="458083FC-5C1D-225B-5AFD-6E538A5CBA05" name="dyscypliny_turnieju_Dyscyplina_FK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>61ED8AFC-9B9B-75AA-73B5-8B8710DC6450</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A990911E-486A-A8FE-73C7-0CE569E1ED4E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D3043357-4828-B9FC-247E-E3353F2673BC" name="dyscypliny_turnieju_Turniej_FK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>993FEB8A-A4D8-2D2C-813C-A6CFEE6AB353</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1EB3C190-7926-6EBD-18BA-CCFDCDB26DB3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

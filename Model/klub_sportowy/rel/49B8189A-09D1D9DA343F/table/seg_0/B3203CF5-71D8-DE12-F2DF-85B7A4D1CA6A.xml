@@ -13,7 +13,9 @@
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>1AC62B83-B980-6AF4-4568-A9FBBB0CE436</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -23,16 +25,20 @@
 <generatorID>BFFF1090-F391-6EE2-3036-FA30481D7298</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Dyscyplina_id_dyscypliny" id="06C0952E-A050-5B50-AD8E-DB422D172DF5">
+<Column name="Dyscyplina_id" id="06C0952E-A050-5B50-AD8E-DB422D172DF5">
 <createdBy>yelki</createdBy>
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>E38F4550-B212-53F4-1D0D-72C5BDE84039</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -40,18 +46,17 @@
 <colAssociation fkAssociation="066EA9E6-363E-8B07-530D-1DCB4D27D77B" referredColumn="CC49377D-E1AF-30A5-0A7A-4AEA7CC6EF30"/>
 </associations>
 </Column>
-<Column name="Zawodnik_Zawodnik_ID" id="FCC8CA78-B38D-E1F1-AB75-6314CBB6F6D4">
+<Column name="Wspolpraca_nr_umowy" id="AFB2D25C-1B8F-500D-F690-56B5F5648355">
 <createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
+<createdTime>2018-12-17 18:55:15 UTC</createdTime>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="99CBC3EC-66A7-FDE8-3BB0-F388DCA86A11" referredColumn="8FF42A12-C618-E297-86F6-9C43CA535EF0"/>
+<colAssociation fkAssociation="0CD01D5A-1D9F-77B7-5AD8-C062F88C9AF6" referredColumn="C46562DD-E682-A3D6-EDB7-FA823C2D9C52"/>
 </associations>
 </Column>
 </columns>
@@ -68,16 +73,13 @@
 <colUsage columnID="AE614108-068A-3901-9ACD-DA117FF59765"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="D5DA3042-C601-757B-AB49-5F4C1AF69137" name="Sekcja_Zawodnik_FK">
+<ind_PK_UK id="E02FB87B-4429-1337-CDA6-7BC17F66E3C3" name="Sekcja__IDX">
 <createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>67F5BDF3-5B4E-96ED-32E5-D02A136B954F</generatorID>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Foreign Key</indexState>
+<indexState>Unique Plain Index</indexState>
 <isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="FCC8CA78-B38D-E1F1-AB75-6314CBB6F6D4"/>
-</indexColumnUsage>
+<relationGeneratorID>67402277-DFE6-0E34-AD7B-BD3D1C95BB0B</relationGeneratorID>
 </ind_PK_UK>
 <ind_PK_UK id="E003EB0A-B289-1AB2-2ADF-60B39AD10D2A" name="Sekcja_Dyscyplina_FK">
 <createdBy>yelki</createdBy>
@@ -88,6 +90,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="06C0952E-A050-5B50-AD8E-DB422D172DF5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7EDF828F-7F3E-475B-5A4C-C5FBA9559C1F" name="Sekcja_Wspolpraca_FK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-17 18:55:15 UTC</createdTime>
+<generatorID>830305F2-0E1F-AAD3-C604-335DA429427E</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AFB2D25C-1B8F-500D-F690-56B5F5648355"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

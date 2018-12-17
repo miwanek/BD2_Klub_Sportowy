@@ -13,7 +13,9 @@
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>6081EED8-6C16-B6A9-78A4-B41A07FE2E7C</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -23,7 +25,9 @@
 <generatorID>126275CF-A4CD-8ABD-474A-DDA11E13AA41</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -33,19 +37,25 @@
 <generatorID>26FBB579-A263-CC93-06FF-9E7A6860061E</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Adres_id_adresu" id="74A885BB-3B2C-975C-6B11-270C0CEC9E9E">
+<Column name="Adres_id" id="74A885BB-3B2C-975C-6B11-270C0CEC9E9E">
 <createdBy>yelki</createdBy>
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>05303C47-AEB3-D1E0-8057-12A46538760A</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<use>0</use>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="616C3945-AB3A-C700-8A80-90AA758196B9" referredColumn="9A31A032-057F-3ECD-23DE-5359F5668783"/>
+</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -68,6 +78,17 @@
 <indexState>Unique Plain Index</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <relationGeneratorID>1F8F05C9-D77B-83CA-0C42-2683C9479F3A</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="74A885BB-3B2C-975C-6B11-270C0CEC9E9E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="60288035-E4BA-9B8D-42D6-47D638A9AC58" name="Obiekt_sportowy_Adres_FK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>1F8F05C9-D77B-83CA-0C42-2683C9479F3A</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="74A885BB-3B2C-975C-6B11-270C0CEC9E9E"/>
 </indexColumnUsage>

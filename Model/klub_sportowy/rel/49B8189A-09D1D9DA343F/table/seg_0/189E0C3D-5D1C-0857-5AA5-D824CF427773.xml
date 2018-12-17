@@ -8,12 +8,28 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Jednostka_sportowa_ID" id="B8F51102-14B4-8034-0AF1-661869B1E37C">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7C2A1CD4-6C30-3DF9-027A-4AEFCCF4E755" referredColumn="659F4931-3E18-0CF9-8FEB-362AAAB5F580"/>
+</associations>
+</Column>
 <Column name="id_druzyny" id="20CDDFFF-2B23-3437-57F4-A984A5A4C411">
 <createdBy>yelki</createdBy>
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>9138348D-1D11-E5D4-004F-8250913D0E3A</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -23,7 +39,9 @@
 <generatorID>A0341E0C-6A0D-AC2B-3C9E-CEBBECC61768</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -33,46 +51,52 @@
 <generatorID>34228B48-9EF9-9F1C-346D-8EA69744100D</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Sekcja_id_sekcji" id="FA27E01A-FCE8-0DD8-099D-F1143C71F464">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>C0DF70A4-5947-F086-096C-E0ADADC5008C</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="89B01746-550D-7E20-B415-EFA10BEA1EE2" referredColumn="AE614108-068A-3901-9ACD-DA117FF59765"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="E8C73E5E-8A87-E3D8-E5A5-C2CA5EEDE516" name="Druzyna_PK">
+<ind_PK_UK id="01351395-4FE7-8A93-5124-69E5FF29BE8D" name="Druzyna_PK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="B8F51102-14B4-8034-0AF1-661869B1E37C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E8C73E5E-8A87-E3D8-E5A5-C2CA5EEDE516" name="Druzyna_id_druzyny_UN">
 <createdBy>yelki</createdBy>
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>EB910E25-5637-6D03-A5AD-1CA156E4B35D</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<pk>true</pk>
-<indexState>Primary Constraint</indexState>
+<indexState>Unique Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="20CDDFFF-2B23-3437-57F4-A984A5A4C411"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="0BEFF981-D0DA-0509-DA46-E03393C091AF" name="Druzyna_Sekcja_FK">
+<ind_PK_UK id="82E10961-0144-62EB-B8A0-B0DA98D8AD75" name="Druzyna__IDX">
 <createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>C10ED5DF-52AF-AAF2-17AA-8671821785CA</generatorID>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>0EF311D3-D079-7FA1-9328-595CE7ECA8A6</relationGeneratorID>
+</ind_PK_UK>
+<ind_PK_UK id="5C4CB641-B0A8-EB8D-3AB1-4F04179A25DC" name="Druzyna_Jednostka_sportowa_FK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>923E6702-A0F0-3560-36A2-51291A21CF9C</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="FA27E01A-FCE8-0DD8-099D-F1143C71F464"/>
+<colUsage columnID="B8F51102-14B4-8034-0AF1-661869B1E37C"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

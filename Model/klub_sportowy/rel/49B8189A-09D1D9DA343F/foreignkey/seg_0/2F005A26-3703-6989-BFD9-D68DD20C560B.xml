@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2F005A26-3703-6989-BFD9-D68DD20C560B" containerWithKeyObject="AA68AD47-F407-05FE-48E9-D9F47029C398" localFKIndex="5004D338-6E75-FA78-70E5-EC3228495BFB" name="Rozgrywka_dyscypliny_turnieju_FK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>11BDA287-8A97-6048-ECD5-03A4A2B17E67</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<referredTableLongName>dyscypliny_turnieju</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DAFE210F-6FA6-D909-A3E9-0145431E8650</referredTableID>
+<keyObject>FF7123DF-4D13-E18D-4D67-723FB4772437</keyObject>
+<referredKeyID>FF7123DF-4D13-E18D-4D67-723FB4772437</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>dyscypliny_turnieju_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

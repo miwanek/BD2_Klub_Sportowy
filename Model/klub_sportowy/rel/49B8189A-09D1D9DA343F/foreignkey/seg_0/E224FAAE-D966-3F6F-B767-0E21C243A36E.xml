@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E224FAAE-D966-3F6F-B767-0E21C243A36E" containerWithKeyObject="02743963-3B7F-7B68-F2E4-7C45BA3B65FD" localFKIndex="71B82EBF-2C39-7751-2FF1-FBFAB7F45CA8" name="udzial_w_druzynie_Druzyna_FK">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>E1BA85ED-8E64-7377-A59F-355B093A85C6</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<referredTableLongName>Druzyna</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>189E0C3D-5D1C-0857-5AA5-D824CF427773</referredTableID>
+<keyObject>E8C73E5E-8A87-E3D8-E5A5-C2CA5EEDE516</keyObject>
+<referredKeyID>E8C73E5E-8A87-E3D8-E5A5-C2CA5EEDE516</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_druzyny</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
