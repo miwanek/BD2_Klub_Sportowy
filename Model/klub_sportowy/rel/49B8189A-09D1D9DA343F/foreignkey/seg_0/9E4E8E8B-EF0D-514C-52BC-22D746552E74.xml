@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D068DEBE-C122-9B7B-6D5F-81160C342570" containerWithKeyObject="904BC2BE-073A-3439-F6C7-EC5D05CCEF98" localFKIndex="E4E6C54E-DB76-3701-A35A-009116BFD962" name="Uprawianie_dyscypliny_Dyscyplina_FK">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>71CD2392-9D5D-76C0-2892-1085BD3AA133</generatorID>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9E4E8E8B-EF0D-514C-52BC-22D746552E74" containerWithKeyObject="3AB0E941-2767-5CBC-FEA0-CB7454BB5745" localFKIndex="84245B8A-D0F6-AD2A-F3D3-94BF0474F2DF" name="opieka_nad_dyscyplina_Dyscyplina_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:26:06 UTC</createdTime>
+<generatorID>B7E502B3-F462-CE97-5539-CF80EB364BA2</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <referredTableLongName>Dyscyplina</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

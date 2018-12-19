@@ -9,10 +9,9 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Druzyna_id_druzyny" id="C4AC0171-B2D9-D0D5-8AEC-27B3FCD677A5">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>531D46B5-9BED-4CDA-55B8-79BF651787E3</generatorID>
+<Column name="Druzyna_Jednostka_sportowa_ID" id="8D11AF4B-7996-B19F-C674-6AD9A67B6471">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:17:44 UTC</createdTime>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -21,30 +20,55 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="E224FAAE-D966-3F6F-B767-0E21C243A36E" referredColumn="20CDDFFF-2B23-3437-57F4-A984A5A4C411"/>
+<colAssociation fkAssociation="75D5B0D6-A673-B2E9-28C2-2E610500CBB9" referredColumn="B8F51102-14B4-8034-0AF1-661869B1E37C"/>
 </associations>
 </Column>
-<Column name="Zawodnik_id_zawodnika" id="1451B01C-0EB0-BEED-9989-8913CEB2E421">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>D1E6CFC7-9F7B-F706-D270-43FC6180E996</generatorID>
+<Column name="Zawodnik_Jednostka_sportowa_ID" id="051FBE67-5806-E8FF-B72E-ACF7C0D9A1AD">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:18:02 UTC</createdTime>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4CCC2161-517B-C944-3B0B-48EA30686BA7" referredColumn="0DC197EF-8F16-965D-B4E1-AFE07C73AE8C"/>
+</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="71B82EBF-2C39-7751-2FF1-FBFAB7F45CA8" name="udzial_w_druzynie_Druzyna_FK">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>E1BA85ED-8E64-7377-A59F-355B093A85C6</generatorID>
+<ind_PK_UK id="DF7741A5-47EC-31AC-B16E-EA882B508853" name="udzial_w_druzynie_PK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:18:17 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8D11AF4B-7996-B19F-C674-6AD9A67B6471"/>
+<colUsage columnID="051FBE67-5806-E8FF-B72E-ACF7C0D9A1AD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E1550C86-6ED6-5F48-0F35-41B1D3906BB0" name="udzial_w_druzynie_Druzyna_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:17:44 UTC</createdTime>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="C4AC0171-B2D9-D0D5-8AEC-27B3FCD677A5"/>
+<colUsage columnID="8D11AF4B-7996-B19F-C674-6AD9A67B6471"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FDEBD29C-A27B-0DB1-6F3C-9989B718D54A" name="udzial_w_druzynie_Zawodnik_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:18:02 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="051FBE67-5806-E8FF-B72E-ACF7C0D9A1AD"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

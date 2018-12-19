@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4D3BA7D3-E1CD-1BA3-51DF-2911FA246C99" containerWithKeyObject="6121391D-B9B9-4243-EE92-8DCA8969993B" localFKIndex="F26A9E81-640D-3A37-47C6-D3DC232BEBFF" name="Wspolpraca_Trener_FK">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>AC7333EB-4643-4BC3-38AD-E33A40890392</generatorID>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="13EFEE4E-3639-35FA-B628-0799ED3B96FA" containerWithKeyObject="3AB0E941-2767-5CBC-FEA0-CB7454BB5745" localFKIndex="8C3C4B02-0575-37AB-A86E-3B2E6916878A" name="opieka_nad_dyscyplina_Trener_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:25:29 UTC</createdTime>
+<generatorID>CC69AFA5-EEC0-A14E-8C22-26D10EDE760B</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <referredTableLongName>Trener</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

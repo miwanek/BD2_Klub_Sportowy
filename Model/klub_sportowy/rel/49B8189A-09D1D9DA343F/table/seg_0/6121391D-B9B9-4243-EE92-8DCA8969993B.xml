@@ -19,12 +19,40 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="Trener_id" id="8F44A5A7-F310-0A6A-983D-692D981802B9">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>2BBD6020-7502-214A-23AC-CABB484EEEBD</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4D3BA7D3-E1CD-1BA3-51DF-2911FA246C99" referredColumn="74A28DF2-0467-2EE2-1699-CAD1F2887665"/>
+</associations>
+</Column>
+<Column name="Jednostka_sportowa_ID" id="4E0D3727-2748-04A7-0CCC-00196128E6CD">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FF8FA67E-FA80-5F0B-CC0C-128BAAD3112E" referredColumn="659F4931-3E18-0CF9-8FEB-362AAAB5F580"/>
+</associations>
+</Column>
 <Column name="data_poczatkowa" id="8365BCA5-7FB2-F07E-9F6E-2547296AE85F">
 <createdBy>yelki</createdBy>
 <createdTime>2018-12-16 18:58:18 UTC</createdTime>
 <generatorID>15EDF6BE-79AD-16FA-FEF1-89E7E9A087A5</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
@@ -43,22 +71,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Trener_id" id="8F44A5A7-F310-0A6A-983D-692D981802B9">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>2BBD6020-7502-214A-23AC-CABB484EEEBD</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="4D3BA7D3-E1CD-1BA3-51DF-2911FA246C99" referredColumn="74A28DF2-0467-2EE2-1699-CAD1F2887665"/>
-</associations>
-</Column>
 <Column name="wynagrodzenie" id="46FE3235-118D-82EE-5086-41DACBC8A361">
 <createdBy>yelki</createdBy>
 <createdTime>2018-12-16 18:58:18 UTC</createdTime>
@@ -70,20 +82,6 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Jednostka_sportowa_ID" id="4E0D3727-2748-04A7-0CCC-00196128E6CD">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="FF8FA67E-FA80-5F0B-CC0C-128BAAD3112E" referredColumn="659F4931-3E18-0CF9-8FEB-362AAAB5F580"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

@@ -8,22 +8,12 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Zawodnik_id_zawodnika" id="92C21EAE-3EA8-BF3E-7A29-DBAC86205177">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>D27017A2-0562-85C1-560B-C798A174B2C2</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="Dyscyplina_id_dyscypliny" id="0EB0CECF-236F-A81D-F9B7-0DDDB61CDD31">
 <createdBy>yelki</createdBy>
 <createdTime>2018-12-16 18:58:18 UTC</createdTime>
 <generatorID>72A943B9-F3EE-A630-50F5-41003E6DE7FF</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
@@ -33,8 +23,34 @@
 <colAssociation fkAssociation="D068DEBE-C122-9B7B-6D5F-81160C342570" referredColumn="CC49377D-E1AF-30A5-0A7A-4AEA7CC6EF30"/>
 </associations>
 </Column>
+<Column name="Zawodnik_Jednostka_sportowa_ID" id="6DBBC4D3-58B8-198A-E5B0-0597B378765E">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:22:08 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="04FE5901-CC7D-65D3-46D7-E5910B1A4D06" referredColumn="0DC197EF-8F16-965D-B4E1-AFE07C73AE8C"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="864B50D0-759D-286A-5B64-F4C9D1279EF5" name="Uprawianie_dyscypliny_PK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:22:26 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0EB0CECF-236F-A81D-F9B7-0DDDB61CDD31"/>
+<colUsage columnID="6DBBC4D3-58B8-198A-E5B0-0597B378765E"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="E4E6C54E-DB76-3701-A35A-009116BFD962" name="Uprawianie_dyscypliny_Dyscyplina_FK">
 <createdBy>yelki</createdBy>
 <createdTime>2018-12-16 18:58:18 UTC</createdTime>
@@ -44,6 +60,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="0EB0CECF-236F-A81D-F9B7-0DDDB61CDD31"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="97955293-76A9-11E3-3474-E877D6344297" name="Uprawianie_dyscypliny_Zawodnik_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:22:08 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6DBBC4D3-58B8-198A-E5B0-0597B378765E"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

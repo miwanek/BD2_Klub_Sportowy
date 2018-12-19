@@ -22,23 +22,11 @@
 <colAssociation fkAssociation="7C2A1CD4-6C30-3DF9-027A-4AEFCCF4E755" referredColumn="659F4931-3E18-0CF9-8FEB-362AAAB5F580"/>
 </associations>
 </Column>
-<Column name="id_druzyny" id="20CDDFFF-2B23-3437-57F4-A984A5A4C411">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>9138348D-1D11-E5D4-004F-8250913D0E3A</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="nazwa_druzyny" id="A89D3683-F428-6170-82C5-6FEDB1DA2B60">
 <createdBy>yelki</createdBy>
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>A0341E0C-6A0D-AC2B-3C9E-CEBBECC61768</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -57,6 +45,20 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="Sekcja_id_sekcji" id="74886D3B-2994-D2A1-BC15-B233D6C7818B">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:29:33 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="342960D0-B8F4-B2B9-4909-2A811E6B2061" referredColumn="AE614108-068A-3901-9ACD-DA117FF59765"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="01351395-4FE7-8A93-5124-69E5FF29BE8D" name="Druzyna_PK">
@@ -69,25 +71,6 @@
 <colUsage columnID="B8F51102-14B4-8034-0AF1-661869B1E37C"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E8C73E5E-8A87-E3D8-E5A5-C2CA5EEDE516" name="Druzyna_id_druzyny_UN">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>EB910E25-5637-6D03-A5AD-1CA156E4B35D</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Unique Constraint</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="20CDDFFF-2B23-3437-57F4-A984A5A4C411"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="82E10961-0144-62EB-B8A0-B0DA98D8AD75" name="Druzyna__IDX">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>0EF311D3-D079-7FA1-9328-595CE7ECA8A6</relationGeneratorID>
-</ind_PK_UK>
 <ind_PK_UK id="5C4CB641-B0A8-EB8D-3AB1-4F04179A25DC" name="Druzyna_Jednostka_sportowa_FK">
 <createdBy>yelki</createdBy>
 <createdTime>2018-12-16 18:58:18 UTC</createdTime>
@@ -97,6 +80,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="B8F51102-14B4-8034-0AF1-661869B1E37C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CDC8AC7B-C75D-BD8C-A1E8-3537317F791C" name="Druzyna_Sekcja_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:29:33 UTC</createdTime>
+<generatorID>21BF2909-3C2C-F27A-B955-E3AF597DCA64</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="74886D3B-2994-D2A1-BC15-B233D6C7818B"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

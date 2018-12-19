@@ -13,7 +13,6 @@
 <createdTime>2018-12-16 18:58:18 UTC</createdTime>
 <generatorID>0EEE2440-1E7E-79B0-0D06-D5BEF32D0B75</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -21,15 +20,13 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="D73F0FB9-055A-FF12-5FEC-9A41204EF779" referredColumn="74A28DF2-0467-2EE2-1699-CAD1F2887665"/>
+<colAssociation fkAssociation="13EFEE4E-3639-35FA-B628-0799ED3B96FA" referredColumn="74A28DF2-0467-2EE2-1699-CAD1F2887665"/>
 </associations>
 </Column>
-<Column name="Dyscyplina_id" id="387891E7-23A8-F1B3-DA1E-F4B325ED0E2A">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>6D235E4D-8616-47B4-4B7B-187A07E3DF95</generatorID>
+<Column name="Dyscyplina_id_dyscypliny" id="61CAF9C1-F636-50E4-E10C-DF7D69341D20">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:26:06 UTC</createdTime>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -37,15 +34,27 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="BF393DE3-A4D9-F4A0-076C-F2FEE4F4155C" referredColumn="CC49377D-E1AF-30A5-0A7A-4AEA7CC6EF30"/>
+<colAssociation fkAssociation="9E4E8E8B-EF0D-514C-52BC-22D746552E74" referredColumn="CC49377D-E1AF-30A5-0A7A-4AEA7CC6EF30"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="F99DF034-2DF4-7D2E-2754-267938C1F9E1" name="opieka_nad_dyscyplina_Trener_FK">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>7122865C-C37D-EF3F-E654-0E0D0D25E454</generatorID>
+<ind_PK_UK id="53C521DF-1604-F341-1983-4B45A41CC689" name="opieka_nad_dyscyplina_PK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:23:03 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B4220A32-E783-393D-A719-8C6F16227512"/>
+<colUsage columnID="61CAF9C1-F636-50E4-E10C-DF7D69341D20"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8C3C4B02-0575-37AB-A86E-3B2E6916878A" name="opieka_nad_dyscyplina_Trener_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:25:29 UTC</createdTime>
+<generatorID>CC69AFA5-EEC0-A14E-8C22-26D10EDE760B</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -53,15 +62,15 @@
 <colUsage columnID="B4220A32-E783-393D-A719-8C6F16227512"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="2B6E5EC0-9688-66EC-51BB-373D5C6D0110" name="opieka_nad_dyscyplina_Dyscyplina_FK">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>05ABD012-8C3C-1FFD-BDA6-9462F8818B69</generatorID>
+<ind_PK_UK id="84245B8A-D0F6-AD2A-F3D3-94BF0474F2DF" name="opieka_nad_dyscyplina_Dyscyplina_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:26:06 UTC</createdTime>
+<generatorID>B7E502B3-F462-CE97-5539-CF80EB364BA2</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="387891E7-23A8-F1B3-DA1E-F4B325ED0E2A"/>
+<colUsage columnID="61CAF9C1-F636-50E4-E10C-DF7D69341D20"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

@@ -24,7 +24,6 @@
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>7985AD32-E260-3909-E877-6365B2A1F2E2</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -60,7 +59,6 @@
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>25A50F63-DAE5-95D2-9A24-827F81147F1F</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT008</logicalDatatype>
@@ -84,6 +82,7 @@
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>AE0158A2-9697-1476-5A5A-82E9409C2DB5</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>

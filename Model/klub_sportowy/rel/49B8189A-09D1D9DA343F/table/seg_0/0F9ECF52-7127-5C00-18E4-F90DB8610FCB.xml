@@ -24,7 +24,6 @@
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>14DDF049-85CB-70FE-E836-B60D0F6206E0</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -55,21 +54,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Obiekt_sportowy_id" id="8250529A-597D-E007-EC1B-AD3ED102BA11">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>63EDB239-EE47-590F-8B3E-02F43D7A156F</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="4068CBBC-C81A-2B45-8A4C-B5E263795E45" referredColumn="3BE6CB03-6294-9B4D-51F0-4162C4F53041"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="8CE6AFE3-FB8D-81FD-2F54-AF63D8611153" name="Adres_PK">
@@ -82,28 +66,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="9A31A032-057F-3ECD-23DE-5359F5668783"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="D06A02DB-DCA0-6070-8933-0949F6553201" name="Adres__IDX">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>1F8F05C9-D77B-83CA-0C42-2683C9479F3A</relationGeneratorID>
-<indexColumnUsage>
-<colUsage columnID="8250529A-597D-E007-EC1B-AD3ED102BA11"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="85E72230-6223-56E4-F870-25C78BFFB5E2" name="Adres_Obiekt_sportowy_FK">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>1F8F05C9-D77B-83CA-0C42-2683C9479F3A</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="8250529A-597D-E007-EC1B-AD3ED102BA11"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

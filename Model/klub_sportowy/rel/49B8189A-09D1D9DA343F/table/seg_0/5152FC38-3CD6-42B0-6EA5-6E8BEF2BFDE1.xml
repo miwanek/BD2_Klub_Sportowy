@@ -23,23 +23,11 @@
 <colAssociation fkAssociation="FAC4A54F-0D9C-6EA1-FEC1-22C59C589971" referredColumn="659F4931-3E18-0CF9-8FEB-362AAAB5F580"/>
 </associations>
 </Column>
-<Column name="id_zawodnika" id="6F775044-FFC5-F52F-485A-BBBA750A7E10">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>E9C9972C-E163-447D-B064-65C1753CF1C8</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="imie" id="D38C8586-ABAC-5CA2-4D3A-CD564F4EA9DC">
 <createdBy>yelki</createdBy>
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>95389DE3-A189-F584-33FA-F4789A378CD4</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -51,40 +39,11 @@
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>B8908280-BFD6-B3B4-7C7D-E43C77DB7896</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Druzyna_id" id="F7FB8C8D-DA4A-46EC-2475-B097C5C4E014">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>CF2F668A-60E4-00AE-A514-7720A4B9FE7A</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="A1D661BD-3E3E-397A-9BA6-8F3E94078D3B" referredColumn="20CDDFFF-2B23-3437-57F4-A984A5A4C411"/>
-</associations>
-</Column>
-<Column name="Zawodnik_ID" id="8FF42A12-C618-E297-86F6-9C43CA535EF0">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementColumn>true</autoIncrementColumn>
-<identityColumn>true</identityColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<isSurrogateColumn>true</isSurrogateColumn>
 </Column>
 <Column name="plec" id="11D143D2-D53B-162D-340B-6A67E6949CFB">
 <createdBy>yelki</createdBy>
@@ -120,26 +79,6 @@
 <indexState>Primary Constraint</indexState>
 <indexColumnUsage>
 <colUsage columnID="0DC197EF-8F16-965D-B4E1-AFE07C73AE8C"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="AF5469AB-E311-1036-7139-2CB84CACF208" name="Zawodnik_ID_UN">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Unique Constraint</indexState>
-<indexColumnUsage>
-<colUsage columnID="8FF42A12-C618-E297-86F6-9C43CA535EF0"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="34A5592F-C3F7-2C4E-0E0A-FE1AA3768811" name="Zawodnik_Druzyna_FK">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>F2A43896-C64B-333D-1119-593400AA8210</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="F7FB8C8D-DA4A-46EC-2475-B097C5C4E014"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="F1E83DC4-975A-DE0B-5B67-91F7016B19F8" name="Zawodnik_Jednostka_sportowa_FK">

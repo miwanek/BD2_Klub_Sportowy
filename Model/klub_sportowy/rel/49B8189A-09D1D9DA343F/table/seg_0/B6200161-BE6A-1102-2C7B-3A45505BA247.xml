@@ -23,10 +23,9 @@
 <colAssociation fkAssociation="96C4A362-84BC-EEC1-A7A9-010511317C50" referredColumn="A097EAD8-9353-93ED-7836-F799A70985F9"/>
 </associations>
 </Column>
-<Column name="Wynik_id" id="D8508FC1-561F-1656-6770-220834DA1664">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>FAEB6963-D9D8-B5C5-FF6C-29E60D942DF1</generatorID>
+<Column name="Jednostka_sportowa_ID" id="E447A791-D6CA-43B7-0508-B7D1F1277E87">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:05:54 UTC</createdTime>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -35,80 +34,59 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="7F297749-4775-4D17-9FFF-DDD5A9272279" referredColumn="C52AE29C-C742-82D0-35ED-C684BEBD1A2D"/>
+<colAssociation fkAssociation="8CD9F536-50A2-4A2F-AEA8-D47269987981" referredColumn="659F4931-3E18-0CF9-8FEB-362AAAB5F580"/>
 </associations>
 </Column>
-<Column name="Udzial_w_rozgrywce_ID" id="A49209F7-F2AB-B81F-6523-65EBAD1C7E8D">
+<Column name="miejsce" id="8CD7D814-EBEA-AB7F-9B07-36795AACDC0D">
 <createdBy>yelki</createdBy>
 <createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementColumn>true</autoIncrementColumn>
-<identityColumn>true</identityColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<isSurrogateColumn>true</isSurrogateColumn>
-</Column>
-<Column name="Jednostka_sportowa_ID" id="726B7A99-BDE2-780A-60F3-A84DBEA04BD9">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>ED1B0010-8A17-9444-90AA-9C98166B20FD</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="7F038DDE-E860-9091-A51B-5CD957FEE4E4" referredColumn="659F4931-3E18-0CF9-8FEB-362AAAB5F580"/>
-</associations>
+</Column>
+<Column name="rezultat" id="BF9A0AAC-2270-3C5E-F2BD-BA8883AAC954">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>3827C696-49EF-8698-ED25-4B85DF6911BB</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="punkty" id="1188C3B3-91D9-2B6F-C16C-25CF33F262CE">
+<createdBy>yelki</createdBy>
+<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>45FFB2DF-3A02-F841-0BC7-91C8FB2FD3A1</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="1E987ADF-3D58-81F0-1356-D16E6C3ACDC9" name="Udzial_w_rozgrywce_PK">
+<ind_PK_UK id="8892E6D4-BA0E-2FCF-771E-7E9ACD02514E" name="Wynik_PK">
 <createdBy>yelki</createdBy>
 <createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<generatorID>4D1C5CA9-F34E-AF9E-EA1C-E3A057E0EAE0</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
-<indexColumnUsage>
-<colUsage columnID="A49209F7-F2AB-B81F-6523-65EBAD1C7E8D"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="6B1AB6C9-CDC9-7166-1036-A8CE1BFC95C3" name="Udzial_w_rozgrywce__IDX">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>D9E8A6B8-7B4E-E357-7EC1-8F76E0228A2F</relationGeneratorID>
-<indexColumnUsage>
-<colUsage columnID="D8508FC1-561F-1656-6770-220834DA1664"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="12C3A30D-3DB4-2FE7-D2F7-C61B6E0DD2F6" name="Udzial_w_rozgrywce_Wynik_FK">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>D9E8A6B8-7B4E-E357-7EC1-8F76E0228A2F</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="D8508FC1-561F-1656-6770-220834DA1664"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="9ED14FCF-12F9-6FD9-867E-C48E61D99B84" name="Udzial_w_rozgrywce_Jednostka_sportowa_FK">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>20C8DCE3-82A9-8A4E-12C6-3FB3C5E5912D</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="726B7A99-BDE2-780A-60F3-A84DBEA04BD9"/>
+<colUsage columnID="92997D42-C33C-86B8-E783-0AC08D42A810"/>
+<colUsage columnID="E447A791-D6CA-43B7-0508-B7D1F1277E87"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="35C25EB2-F87D-29C8-6829-85732B113FE5" name="Udzial_w_rozgrywce_Rozgrywka_FK">
@@ -120,6 +98,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="92997D42-C33C-86B8-E783-0AC08D42A810"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="758D0409-A803-B64C-DF26-3E8A4CBF032D" name="Udzial_w_rozgrywce_Jednostka_sportowa_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:05:54 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E447A791-D6CA-43B7-0508-B7D1F1277E87"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

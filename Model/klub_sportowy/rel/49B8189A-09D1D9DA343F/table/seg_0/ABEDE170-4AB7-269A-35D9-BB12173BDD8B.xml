@@ -24,7 +24,6 @@
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>3AE5DE1A-66FA-914A-A5DB-22FD450A9376</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -36,7 +35,6 @@
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>8CDBAE0C-FB9F-CF32-AA32-6EC78B26D302</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>

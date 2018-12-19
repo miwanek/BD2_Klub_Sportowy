@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="rodzaj" id="5065B6F8-823C-70C5-D203-996A838DE69F">
+<Column name="nazwa" id="5065B6F8-823C-70C5-D203-996A838DE69F">
 <createdBy>yelki</createdBy>
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
 <generatorID>BFFF1090-F391-6EE2-3036-FA30481D7298</generatorID>
@@ -31,10 +31,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Dyscyplina_id" id="06C0952E-A050-5B50-AD8E-DB422D172DF5">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>E38F4550-B212-53F4-1D0D-72C5BDE84039</generatorID>
+<Column name="Dyscyplina_id_dyscypliny" id="C7E450C7-4CF5-0D79-FAF9-4759D3D236F5">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:29:53 UTC</createdTime>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -43,20 +42,7 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="066EA9E6-363E-8B07-530D-1DCB4D27D77B" referredColumn="CC49377D-E1AF-30A5-0A7A-4AEA7CC6EF30"/>
-</associations>
-</Column>
-<Column name="Wspolpraca_nr_umowy" id="AFB2D25C-1B8F-500D-F690-56B5F5648355">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-17 18:55:15 UTC</createdTime>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="0CD01D5A-1D9F-77B7-5AD8-C062F88C9AF6" referredColumn="C46562DD-E682-A3D6-EDB7-FA823C2D9C52"/>
+<colAssociation fkAssociation="388608C4-4691-E15A-630D-187D50355DD1" referredColumn="CC49377D-E1AF-30A5-0A7A-4AEA7CC6EF30"/>
 </associations>
 </Column>
 </columns>
@@ -73,34 +59,15 @@
 <colUsage columnID="AE614108-068A-3901-9ACD-DA117FF59765"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E02FB87B-4429-1337-CDA6-7BC17F66E3C3" name="Sekcja__IDX">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>67402277-DFE6-0E34-AD7B-BD3D1C95BB0B</relationGeneratorID>
-</ind_PK_UK>
-<ind_PK_UK id="E003EB0A-B289-1AB2-2ADF-60B39AD10D2A" name="Sekcja_Dyscyplina_FK">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>597AFCFC-6FFF-D301-E55E-6BE904A05E89</generatorID>
+<ind_PK_UK id="7274502D-4237-D9D4-71F6-B451BB8BDF20" name="Sekcja_Dyscyplina_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-18 01:29:53 UTC</createdTime>
+<generatorID>B7E502B3-F462-CE97-5539-CF80EB364BA2</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="06C0952E-A050-5B50-AD8E-DB422D172DF5"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="7EDF828F-7F3E-475B-5A4C-C5FBA9559C1F" name="Sekcja_Wspolpraca_FK">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-17 18:55:15 UTC</createdTime>
-<generatorID>830305F2-0E1F-AAD3-C604-335DA429427E</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="AFB2D25C-1B8F-500D-F690-56B5F5648355"/>
+<colUsage columnID="C7E450C7-4CF5-0D79-FAF9-4759D3D236F5"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
