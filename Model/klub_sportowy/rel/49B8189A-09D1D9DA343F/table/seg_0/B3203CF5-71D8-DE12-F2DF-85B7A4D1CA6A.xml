@@ -59,13 +59,6 @@
 <colUsage columnID="AE614108-068A-3901-9ACD-DA117FF59765"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="89666538-CA46-57FA-25E6-9ADED0A52687" name="Sekcja_Wspolpraca_FK">
-<createdBy>miwan</createdBy>
-<createdTime>2018-12-23 12:06:01 UTC</createdTime>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-</ind_PK_UK>
 <ind_PK_UK id="EEEE0A66-BF2D-96BE-D076-67935567809B" name="Sekcja_Dyscyplina_FK">
 <createdBy>miwan</createdBy>
 <createdTime>2018-12-23 13:07:42 UTC</createdTime>
