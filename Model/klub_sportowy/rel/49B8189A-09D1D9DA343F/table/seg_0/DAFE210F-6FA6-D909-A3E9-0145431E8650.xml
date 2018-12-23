@@ -38,19 +38,6 @@
 <colAssociation fkAssociation="954AC0EC-2D12-BD2C-E9EA-FB0369FAE7FB" referredColumn="63E2FCB5-A9FF-5002-ACB9-CCD427D4CD68"/>
 </associations>
 </Column>
-<Column name="dyscypliny_turnieju_ID" id="F22BB095-C994-2F47-A641-CDC39F0FBFDC">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementColumn>true</autoIncrementColumn>
-<identityColumn>true</identityColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<isSurrogateColumn>true</isSurrogateColumn>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="FF7123DF-4D13-E18D-4D67-723FB4772437" name="dyscypliny_turnieju_PK">
@@ -60,7 +47,8 @@
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <indexColumnUsage>
-<colUsage columnID="F22BB095-C994-2F47-A641-CDC39F0FBFDC"/>
+<colUsage columnID="1EB3C190-7926-6EBD-18BA-CCFDCDB26DB3"/>
+<colUsage columnID="A990911E-486A-A8FE-73C7-0CE569E1ED4E"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="458083FC-5C1D-225B-5AFD-6E538A5CBA05" name="dyscypliny_turnieju_Dyscyplina_FK">

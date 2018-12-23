@@ -57,8 +57,9 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,,3</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="punkty" id="1188C3B3-91D9-2B6F-C16C-25CF33F262CE">
@@ -73,6 +74,21 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Jednostka_id_jendostki" id="EE395650-47C2-616F-C299-C77B84145975">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 14:09:04 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0D9AA2E6-F409-C252-CF48-B83315A1A962" referredColumn="CE072E3C-165F-181E-7A5D-C387210C9EC2"/>
+</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -116,6 +132,16 @@
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="52499EB4-1B1A-E042-E720-503E325F051F" name="Udzial_w_rozgrywce_Jednostka_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 14:09:04 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE395650-47C2-616F-C299-C77B84145975"/>
+</indexColumnUsage>
 </ind_PK_UK>
 </indexes>
 </Table>

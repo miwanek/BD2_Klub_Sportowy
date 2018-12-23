@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B7AAA788-8F03-8A61-3055-23022439F4B8" name="Jednostka">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 14:02:12 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<ordsAlias>table_22</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_jendostki" id="CE072E3C-165F-181E-7A5D-C387210C9EC2">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 14:04:21 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazwa" id="BB004691-D609-F4AF-ABCE-918D3BE7EB2D">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 14:04:21 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C265799D-35FC-DEA7-1091-634712EA224C" name="jednostka_PK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 14:08:35 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CE072E3C-165F-181E-7A5D-C387210C9EC2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
