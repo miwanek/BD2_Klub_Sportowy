@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="02743963-3B7F-7B68-F2E4-7C45BA3B65FD" name="udzial_w_druzynie">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="02743963-3B7F-7B68-F2E4-7C45BA3B65FD" name="Udzial_w_druzynie">
 <createdBy>yelki</createdBy>
 <createdTime>2018-12-16 18:58:18 UTC</createdTime>
 <generatorID>CC7EE8ED-26D8-3362-E16F-74F5CEA8A24B</generatorID>
@@ -15,7 +15,7 @@
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -29,7 +29,7 @@
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>

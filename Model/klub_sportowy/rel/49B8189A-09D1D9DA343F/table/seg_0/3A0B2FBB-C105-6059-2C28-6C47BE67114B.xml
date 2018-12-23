@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3A0B2FBB-C105-6059-2C28-6C47BE67114B" name="Poziom">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:55:49 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<ordsAlias>table_21</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_poziomu" id="AE5AC101-A6C9-4625-4E3D-8CE5D4334459">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:56:12 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazwa" id="FBCC6FCC-A82C-6EDC-779C-77333ADD0B74">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:56:33 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4C62614A-00BF-48B6-63CE-B0085323736E" name="poziom_PK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:56:33 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE5AC101-A6C9-4625-4E3D-8CE5D4334459"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

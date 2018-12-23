@@ -30,6 +30,17 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="data_zakonczenia" id="7DB56EF8-603C-83D1-177A-EA0768B966FC">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:22:51 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="rodzaj" id="BC1747BF-50AC-5B4B-A84B-84E2F16B2C9F">
 <createdBy>yelki</createdBy>
 <createdTime>2018-12-16 18:58:18 UTC</createdTime>
@@ -84,9 +95,9 @@
 <colAssociation fkAssociation="EBFCDD22-5124-A2DF-6AE3-837A736A851C" referredColumn="63E2FCB5-A9FF-5002-ACB9-CCD427D4CD68"/>
 </associations>
 </Column>
-<Column name="dyscypliny_turnieju_ID" id="C6A0FA77-5BF2-EE32-5006-5D738404441F">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
+<Column name="Dyscyplina_id_dyscypliny" id="EC05190D-2ABA-D619-EAAC-E5AA723D6999">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:13:06 UTC</createdTime>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -95,7 +106,7 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="2F005A26-3703-6989-BFD9-D68DD20C560B" referredColumn="F22BB095-C994-2F47-A641-CDC39F0FBFDC"/>
+<colAssociation fkAssociation="0B3446AB-8132-B82F-2937-D288C63645E1" referredColumn="CC49377D-E1AF-30A5-0A7A-4AEA7CC6EF30"/>
 </associations>
 </Column>
 </columns>
@@ -134,15 +145,15 @@
 <colUsage columnID="E7D5476C-4B40-3A9A-23FB-2667017A60C6"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="5004D338-6E75-FA78-70E5-EC3228495BFB" name="Rozgrywka_dyscypliny_turnieju_FK">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>11BDA287-8A97-6048-ECD5-03A4A2B17E67</generatorID>
+<ind_PK_UK id="CEF6248D-E326-F951-DCC7-997688C398E6" name="Rozgrywka_Dyscyplina_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:13:06 UTC</createdTime>
+<generatorID>B7E502B3-F462-CE97-5539-CF80EB364BA2</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="C6A0FA77-5BF2-EE32-5006-5D738404441F"/>
+<colUsage columnID="EC05190D-2ABA-D619-EAAC-E5AA723D6999"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

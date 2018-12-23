@@ -53,7 +53,7 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="FE9AB037-65F2-979E-F23A-668707E7C323" referredColumn="9A31A032-057F-3ECD-23DE-5359F5668783"/>
+<colAssociation fkAssociation="6FE4648E-2D0D-FEFE-4D99-45D08D69BB54" referredColumn="9A31A032-057F-3ECD-23DE-5359F5668783"/>
 </associations>
 </Column>
 </columns>
@@ -91,9 +91,9 @@
 <colUsage columnID="4D7A7E57-2B59-7BE4-9551-149CBEC1457E"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="D46051AC-E850-DE97-383E-52EFF14CA128" name="Obiekt_sportowy_Adres_FK">
+<ind_PK_UK id="1D9EBC8B-BA81-6B57-92C7-C276983117FE" name="Obiekt_sportowy_Adres_FK">
 <createdBy>miwan</createdBy>
-<createdTime>2018-12-18 01:06:38 UTC</createdTime>
+<createdTime>2018-12-23 13:06:11 UTC</createdTime>
 <generatorID>E510E596-AA8F-1920-F683-2992E781F04C</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <indexState>Foreign Key</indexState>

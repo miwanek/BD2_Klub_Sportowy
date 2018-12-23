@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="95506C0F-24D8-CEAA-CF8C-16FF613477FB" name="Grupa">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:36:42 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<ordsAlias>table_20</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_grupy" id="71FE2C0D-B24B-2E4E-AE57-B6ECEC350AE0">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:45:21 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazwa" id="0D43F9F7-4EF8-1925-38F6-C07366F8B7E4">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:45:21 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Sekcja_id_sekcji" id="0B5A0F48-F07B-F756-DBFD-3A0F7DA41387">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:48:56 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3544CCA4-5970-2276-7861-D20858D63CA5" referredColumn="AE614108-068A-3901-9ACD-DA117FF59765"/>
+</associations>
+</Column>
+<Column name="poziom_id_poziomu" id="3AFC35F2-CD3B-2A60-ED4D-39ED36AE2138">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:56:39 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A0D11EFD-C116-4B4A-CEA5-28E3A4832BDD" referredColumn="AE5AC101-A6C9-4625-4E3D-8CE5D4334459"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7F9DE2DA-72D1-13CC-80A7-6276E3B63E3E" name="grupa_PK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:45:21 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="71FE2C0D-B24B-2E4E-AE57-B6ECEC350AE0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4E4608B2-4527-2640-C918-10C54AEEFB38" name="grupa_Sekcja_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:48:56 UTC</createdTime>
+<generatorID>21BF2909-3C2C-F27A-B955-E3AF597DCA64</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B5A0F48-F07B-F756-DBFD-3A0F7DA41387"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9719AD3A-446B-C3B4-DCE7-BE9BFE8F50B4" name="grupa_poziom_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:56:39 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3AFC35F2-CD3B-2A60-ED4D-39ED36AE2138"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

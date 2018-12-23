@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="53DC5FC8-131D-53A8-F93C-2D8767990FBA" containerWithKeyObject="5EF781A2-6071-7194-8C56-41E7DA344D3F" localFKIndex="35EEFA1F-B64C-792C-68A5-C67AB9A45666" name="udzial_w_turnieju_Turniej_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:31:30 UTC</createdTime>
+<generatorID>8E2B0054-1913-3F87-E124-DDEC5BB0FDC5</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<referredTableLongName>Turniej</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>3FD3EF80-33BF-11C3-FB12-7D6EC182CA73</referredTableID>
+<keyObject>B2FDB0CC-44E2-53EF-5272-B3C18703F4CF</keyObject>
+<referredKeyID>B2FDB0CC-44E2-53EF-5272-B3C18703F4CF</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_turnieju</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -14,7 +14,7 @@
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -59,6 +59,20 @@
 <colAssociation fkAssociation="342960D0-B8F4-B2B9-4909-2A811E6B2061" referredColumn="AE614108-068A-3901-9ACD-DA117FF59765"/>
 </associations>
 </Column>
+<Column name="Poziom_id_poziomu" id="43767884-4664-2311-4B05-216156989E17">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 13:05:06 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9289C393-AD34-B62E-B77C-92A94CEB4054" referredColumn="AE5AC101-A6C9-4625-4E3D-8CE5D4334459"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="01351395-4FE7-8A93-5124-69E5FF29BE8D" name="Druzyna_PK">
@@ -91,6 +105,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="74886D3B-2994-D2A1-BC15-B233D6C7818B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2D9FCC6E-1A14-EFE6-5E7A-1CA66C608C16" name="Druzyna_Poziom_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 13:05:06 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="43767884-4664-2311-4B05-216156989E17"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

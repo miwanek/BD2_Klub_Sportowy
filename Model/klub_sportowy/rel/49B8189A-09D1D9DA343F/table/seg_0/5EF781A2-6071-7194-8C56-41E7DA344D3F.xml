@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5EF781A2-6071-7194-8C56-41E7DA344D3F" name="udzial_w_turnieju">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:25:50 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<ordsAlias>table_19</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Jednostka_sportowa_ID" id="673B09FD-A30A-B8EB-723D-9C63A2C04466">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:31:20 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8D6C41D1-97FF-25C3-B4AC-896B31073783" referredColumn="659F4931-3E18-0CF9-8FEB-362AAAB5F580"/>
+</associations>
+</Column>
+<Column name="Turniej_id_turnieju" id="C7374D3E-F0D3-AF93-CAC5-04D6332B601C">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:31:30 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="53DC5FC8-131D-53A8-F93C-2D8767990FBA" referredColumn="63E2FCB5-A9FF-5002-ACB9-CCD427D4CD68"/>
+</associations>
+</Column>
+<Column name="miejsce" id="71109716-49B4-DF2A-FE1F-04A30B2D5FB0">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:27:21 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="punkty" id="CB901376-F4F2-E363-7251-632FB45C83E6">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:27:21 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AB704B9B-46AC-2867-1743-D4017C8F5C2E" name="udzial_w_turnieju_PK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:31:46 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="673B09FD-A30A-B8EB-723D-9C63A2C04466"/>
+<colUsage columnID="C7374D3E-F0D3-AF93-CAC5-04D6332B601C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C5C1624C-D0D4-6260-FE6C-E73ABDE489D4" name="udzial_w_turnieju_Jednostka_sportowa_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:31:20 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="673B09FD-A30A-B8EB-723D-9C63A2C04466"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="35EEFA1F-B64C-792C-68A5-C67AB9A45666" name="udzial_w_turnieju_Turniej_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:31:30 UTC</createdTime>
+<generatorID>8E2B0054-1913-3F87-E124-DDEC5BB0FDC5</generatorID>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C7374D3E-F0D3-AF93-CAC5-04D6332B601C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

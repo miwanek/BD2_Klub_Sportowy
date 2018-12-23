@@ -15,7 +15,7 @@
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -69,6 +69,20 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="grupa_id_grupy" id="D25CFF8C-CC34-D7F1-B9A4-A727FBCA3A61">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:45:37 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2946B2A7-5DBF-98D2-4AF5-B9C30D0AEAA0" referredColumn="71FE2C0D-B24B-2E4E-AE57-B6ECEC350AE0"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="C7BE6A2D-3440-0134-6C72-B24783DE3ACC" name="Zawodnik_PK">
@@ -90,6 +104,23 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="0DC197EF-8F16-965D-B4E1-AFE07C73AE8C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0320DD3B-9C6A-8AB6-A844-A0A2C88131E5" name="Zawodnik_Druzyna_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:06:01 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="86AB7A39-CF43-010A-334C-D2422C819453" name="Zawodnik_grupa_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:45:37 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D25CFF8C-CC34-D7F1-B9A4-A727FBCA3A61"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

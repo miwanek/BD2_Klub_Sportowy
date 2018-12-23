@@ -30,6 +30,17 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="aktywna" id="4CAC635C-705C-3383-F44E-82817C33ABB9">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:07:34 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="ilosc_miejsc_trening" id="A6D26160-BFBB-F1FE-D6CC-0E8B41817549">
 <createdBy>yelki</createdBy>
 <createdTime>2018-11-25 11:07:39 UTC</createdTime>
@@ -51,17 +62,6 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="data_poczatkowa" id="BC9812E6-43CB-428D-9940-F24B55191AB3">
-<createdBy>yelki</createdBy>
-<createdTime>2018-11-25 11:07:39 UTC</createdTime>
-<generatorID>25A50F63-DAE5-95D2-9A24-827F81147F1F</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -91,18 +91,6 @@
 <associations>
 <colAssociation fkAssociation="019910C1-5424-28B2-3642-C2B418867D01" referredColumn="3BE6CB03-6294-9B4D-51F0-4162C4F53041"/>
 </associations>
-</Column>
-<Column name="data_koncowa" id="03AE4989-1B81-F908-A50C-0618C1F084FB">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>B72341C4-6B73-1A07-987D-1A24571A03ED</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

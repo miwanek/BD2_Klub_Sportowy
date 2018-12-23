@@ -31,9 +31,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Dyscyplina_id_dyscypliny" id="C7E450C7-4CF5-0D79-FAF9-4759D3D236F5">
+<Column name="Dyscyplina_id_dyscypliny" id="1A0D65B4-70A0-375B-03FD-6A167BA8F1CA">
 <createdBy>miwan</createdBy>
-<createdTime>2018-12-18 01:29:53 UTC</createdTime>
+<createdTime>2018-12-23 13:07:42 UTC</createdTime>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -42,7 +42,7 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="388608C4-4691-E15A-630D-187D50355DD1" referredColumn="CC49377D-E1AF-30A5-0A7A-4AEA7CC6EF30"/>
+<colAssociation fkAssociation="7FFCD9B5-3648-7A11-1B29-103E3A6BD93E" referredColumn="CC49377D-E1AF-30A5-0A7A-4AEA7CC6EF30"/>
 </associations>
 </Column>
 </columns>
@@ -59,15 +59,22 @@
 <colUsage columnID="AE614108-068A-3901-9ACD-DA117FF59765"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="7274502D-4237-D9D4-71F6-B451BB8BDF20" name="Sekcja_Dyscyplina_FK">
+<ind_PK_UK id="89666538-CA46-57FA-25E6-9ADED0A52687" name="Sekcja_Wspolpraca_FK">
 <createdBy>miwan</createdBy>
-<createdTime>2018-12-18 01:29:53 UTC</createdTime>
+<createdTime>2018-12-23 12:06:01 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="EEEE0A66-BF2D-96BE-D076-67935567809B" name="Sekcja_Dyscyplina_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 13:07:42 UTC</createdTime>
 <generatorID>B7E502B3-F462-CE97-5539-CF80EB364BA2</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="C7E450C7-4CF5-0D79-FAF9-4759D3D236F5"/>
+<colUsage columnID="1A0D65B4-70A0-375B-03FD-6A167BA8F1CA"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

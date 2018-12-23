@@ -1,15 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="BF393DE3-A4D9-F4A0-076C-F2FEE4F4155C" containerWithKeyObject="3AB0E941-2767-5CBC-FEA0-CB7454BB5745" localFKIndex="2B6E5EC0-9688-66EC-51BB-373D5C6D0110" name="opieka_nad_dyscyplina_Dyscyplina_FK">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>05ABD012-8C3C-1FFD-BDA6-9462F8818B69</generatorID>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0B3446AB-8132-B82F-2937-D288C63645E1" containerWithKeyObject="AA68AD47-F407-05FE-48E9-D9F47029C398" localFKIndex="CEF6248D-E326-F951-DCC7-997688C398E6" name="Rozgrywka_Dyscyplina_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:13:06 UTC</createdTime>
+<generatorID>B7E502B3-F462-CE97-5539-CF80EB364BA2</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <referredTableLongName>Dyscyplina</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>AD3FFE1B-35AF-24E6-B908-999D8CFF25B1</referredTableID>
 <keyObject>D0C9BEB9-D3AF-4FC4-5AE0-23011B163737</keyObject>
 <referredKeyID>D0C9BEB9-D3AF-4FC4-5AE0-23011B163737</referredKeyID>
-<mandatory>false</mandatory>
+<mandatory>true</mandatory>
 <refColNames>id_dyscypliny</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>

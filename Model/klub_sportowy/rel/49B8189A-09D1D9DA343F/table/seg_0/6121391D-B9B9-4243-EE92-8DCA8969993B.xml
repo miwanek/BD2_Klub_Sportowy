@@ -71,18 +71,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="wynagrodzenie" id="46FE3235-118D-82EE-5086-41DACBC8A361">
-<createdBy>yelki</createdBy>
-<createdTime>2018-12-16 18:58:18 UTC</createdTime>
-<generatorID>DE39F739-E3D6-92A0-3E43-59D29C8B53DD</generatorID>
-<ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="B06621EC-D41D-9894-6248-509F5CB85F2E" name="Wspolpraca_PK">

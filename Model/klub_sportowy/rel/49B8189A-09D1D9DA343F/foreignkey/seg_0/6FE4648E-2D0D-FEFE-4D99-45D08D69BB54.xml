@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FE9AB037-65F2-979E-F23A-668707E7C323" containerWithKeyObject="8CCC1D6D-384A-C48D-0FAC-03881D660DE6" localFKIndex="D46051AC-E850-DE97-383E-52EFF14CA128" name="Obiekt_sportowy_Adres_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="6FE4648E-2D0D-FEFE-4D99-45D08D69BB54" containerWithKeyObject="8CCC1D6D-384A-C48D-0FAC-03881D660DE6" localFKIndex="1D9EBC8B-BA81-6B57-92C7-C276983117FE" name="Obiekt_sportowy_Adres_FK">
 <createdBy>miwan</createdBy>
-<createdTime>2018-12-18 01:06:38 UTC</createdTime>
+<createdTime>2018-12-23 13:06:11 UTC</createdTime>
 <generatorID>E510E596-AA8F-1920-F683-2992E781F04C</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
 <referredTableLongName>Adres</referredTableLongName>

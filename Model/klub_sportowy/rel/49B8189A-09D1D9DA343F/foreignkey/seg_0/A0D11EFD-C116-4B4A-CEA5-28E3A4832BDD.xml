@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A0D11EFD-C116-4B4A-CEA5-28E3A4832BDD" containerWithKeyObject="95506C0F-24D8-CEAA-CF8C-16FF613477FB" localFKIndex="9719AD3A-446B-C3B4-DCE7-BE9BFE8F50B4" name="grupa_poziom_FK">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 12:56:39 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<referredTableLongName>Poziom</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>3A0B2FBB-C105-6059-2C28-6C47BE67114B</referredTableID>
+<keyObject>4C62614A-00BF-48B6-63CE-B0085323736E</keyObject>
+<referredKeyID>4C62614A-00BF-48B6-63CE-B0085323736E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_poziomu</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
