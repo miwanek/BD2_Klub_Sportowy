@@ -65,6 +65,17 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="plec" id="8DCF62A8-F52A-E4E0-CCF1-D77B5B6920B1">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 15:37:23 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="Sala_id" id="4F44A41E-CBB2-DBDC-098E-9ACFC2806099">
 <createdBy>yelki</createdBy>
 <createdTime>2018-12-16 18:58:18 UTC</createdTime>

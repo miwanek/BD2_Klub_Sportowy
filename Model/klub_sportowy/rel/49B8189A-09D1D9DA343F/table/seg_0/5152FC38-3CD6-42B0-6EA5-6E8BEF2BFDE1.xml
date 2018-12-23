@@ -50,11 +50,11 @@
 <createdTime>2018-11-25 13:17:40 UTC</createdTime>
 <generatorID>63ED6004-8439-E1FC-B954-BC8A4D8365BF</generatorID>
 <ownerDesignName>klub_sportowy</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="data_urodzenia" id="9C505DD8-6480-3275-B5CE-D6B99F3C6170">

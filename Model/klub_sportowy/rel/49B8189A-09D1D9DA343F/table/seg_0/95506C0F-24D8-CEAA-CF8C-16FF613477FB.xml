@@ -18,6 +18,17 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="plec" id="C3332528-46FC-1ADF-1A71-35C1D4A249BA">
+<createdBy>miwan</createdBy>
+<createdTime>2018-12-23 15:39:45 UTC</createdTime>
+<ownerDesignName>klub_sportowy</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="nazwa" id="0D43F9F7-4EF8-1925-38F6-C07366F8B7E4">
 <createdBy>miwan</createdBy>
 <createdTime>2018-12-23 12:45:21 UTC</createdTime>
