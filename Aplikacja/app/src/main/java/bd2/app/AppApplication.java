@@ -9,8 +9,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import static javafx.application.Application.launch;
-
 @SpringBootApplication
 public class AppApplication extends Application {
 
@@ -31,11 +29,11 @@ public class AppApplication extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception{
-		fxmlLoader.setLocation(getClass().getResource("/fxml/sample.fxml"));
+		fxmlLoader.setLocation(getClass().getResource("/fxml/widok1.fxml"));
 		rootNode = fxmlLoader.load();
 
-		primaryStage.setTitle("Hello World");
-		Scene scene = new Scene(rootNode, 800, 600);
+		primaryStage.setTitle("Sport tournaments app");
+		Scene scene = new Scene(rootNode, 914, 680);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}

@@ -10,7 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="680.0" prefWidth="914.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox prefHeight="680.0" prefWidth="914.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.app.MainController">
   <children>
       <SplitPane dividerPositions="0.264138535729943" prefHeight="693.0" prefWidth="914.0">
         <items>
@@ -20,25 +22,38 @@
                      <children>
                         <Label layoutX="9.0" layoutY="86.0" text="Element:" />
                         <TextField fx:id="elementTextFirld" layoutX="60.0" layoutY="82.0" prefHeight="26.0" prefWidth="170.0" />
-                        <ComboBox fx:id="tableFieldList" layoutX="59.0" layoutY="45.0" onAction="#show" prefHeight="26.0" prefWidth="170.0" />
+                        <ComboBox fx:id="tableList" layoutX="59.0" layoutY="13.0"  prefHeight="26.0" prefWidth="170.0" >
+                             <items>
+                                 <FXCollections fx:factory="observableArrayList">
+                                     <String fx:value="Adres" />
+                                     <String fx:value="druzyna" />
+                                     <String fx:value="dyscyplina" />
+                                     <String fx:value="grupa" />
+                                     <String fx:value="jednostka_sportowa" />
+                                     <String fx:value="rozgrywka" />
+                                     <String fx:value="turniej" />
+                                     <String fx:value="zawodnik" />
+                                 </FXCollections>
+                             </items>
+                        </ComboBox>
+                        <ComboBox fx:id="tableFieldList" layoutX="59.0" layoutY="45.0"  prefHeight="26.0" prefWidth="170.0" />
                         <Label layoutX="14.0" layoutY="49.0" text="Field:" />
-                        <Button fx:id="searchButton" layoutX="111.0" layoutY="121.0" mnemonicParsing="false" onAction="#onClick" text="Search" />
-                        <Button fx:id="deleteButton" layoutX="173.0" layoutY="121.0" mnemonicParsing="false" onAction="#onClick" text="Delete" />
-                        <ComboBox fx:id="tableList" layoutX="59.0" layoutY="13.0" onAction="#show" prefHeight="26.0" prefWidth="170.0" />
+                        <Button fx:id="searchButton" onAction="#searchButtonPressed" layoutX="111.0" layoutY="121.0" mnemonicParsing="false"  text="Search" />
+                        <Button fx:id="deleteButton" layoutX="173.0" layoutY="121.0" mnemonicParsing="false"  text="Delete" />
                         <Label layoutX="16.0" layoutY="18.0" text="Table:" />
-                        <Button fx:id="saveButton" layoutX="111.0" layoutY="165.0" mnemonicParsing="false" onAction="#onClick" prefHeight="26.0" prefWidth="114.0" text="Save changes" />
+                        <Button fx:id="saveButton" layoutX="111.0" layoutY="165.0" mnemonicParsing="false"  prefHeight="26.0" prefWidth="114.0" text="Save changes" />
                      </children></AnchorPane>
                </children>
             </AnchorPane>
           <AnchorPane prefHeight="365.0" prefWidth="578.0">
                <children>
-                  <TableView layoutX="119.0" layoutY="-115.0" prefHeight="342.4" prefWidth="578.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="mainTable" layoutX="119.0" layoutY="-115.0" prefHeight="342.4" prefWidth="578.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn prefWidth="123.9999343752861" sortable="false" text="C1" />
                       <TableColumn prefWidth="113.59998321533203" sortable="false" text="C2" />
                         <TableColumn prefWidth="104.80006408691406" sortable="false" text="C3" />
                         <TableColumn prefWidth="110.39996337890625" sortable="false" text="C4" />
-                        <TableColumn prefWidth="115.99996948242188" sortable="false" text="C5" />
+                        <!--<TableColumn prefWidth="115.99996948242188" sortable="false" text="C5" />-->
                     </columns>
                   </TableView>
                </children>
