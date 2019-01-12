@@ -1,12 +1,10 @@
-package bd2.app.obiekt_sportowy;
+package bd2.app.sport;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -14,8 +12,8 @@ import javax.persistence.*;
 @Access(AccessType.PROPERTY)
 @Entity
 @NoArgsConstructor
-@ToString
-public class Adres {
+@Table(name = "adres")
+public class Address {
 
     private IntegerProperty id_adresu = new SimpleIntegerProperty();
 

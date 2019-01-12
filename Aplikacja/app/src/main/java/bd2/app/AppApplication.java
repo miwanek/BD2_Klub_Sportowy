@@ -33,7 +33,7 @@ public class AppApplication extends Application {
 		rootNode = fxmlLoader.load();
 
 		primaryStage.setTitle("Sport tournaments app");
-		Scene scene = new Scene(rootNode, 914, 680);
+		Scene scene = new Scene(rootNode, 1200, 680);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}

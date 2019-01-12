@@ -1,4 +1,4 @@
-package bd2.app.obiekt_sportowy;
+package bd2.app.sport;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ public class AddressService {
 
     private final AddressRepository addressRepository;
 
-    public List<Adres> getAdresses(String selectedColumn, String columnValue) {
+    public List<Address> getAdresses(String selectedColumn, String columnValue) {
         if(selectedColumn == null || columnValue == null) {
             return addressRepository.findAll();
         }

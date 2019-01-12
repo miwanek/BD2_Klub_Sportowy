@@ -1,9 +1,14 @@
 package bd2.app;
 
 
+import bd2.app.cell.ActionButtonTableCell;
+import bd2.app.sport.Address;
+import bd2.app.sport.SportFacility;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 
@@ -17,7 +22,7 @@ public class MainController {
     private final DataController dataController;
 
     @FXML
-    private TextField elementTextFirld;
+    private TextField elementTextField;
 
     @FXML
     private ComboBox<?> tableFieldList;
@@ -26,7 +31,13 @@ public class MainController {
     private Button searchButton;
 
     @FXML
-    private Button deleteButton;
+    private Button groupReportButton;
+
+    @FXML
+    private Button sectionReportButton;
+
+    @FXML
+    private Button addButton;
 
     @FXML
     private ComboBox<?> tableList;
@@ -39,23 +50,43 @@ public class MainController {
         mainTable.getItems().clear();
         //mainTable.setEditable(true);
         String selectedTable = tableList.getValue() != null ? tableList.getValue().toString() : null;
-        String selectedColumn = null;
+        String selectedColumn = tableFieldList.getValue() != null ? tableFieldList.getValue().toString() : null;
         String columnValue = null;
 
         List<? extends Object> data =  dataController.chooseSearchTable(selectedTable, selectedColumn, columnValue);
 
-        //System.out.println(data.toString());
+//        System.out.println(data.toString());
 
         try {
-             Field[] fields = Class.forName("bd2.app.obiekt_sportowy." + selectedTable).getDeclaredFields();
+             Class selectedClass = Class.forName("bd2.app.sport." + selectedTable);
+             Field[] fields = selectedClass.getDeclaredFields();
 
              System.out.println(fields.length);
 
              for(int i = 0 ; i < fields.length; i++) {
                  TableColumn tableColumn = (TableColumn)mainTable.getColumns().get(i);
+                 System.out.println(fields[i].getName());
+
                  tableColumn.setCellValueFactory(new PropertyValueFactory<>(fields[i].getName()));
                  tableColumn.setText(fields[i].getName());
              }
+
+             TableColumn deleteColumn = (TableColumn)mainTable.getColumns().get(fields.length);
+             TableColumn editColumn = (TableColumn)mainTable.getColumns().get(fields.length + 1);
+
+             deleteColumn.setText("delete");
+             editColumn.setText("edit");
+
+            deleteColumn.setCellFactory(ActionButtonTableCell.forTableColumn("delete", (Object p) -> {
+                mainTable.getItems().remove(p);
+                return p;
+            }));
+
+            editColumn.setCellFactory(ActionButtonTableCell.forTableColumn("edit", (Object p) -> {
+                mainTable.getItems().remove(p);
+                return p;
+            }));
+
         }
         catch (Exception ClassNotFoundException) {
             return;

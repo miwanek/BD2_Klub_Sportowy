@@ -1,7 +1,8 @@
 package bd2.app;
 
 
-import bd2.app.obiekt_sportowy.AddressService;
+import bd2.app.sport.AddressService;
+import bd2.app.sport.SportFacilityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 
@@ -13,16 +14,19 @@ public class DataController {
 
     private final AddressService addressService;
 
+    private final SportFacilityService sportFacilityService;
+
     public List<? extends Object> chooseSearchTable(String selectedTable, String selectedColumn, String columnValue) {
 
         if(selectedTable == null) return null;
 
         switch(selectedTable)
         {
-            case "Adres" :
+            case "Address" :
                 return addressService.getAdresses(selectedColumn, columnValue);
 
-            case "zawodnik" :
+            case "SportFacility" :
+                return sportFacilityService.getSportFacilities(selectedColumn, columnValue);
 
         }
 
