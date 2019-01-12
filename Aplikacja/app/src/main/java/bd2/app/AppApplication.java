@@ -29,7 +29,7 @@ public class AppApplication extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception{
-		fxmlLoader.setLocation(getClass().getResource("/fxml/widok1.fxml"));
+		fxmlLoader.setLocation(getClass().getResource("/fxml/mainView.fxml"));
 		rootNode = fxmlLoader.load();
 
 		primaryStage.setTitle("Sport tournaments app");

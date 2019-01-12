@@ -6,13 +6,12 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="680.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.app.MainController">
+<VBox prefHeight="680.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.app.MainController">
   <children>
       <SplitPane dividerPositions="0.24207011686143573" prefHeight="699.0" prefWidth="973.0">
         <items>
@@ -27,12 +26,12 @@
                                  <FXCollections fx:factory="observableArrayList">
                                      <String fx:value="Address" />
                                      <String fx:value="SportFacility" />
-                                     <String fx:value="druzyna" />
-                                     <String fx:value="grupa" />
-                                     <String fx:value="jednostka_sportowa" />
-                                     <String fx:value="rozgrywka" />
-                                     <String fx:value="turniej" />
-                                     <String fx:value="zawodnik" />
+                                     <String fx:value="Team" />
+                                     <String fx:value="Group" />
+                                     <String fx:value="Representation" />
+                                     <String fx:value="Representation_trainer" />
+                                     <String fx:value="Tournament" />
+                                     <String fx:value="Player" />
                                  </FXCollections>
                              </items>
                         </ComboBox>
@@ -50,14 +49,14 @@
                <children>
                   <TableView fx:id="mainTable" layoutY="-115.0" prefHeight="678.0" prefWidth="904.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                        <TableColumn prefWidth="123.9999343752861" sortable="false" text="Attribute1" />
-                        <TableColumn prefWidth="113.59998321533203" sortable="false" text="Attribute2" />
-                        <TableColumn prefWidth="104.80006408691406" sortable="false" text="Attribute3" />
-                        <TableColumn prefWidth="110.39996337890625" sortable="false" text="Attribute4" />
-                        <TableColumn prefWidth="115.99996948242188" sortable="false" text="Attribute5" />
-                        <TableColumn prefWidth="120.0" sortable="false" text="Attribute6" />
-                        <TableColumn prefWidth="110.0" sortable="false" text="Attribute7" />
-                        <TableColumn prefWidth="103.0" sortable="false" text="Attribute8" />
+                        <!--<TableColumn prefWidth="123.9999343752861" sortable="false" text="Attribute1" />-->
+                        <!--<TableColumn prefWidth="113.59998321533203" sortable="false" text="Attribute2" />-->
+                        <!--<TableColumn prefWidth="104.80006408691406" sortable="false" text="Attribute3" />-->
+                        <!--<TableColumn prefWidth="110.39996337890625" sortable="false" text="Attribute4" />-->
+                        <!--<TableColumn prefWidth="115.99996948242188" sortable="false" text="Attribute5" />-->
+                        <!--<TableColumn prefWidth="120.0" sortable="false" text="Attribute6" />-->
+                        <!--<TableColumn prefWidth="110.0" sortable="false" text="Attribute7" />-->
+                        <!--<TableColumn prefWidth="103.0" sortable="false" text="Attribute8" />-->
                     </columns>
                   </TableView>
                </children>
