@@ -11,11 +11,11 @@ import javax.persistence.Id;
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode
-public class Level {
+public class Tier {
 
   @Id
   @Column(length = 30)
-  private String levelId;
+  private String tierId;
 
   @Column(length = 30, nullable = false)
   private String name;

@@ -39,6 +39,6 @@ public class Team implements Serializable {
   private Section section;
 
   @ManyToOne
-  @JoinColumn(name = "level_id", nullable = false)
-  private Level level;
+  @JoinColumn(name = "tier_id", nullable = false)
+  private Tier tier;
 }

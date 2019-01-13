@@ -5,12 +5,10 @@ import lombok.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -42,6 +40,6 @@ public class Player implements Serializable {
   private LocalDateTime birthDate;
 
   @ManyToOne
-  @JoinColumn(name = "group_id")
-  private Group group;
+  @JoinColumn(name = "group_id", nullable = false)
+  private PlayerGroup playerGroup;
 }

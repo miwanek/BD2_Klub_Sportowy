@@ -3,8 +3,10 @@ package bd2.app.sport.controllers;
 
 import bd2.app.sport.entities.Address;
 import bd2.app.sport.entities.SportFacility;
+import bd2.app.sport.flatEntities.FlatPlayer;
 import bd2.app.sport.flatEntities.FlatSportFacility;
 import bd2.app.sport.services.entity.AddressService;
+import bd2.app.sport.services.entity.PlayerService;
 import bd2.app.sport.services.entity.SportFacilityService;
 import javafx.scene.control.Alert;
 import lombok.RequiredArgsConstructor;
@@ -18,12 +20,15 @@ import java.util.List;
 public class DeleteController {
 
     private final AddressService addressService;
+    private final PlayerService playerService;
     private final SportFacilityService sportFacilityService;
 
     public void deleteRowFromTable(String selectedTable, Object toDelete)  {
 
+        Long id;
+        String stringId;
+
         try {
-            Long id;
             switch (selectedTable) {
                 case "Address":
                     id = ((Address) toDelete).getAddressId();
@@ -33,6 +38,11 @@ public class DeleteController {
                 case "SportFacility":
                     id = ((FlatSportFacility) toDelete).getFacilityId();
                     sportFacilityService.deleteSportFacility(id);
+                    break;
+
+                case "Player":
+                    stringId = ((FlatPlayer) toDelete).getId();
+                    playerService.deletePlayer(stringId);
                     break;
             }
         }

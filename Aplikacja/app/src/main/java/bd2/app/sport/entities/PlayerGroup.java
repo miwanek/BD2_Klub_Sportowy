@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Group {
+public class PlayerGroup {
 
   @Id
   private Long groupId;
@@ -30,6 +30,6 @@ public class Group {
   private Section section;
 
   @ManyToOne
-  @JoinColumn(name = "level_id", nullable = false)
-  private Level level;
+  @JoinColumn(name = "tier_id", nullable = false)
+  private Tier tier;
 }
