@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MatchParticipationRepository extends JpaRepository<GameParticipation, MatchParticipationId> {
+public interface GameParticipationRepository extends JpaRepository<GameParticipation, MatchParticipationId> {
 }
