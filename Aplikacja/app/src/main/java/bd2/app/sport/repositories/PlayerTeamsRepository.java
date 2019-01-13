@@ -1,7 +1,7 @@
 package bd2.app.sport.repositories;
 
 import bd2.app.sport.entities.PlayerTeams;
-import bd2.app.sport.id.PlayerTeamId;
+import bd2.app.sport.classId.PlayerTeamId;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

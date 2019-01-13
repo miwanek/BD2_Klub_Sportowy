@@ -20,11 +20,21 @@ public class PlayerService {
         if(selectedColumn == null || columnValue == null) {
             return playerRepository.findAll();
         }
-
         return null;
     }
 
     public void deletePlayer(String id) throws DataIntegrityViolationException {
         playerRepository.deleteById(id);
+    }
+
+    public List<PlayerGroup> getPlayersGroups(String selectedColumn, String columnValue) {
+        if(selectedColumn == null || columnValue == null) {
+            return playerGroupRepository.findAll();
+        }
+        return null;
+    }
+
+    public void deletePlayerGroup(Long id) throws DataIntegrityViolationException {
+        playerGroupRepository.deleteById(id);
     }
 }

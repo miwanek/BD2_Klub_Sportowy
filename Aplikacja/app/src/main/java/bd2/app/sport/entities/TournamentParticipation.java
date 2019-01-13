@@ -1,6 +1,6 @@
 package bd2.app.sport.entities;
 
-import bd2.app.sport.id.TournamentParticipationId;
+import bd2.app.sport.classId.TournamentParticipationId;
 import lombok.*;
 
 import javax.persistence.Entity;

@@ -32,6 +32,9 @@ public class DataController {
 
             case "Player" :
                 return playerService.getPlayers(selectedColumn, columnValue);
+
+            case "PlayerGroup" :
+                return playerService.getPlayersGroups(selectedColumn, columnValue);
         }
 
         return null;

@@ -1,8 +1,8 @@
 package bd2.app.sport.controllers;
 
-
 import bd2.app.sport.entities.Address;
 import bd2.app.sport.flatEntities.FlatPlayer;
+import bd2.app.sport.flatEntities.FlatPlayerGroup;
 import bd2.app.sport.flatEntities.FlatSportFacility;
 import bd2.app.sport.services.entity.PlayerService;
 import bd2.app.sport.services.entity.SportFacilityService;
@@ -38,6 +38,11 @@ public class DeleteController {
                 case "Player":
                     stringId = ((FlatPlayer) toDelete).getId();
                     playerService.deletePlayer(stringId);
+                    break;
+
+                case "PlayerGroup":
+                    id = ((FlatPlayerGroup) toDelete).getGroupId();
+                    playerService.deletePlayerGroup(id);
                     break;
             }
         }

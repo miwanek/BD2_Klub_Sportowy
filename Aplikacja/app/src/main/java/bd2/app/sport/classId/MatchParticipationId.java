@@ -1,4 +1,4 @@
-package bd2.app.sport.id;
+package bd2.app.sport.classId;
 
 import bd2.app.sport.entities.Game;
 import bd2.app.sport.entities.Representation;

@@ -1,6 +1,6 @@
 package bd2.app.sport.entities;
 
-import bd2.app.sport.id.PlayerTeamId;
+import bd2.app.sport.classId.PlayerTeamId;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
