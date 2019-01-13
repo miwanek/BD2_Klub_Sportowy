@@ -27,7 +27,7 @@ public class Player implements Serializable {
 
   @OneToOne
   @MapsId
-  @JoinColumn(name = "representation_id")
+  @JoinColumn(name = "representation_id", nullable = false)
   private Representation representation;
 
   @Column(length = 30, nullable = false)
