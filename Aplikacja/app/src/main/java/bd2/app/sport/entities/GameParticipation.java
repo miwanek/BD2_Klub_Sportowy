@@ -19,12 +19,12 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @EqualsAndHashCode
 @IdClass(MatchParticipationId.class)
-public class MatchParticipation implements Serializable {
+public class GameParticipation implements Serializable {
 
   @Id
   @ManyToOne
-  @JoinColumn(name = "match_id")
-  private Match match;
+  @JoinColumn(name = "game_id")
+  private Game game;
 
   @Id
   @ManyToOne
@@ -36,8 +36,4 @@ public class MatchParticipation implements Serializable {
   private BigDecimal result;
 
   private BigDecimal score;
-
-  @ManyToOne
-  @JoinColumn(name = "unit_id", nullable = false)
-  private Unit unit;
 }

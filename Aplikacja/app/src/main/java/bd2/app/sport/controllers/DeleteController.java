@@ -2,10 +2,8 @@ package bd2.app.sport.controllers;
 
 
 import bd2.app.sport.entities.Address;
-import bd2.app.sport.entities.SportFacility;
 import bd2.app.sport.flatEntities.FlatPlayer;
 import bd2.app.sport.flatEntities.FlatSportFacility;
-import bd2.app.sport.services.entity.AddressService;
 import bd2.app.sport.services.entity.PlayerService;
 import bd2.app.sport.services.entity.SportFacilityService;
 import javafx.scene.control.Alert;
@@ -13,13 +11,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 
-import java.util.List;
-
 @Controller
 @RequiredArgsConstructor
 public class DeleteController {
 
-    private final AddressService addressService;
     private final PlayerService playerService;
     private final SportFacilityService sportFacilityService;
 
@@ -32,7 +27,7 @@ public class DeleteController {
             switch (selectedTable) {
                 case "Address":
                     id = ((Address) toDelete).getAddressId();
-                    addressService.deleteAddress(id);
+                    sportFacilityService.deleteAddress(id);
                     break;
 
                 case "SportFacility":

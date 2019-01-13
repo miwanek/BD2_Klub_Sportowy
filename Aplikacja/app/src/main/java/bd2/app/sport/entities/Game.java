@@ -19,10 +19,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Match {
+public class Game {
 
   @Id
-  private Long matchId;
+  private Long gameId;
 
   @Column(nullable = false)
   private LocalDateTime startDate;
@@ -49,4 +49,8 @@ public class Match {
   @ManyToOne
   @JoinColumn(name = "discipline_id", nullable = false)
   private Discipline discipline;
+
+  @ManyToOne
+  @JoinColumn(name = "unit_id")
+  private Unit unit;
 }

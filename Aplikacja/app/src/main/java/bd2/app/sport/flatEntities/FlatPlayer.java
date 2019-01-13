@@ -1,9 +1,11 @@
 package bd2.app.sport.flatEntities;
 
 import bd2.app.sport.entities.Player;
+import bd2.app.sport.entities.PlayerGroup;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.security.acl.Group;
 import java.time.LocalDateTime;
 
 @Getter
@@ -28,6 +30,9 @@ public class FlatPlayer {
         surname = player.getSurname();
         sex = player.getSex();
         birthDate = player.getBirthDate();
-        groupId = player.getPlayerGroup().getGroupId();
+
+        PlayerGroup group = player.getPlayerGroup();
+
+        groupId = group != null ? group.getGroupId() : null;
     }
 }

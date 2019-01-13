@@ -26,11 +26,11 @@
                                  <FXCollections fx:factory="observableArrayList">
                                      <String fx:value="Address" />
                                      <String fx:value="Discipline" />
-                                     <String fx:value="Group" />
+                                     <String fx:value="PlayerGroup" />
                                      <String fx:value="Hall" />
                                      <String fx:value="Level" />
-                                     <String fx:value="Match" />
-                                     <String fx:value="MatchParticipation" />
+                                     <String fx:value="Game" />
+                                     <String fx:value="GameParticipation" />
                                      <String fx:value="Player" />
                                      <String fx:value="PlayerDiscipline" />
                                      <String fx:value="PlayerTeams" />

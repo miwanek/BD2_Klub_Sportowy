@@ -1,7 +1,6 @@
 package bd2.app.sport.controllers;
 
 
-import bd2.app.sport.services.entity.AddressService;
 import bd2.app.sport.services.entity.PlayerService;
 import bd2.app.sport.services.entity.SportFacilityService;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +12,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DataController {
 
-    private final AddressService addressService;
     private final SportFacilityService sportFacilityService;
     private final PlayerService playerService;
 
@@ -24,14 +22,16 @@ public class DataController {
         switch(selectedTable)
         {
             case "Address" :
-                return addressService.getAdresses(selectedColumn, columnValue);
+                return sportFacilityService.getAddresses(selectedColumn, columnValue);
 
-            case "Player" :
-                return playerService.getPlayers(selectedColumn, columnValue);
+            case "Hall" :
+                return sportFacilityService.getHalls(selectedColumn,columnValue);
 
             case "SportFacility" :
                 return sportFacilityService.getSportFacilities(selectedColumn, columnValue);
 
+            case "Player" :
+                return playerService.getPlayers(selectedColumn, columnValue);
         }
 
         return null;

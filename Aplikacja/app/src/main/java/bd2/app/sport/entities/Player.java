@@ -40,6 +40,6 @@ public class Player implements Serializable {
   private LocalDateTime birthDate;
 
   @ManyToOne
-  @JoinColumn(name = "group_id", nullable = false)
+  @JoinColumn(name = "group_id")
   private PlayerGroup playerGroup;
 }

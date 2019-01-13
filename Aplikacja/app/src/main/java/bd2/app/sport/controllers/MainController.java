@@ -2,13 +2,15 @@ package bd2.app.sport.controllers;
 
 
 import bd2.app.cell.ActionButtonTableCell;
-import bd2.app.sport.controllers.DataController;
 import bd2.app.sport.services.FlatEntityService;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 
@@ -58,11 +60,14 @@ public class MainController {
         String columnValue = elementTextField.getText();
 
         List<? extends Object> data = dataController.getDataFromSelectedTable(selectedTable, selectedColumn, columnValue);
-        if(data != null) data =  data.stream().map(x -> FlatEntityService.getFlatEntity(selectedTable, x)).collect(Collectors.toList());
+
+        if (data != null) {
+            data = data.stream().map(x -> FlatEntityService.getFlatEntity(selectedTable, x)).collect(Collectors.toList());
+        }
 
         if (!tryDisplayTableWithValues(selectedTable)) return;
 
-        if(data!= null) data.forEach(row -> mainTable.getItems().add(row));
+        if (data != null) data.forEach(row -> mainTable.getItems().add(row));
     }
 
     private void cleanTableViewAndResizeColumns() {
