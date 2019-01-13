@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
@@ -15,13 +16,16 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class MatchParticipation {
+public class MatchParticipation implements Serializable {
 
   @Id
-  private Long matchId;
-
   @ManyToOne
-  @JoinColumn(name = "representation_id", nullable = false)
+  @JoinColumn(name = "match_id")
+  private Match matchId;
+
+  @Id
+  @ManyToOne
+  @JoinColumn(name = "representation_id")
   private Representation representation;
 
   private Long place;

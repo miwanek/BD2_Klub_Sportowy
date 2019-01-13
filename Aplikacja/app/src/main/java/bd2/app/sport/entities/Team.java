@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import java.io.Serializable;
 
 @Entity
 @Getter
@@ -15,7 +16,7 @@ import javax.persistence.OneToOne;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Team {
+public class Team implements Serializable {
 
   @Id
   @OneToOne

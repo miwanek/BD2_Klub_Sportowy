@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import java.io.Serializable;
 
 @Entity
 @Getter
@@ -19,15 +20,15 @@ import javax.persistence.ManyToOne;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class PlayerDiscipline {
+public class PlayerDiscipline implements Serializable {
 
   @Id
   @ManyToOne
   @JoinColumn(name = "discipline_id")
-  private Long disciplineId;
+  private Discipline discipline;
 
   @Id
   @ManyToOne
-  @JoinColumn(name = "player_representation_id", table = "player")
+  @JoinColumn(name = "player_representation_id")
   private Representation playerRepresentation;
 }
