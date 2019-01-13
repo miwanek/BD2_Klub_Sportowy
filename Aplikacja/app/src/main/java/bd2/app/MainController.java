@@ -2,20 +2,15 @@ package bd2.app;
 
 
 import bd2.app.cell.ActionButtonTableCell;
-import bd2.app.sport.Address;
-import bd2.app.sport.SportFacility;
-import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.util.Callback;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 
 import java.lang.reflect.Field;
 import java.util.List;
 
-import static javafx.scene.control.TableView.CONSTRAINED_RESIZE_POLICY;
 import static javafx.scene.control.TableView.UNCONSTRAINED_RESIZE_POLICY;
 
 @Controller
@@ -52,7 +47,7 @@ public class MainController {
     void searchButtonPressed() {
         mainTable.getItems().clear();
         mainTable.getColumns().clear();
-        mainTable.setColumnResizePolicy(CONSTRAINED_RESIZE_POLICY);
+        mainTable.setColumnResizePolicy(UNCONSTRAINED_RESIZE_POLICY);
         String selectedTable = tableList.getValue() != null ? tableList.getValue().toString() : null;
         String selectedColumn = tableFieldList.getValue() != null ? tableFieldList.getValue().toString() : null;
         String columnValue = null;
@@ -69,7 +64,7 @@ public class MainController {
     }
 
     private void displayTableWithValues(String selectedTable) throws ClassNotFoundException {
-        Class selectedClass = Class.forName("bd2.app.sport." + selectedTable);
+        Class selectedClass = Class.forName("bd2.app.sport.entities." + selectedTable);
         Field[] fields = selectedClass.getDeclaredFields();
 
         System.out.println(fields.length);
@@ -80,20 +75,14 @@ public class MainController {
 
             tableColumn.setCellValueFactory(new PropertyValueFactory<>(fields[i].getName()));
             mainTable.getColumns().add(tableColumn);
-            tableColumn.setMinWidth(100);
-
         }
 
         TableColumn deleteColumn = new TableColumn("delete");
         TableColumn editColumn = new TableColumn("edit");
 
-//        deleteColumn.setMinWidth(100);
-//        editColumn.setMinWidth(100);
-
         mainTable.getColumns().addAll(deleteColumn, editColumn);
 
         deleteColumn.setCellFactory(ActionButtonTableCell.forTableColumn("delete", (Object p) -> {
-
             mainTable.getItems().remove(p);
             return p;
         }));

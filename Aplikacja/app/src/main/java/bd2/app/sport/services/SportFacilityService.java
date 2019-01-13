@@ -1,6 +1,8 @@
-package bd2.app.sport;
+package bd2.app.sport.services;
 
 
+import bd2.app.sport.entities.SportFacility;
+import bd2.app.sport.repositories.SportFacilityRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

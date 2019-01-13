@@ -1,5 +1,6 @@
-package bd2.app.sport;
+package bd2.app.sport.entities;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,11 +10,12 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
+@EqualsAndHashCode
 @NoArgsConstructor
 public class SportFacility {
 
     @Id
-    private Integer facilityId ;
+    private Long facilityId ;
 
     @Column(length = 30, nullable = false)
     private String name ;

@@ -1,8 +1,8 @@
 package bd2.app;
 
 
-import bd2.app.sport.AddressService;
-import bd2.app.sport.SportFacilityService;
+import bd2.app.sport.services.AddressService;
+import bd2.app.sport.services.SportFacilityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 
