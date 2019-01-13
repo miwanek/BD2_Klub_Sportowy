@@ -1,15 +1,20 @@
-package bd2.app;
+package bd2.app.sport.controllers;
 
 
 import bd2.app.cell.ActionButtonTableCell;
+import bd2.app.sport.controllers.DataController;
+import bd2.app.sport.services.FlatEntityService;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.exception.ConstraintViolationException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 
 import java.lang.reflect.Field;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static javafx.scene.control.TableView.UNCONSTRAINED_RESIZE_POLICY;
 
@@ -18,6 +23,8 @@ import static javafx.scene.control.TableView.UNCONSTRAINED_RESIZE_POLICY;
 public class MainController {
 
     private final DataController dataController;
+
+    private final DeleteController deleteController;
 
     @FXML
     private TextField elementTextField;
@@ -50,21 +57,20 @@ public class MainController {
         mainTable.setColumnResizePolicy(UNCONSTRAINED_RESIZE_POLICY);
         String selectedTable = tableList.getValue() != null ? tableList.getValue().toString() : null;
         String selectedColumn = tableFieldList.getValue() != null ? tableFieldList.getValue().toString() : null;
-        String columnValue = null;
+        String columnValue = elementTextField.getText();
 
-        List<? extends Object> data = dataController.chooseSearchTable(selectedTable, selectedColumn, columnValue);
+        List<? extends Object> data = dataController.getDataFromSelectedTable(selectedTable, selectedColumn, columnValue);
+        data = data.stream().map(x -> FlatEntityService.getFlatEntity(selectedTable, x)).collect(Collectors.toList());
 
-        try {
-            displayTableWithValues(selectedTable);
-        } catch (Exception ClassNotFoundException) {
-            return;
-        }
+        if (!tryDisplayTableWithValues(selectedTable)) return;
 
         if (data != null) data.forEach(row -> mainTable.getItems().add(row));
     }
 
-    private void displayTableWithValues(String selectedTable) throws ClassNotFoundException {
+    private void displayTableWithValues(String selectedTable)
+            throws ClassNotFoundException, DataIntegrityViolationException {
         Class selectedClass = Class.forName("bd2.app.sport.entities." + selectedTable);
+        selectedClass = FlatEntityService.getClass(selectedClass, selectedTable);
         Field[] fields = selectedClass.getDeclaredFields();
 
         System.out.println(fields.length);
@@ -83,13 +89,24 @@ public class MainController {
         mainTable.getColumns().addAll(deleteColumn, editColumn);
 
         deleteColumn.setCellFactory(ActionButtonTableCell.forTableColumn("delete", (Object p) -> {
+            deleteController.deleteRowFromTable(selectedTable, p);
             mainTable.getItems().remove(p);
             return p;
         }));
 
         editColumn.setCellFactory(ActionButtonTableCell.forTableColumn("edit", (Object p) -> {
+            deleteController.deleteRowFromTable(selectedTable, p);
             mainTable.getItems().remove(p);
             return p;
         }));
+    }
+
+    private boolean tryDisplayTableWithValues(String selectedTable) {
+        try {
+            displayTableWithValues(selectedTable);
+        } catch (ClassNotFoundException exception) {
+            return false;
+        }
+        return true;
     }
 }

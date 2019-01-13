@@ -1,8 +1,8 @@
-package bd2.app;
+package bd2.app.sport.controllers;
 
 
-import bd2.app.sport.services.AddressService;
-import bd2.app.sport.services.SportFacilityService;
+import bd2.app.sport.services.entity.AddressService;
+import bd2.app.sport.services.entity.SportFacilityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 
@@ -16,7 +16,7 @@ public class DataController {
 
     private final SportFacilityService sportFacilityService;
 
-    public List<? extends Object> chooseSearchTable(String selectedTable, String selectedColumn, String columnValue) {
+    public List<? extends Object> getDataFromSelectedTable(String selectedTable, String selectedColumn, String columnValue) {
 
         if(selectedTable == null) return null;
 

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="680.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.app.MainController">
+<VBox prefHeight="680.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.app.sport.controllers.MainController">
   <children>
       <SplitPane dividerPositions="0.24207011686143573" prefHeight="699.0" prefWidth="973.0">
         <items>

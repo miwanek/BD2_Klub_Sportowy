@@ -1,8 +1,9 @@
-package bd2.app.sport.services;
+package bd2.app.sport.services.entity;
 
 import bd2.app.sport.entities.Address;
 import bd2.app.sport.repositories.AddressRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,5 +20,9 @@ public class AddressService {
         }
 
         return null;
+    }
+
+    public void deleteAddress(Long id) throws DataIntegrityViolationException {
+        addressRepository.deleteById(id);
     }
 }
