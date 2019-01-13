@@ -21,7 +21,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @EqualsAndHashCode
 @IdClass(PlayerTeamId.class)
-public class PlayerTeams implements Serializable {
+public class PlayerTeam implements Serializable {
 
     @Id
     @ManyToOne

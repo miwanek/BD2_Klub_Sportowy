@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PlayerDisciplineRepository extends JpaRepository<PlayerDiscipline, PlayerDisciplineId> {
 
+    void deleteByPlayer_IdAndDiscipline_DisciplineId(String playerId, Long disciplineId);
 }

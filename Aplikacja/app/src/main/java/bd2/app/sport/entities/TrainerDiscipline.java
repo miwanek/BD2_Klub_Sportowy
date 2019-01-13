@@ -17,7 +17,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @EqualsAndHashCode
 @IdClass(TrainerDisciplinesId.class)
-public class TrainerDisciplines implements Serializable {
+public class TrainerDiscipline implements Serializable {
 
   @Id
   @ManyToOne
