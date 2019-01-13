@@ -25,13 +25,26 @@
                              <items>
                                  <FXCollections fx:factory="observableArrayList">
                                      <String fx:value="Address" />
+                                     <String fx:value="Discipline" />
+                                     <String fx:value="Group" />
+                                     <String fx:value="Hall" />
+                                     <String fx:value="Level" />
+                                     <String fx:value="Match" />
+                                     <String fx:value="MatchParticipation" />
+                                     <String fx:value="Player" />
+                                     <String fx:value="PlayerDiscipline" />
+                                     <String fx:value="PlayerTeams" />
+                                     <String fx:value="Representation"/>
+                                     <String fx:value="RepresentationTrainer" />
+                                     <String fx:value="Section" />
                                      <String fx:value="SportFacility" />
                                      <String fx:value="Team" />
-                                     <String fx:value="Group" />
-                                     <String fx:value="Representation" />
-                                     <String fx:value="Representation_trainer" />
                                      <String fx:value="Tournament" />
-                                     <String fx:value="Player" />
+                                     <String fx:value="TournamentDisciplines" />
+                                     <String fx:value="TournamentParticipation" />
+                                     <String fx:value="Trainer" />
+                                     <String fx:value="TrainerDisciplines" />
+                                     <String fx:value="Unit" />
                                  </FXCollections>
                              </items>
                         </ComboBox>

@@ -5,8 +5,10 @@ import lombok.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import java.io.Serializable;
@@ -21,7 +23,10 @@ import java.time.LocalDateTime;
 public class Player implements Serializable {
 
   @Id
+  private String id;
+
   @OneToOne
+  @MapsId
   @JoinColumn(name = "representation_id")
   private Representation representation;
 

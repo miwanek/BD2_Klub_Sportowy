@@ -52,19 +52,23 @@ public class MainController {
 
     @FXML
     void searchButtonPressed() {
-        mainTable.getItems().clear();
-        mainTable.getColumns().clear();
-        mainTable.setColumnResizePolicy(UNCONSTRAINED_RESIZE_POLICY);
+        cleanTableViewAndResizeColumns();
         String selectedTable = tableList.getValue() != null ? tableList.getValue().toString() : null;
         String selectedColumn = tableFieldList.getValue() != null ? tableFieldList.getValue().toString() : null;
         String columnValue = elementTextField.getText();
 
         List<? extends Object> data = dataController.getDataFromSelectedTable(selectedTable, selectedColumn, columnValue);
-        data = data.stream().map(x -> FlatEntityService.getFlatEntity(selectedTable, x)).collect(Collectors.toList());
+        if(data != null) data =  data.stream().map(x -> FlatEntityService.getFlatEntity(selectedTable, x)).collect(Collectors.toList());
 
         if (!tryDisplayTableWithValues(selectedTable)) return;
 
-        if (data != null) data.forEach(row -> mainTable.getItems().add(row));
+        if(data!= null) data.forEach(row -> mainTable.getItems().add(row));
+    }
+
+    private void cleanTableViewAndResizeColumns() {
+        mainTable.getItems().clear();
+        mainTable.getColumns().clear();
+        mainTable.setColumnResizePolicy(UNCONSTRAINED_RESIZE_POLICY);
     }
 
     private void displayTableWithValues(String selectedTable)

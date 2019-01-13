@@ -43,7 +43,7 @@ public class Match {
   private Hall hall;
 
   @ManyToOne
-  @JoinColumn(name = "tournament_id", nullable = false)
+  @JoinColumn(name = "tournament_id")
   private Tournament tournament;
 
   @ManyToOne

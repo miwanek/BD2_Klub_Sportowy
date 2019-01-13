@@ -1,9 +1,11 @@
 package bd2.app.sport.entities;
 
+import bd2.app.sport.id.TournamentParticipationId;
 import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
@@ -15,6 +17,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@IdClass(TournamentParticipationId.class)
 public class TournamentParticipation implements Serializable {
 
   @Id

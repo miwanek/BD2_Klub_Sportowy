@@ -18,7 +18,6 @@ import java.util.List;
 public class DeleteController {
 
     private final AddressService addressService;
-
     private final SportFacilityService sportFacilityService;
 
     public void deleteRowFromTable(String selectedTable, Object toDelete)  {

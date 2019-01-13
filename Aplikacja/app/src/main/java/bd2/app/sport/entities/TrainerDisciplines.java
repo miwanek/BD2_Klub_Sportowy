@@ -1,9 +1,11 @@
 package bd2.app.sport.entities;
 
+import bd2.app.sport.id.TrainerDisciplinesId;
 import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
@@ -14,6 +16,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@IdClass(TrainerDisciplinesId.class)
 public class TrainerDisciplines implements Serializable {
 
   @Id

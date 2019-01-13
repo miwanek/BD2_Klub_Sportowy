@@ -6,6 +6,8 @@ import bd2.app.sport.flatEntities.FlatSportFacility;
 public class FlatEntityService {
 
     public static Object getFlatEntity(String selectedTable, Object entity) {
+
+
         switch (selectedTable) {
             case "SportFacility":
                 return new FlatSportFacility((SportFacility) entity);
