@@ -132,12 +132,14 @@ public class FxmlController implements Initializable {
         deleteColumn.setCellFactory(ActionButtonTableCell.forTableColumn("delete", (Object p) -> {
             deleteController.deleteRowFromTable(selectedTable, p);
             mainTable.getItems().remove(p);
+            searchButtonPressed();
             return p;
         }));
 
         editColumn.setCellFactory(ActionButtonTableCell.forTableColumn("edit", (Object p) -> {
             deleteController.deleteRowFromTable(selectedTable, p);
             mainTable.getItems().remove(p);
+            searchButtonPressed();
             return p;
         }));
     }
