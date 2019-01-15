@@ -3,11 +3,13 @@ package bd2.app.sport.controllers;
 
 import bd2.app.cell.ActionButtonTableCell;
 import bd2.app.sport.flags.CommonFlags;
+import bd2.app.sport.services.AddDialogFactory;
 import bd2.app.sport.services.FlatEntityService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -28,8 +30,10 @@ import static javafx.scene.control.TableView.UNCONSTRAINED_RESIZE_POLICY;
 public class FxmlController implements Initializable {
 
     private final FetchController fetchController;
-
     private final DeleteController deleteController;
+    private final EditController editController;
+    private final AddController addController;
+    private final AddDialogFactory addDialogFactory;
 
     @FXML
     private TextField elementTextField;
@@ -65,6 +69,12 @@ public class FxmlController implements Initializable {
                 .contains(tableList.getValue().toString())) {
             addButton.setVisible(false);
         }
+    }
+
+    @FXML
+    void addEntityButtonPressed() {
+        Dialog  dialog = addDialogFactory.createDialog();
+        dialog.showAndWait();
     }
 
     @FXML
