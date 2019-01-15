@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -35,6 +36,7 @@ public class AppApplication extends Application {
 		primaryStage.setTitle("Sport tournaments app");
 		Scene scene = new Scene(rootNode, 1200, 680);
 		primaryStage.setScene(scene);
+		primaryStage.getIcons().add(new Image(getClass().getClassLoader().getResourceAsStream("icon.png")));
 		primaryStage.show();
 	}
 

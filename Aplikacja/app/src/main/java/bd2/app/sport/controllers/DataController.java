@@ -3,6 +3,8 @@ package bd2.app.sport.controllers;
 import bd2.app.sport.services.entity.DictionariesService;
 import bd2.app.sport.services.entity.PlayerService;
 import bd2.app.sport.services.entity.SportFacilityService;
+import bd2.app.sport.services.entity.TeamService;
+import bd2.app.sport.services.entity.TournamentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 
@@ -15,6 +17,8 @@ public class DataController {
     private final SportFacilityService sportFacilityService;
     private final PlayerService playerService;
     private final DictionariesService dictionariesService;
+    private final TeamService teamService;
+    private final TournamentService tournamentService;
 
     public List<? extends Object> getDataFromSelectedTable(String selectedTable, String selectedColumn, String columnValue) {
 
@@ -27,6 +31,9 @@ public class DataController {
 
             case "Discipline" :
                 return dictionariesService.getDisciplines();
+
+            case "Team" :
+                return teamService.getTeams(selectedColumn, columnValue);
 
             case "Hall" :
                 return sportFacilityService.getHalls(selectedColumn,columnValue);
@@ -48,6 +55,9 @@ public class DataController {
 
             case "Tier" :
                 return dictionariesService.getTiers();
+
+            case "Tournament" :
+                return tournamentService.getTournaments(selectedColumn, columnValue);
 
             case "Unit" :
                 return dictionariesService.getUnits();

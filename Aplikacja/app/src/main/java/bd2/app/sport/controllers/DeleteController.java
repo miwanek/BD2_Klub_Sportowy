@@ -1,15 +1,17 @@
 package bd2.app.sport.controllers;
 
-import bd2.app.sport.classId.PlayerDisciplineId;
-import bd2.app.sport.classId.PlayerTeamId;
 import bd2.app.sport.entities.Address;
+import bd2.app.sport.entities.Tournament;
 import bd2.app.sport.flatEntities.FlatPlayer;
 import bd2.app.sport.flatEntities.FlatPlayerDiscipline;
 import bd2.app.sport.flatEntities.FlatPlayerGroup;
 import bd2.app.sport.flatEntities.FlatPlayerTeam;
 import bd2.app.sport.flatEntities.FlatSportFacility;
+import bd2.app.sport.flatEntities.FlatTeam;
 import bd2.app.sport.services.entity.PlayerService;
 import bd2.app.sport.services.entity.SportFacilityService;
+import bd2.app.sport.services.entity.TeamService;
+import bd2.app.sport.services.entity.TournamentService;
 import javafx.scene.control.Alert;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -21,6 +23,8 @@ public class DeleteController {
 
     private final PlayerService playerService;
     private final SportFacilityService sportFacilityService;
+    private final TeamService teamService;
+    private final TournamentService tournamentService;
 
     public void deleteRowFromTable(String selectedTable, Object toDelete)  {
 
@@ -55,6 +59,16 @@ public class DeleteController {
 
                 case "PlayerTeam":
                     playerService.deletePlayerTeam(((FlatPlayerTeam) toDelete));
+                    break;
+
+                case "Team":
+                    stringId = ((FlatTeam) toDelete).getId();
+                    teamService.deleteTeam(stringId);
+                    break;
+
+                case "Tournament":
+                    id = ((Tournament) toDelete).getTournamentId();
+                    tournamentService.deleteTournament(id);
                     break;
             }
         }
