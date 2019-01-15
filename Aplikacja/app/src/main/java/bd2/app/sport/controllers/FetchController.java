@@ -14,7 +14,7 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-public class DataController {
+public class FetchController {
 
     private final SportFacilityService sportFacilityService;
     private final PlayerService playerService;

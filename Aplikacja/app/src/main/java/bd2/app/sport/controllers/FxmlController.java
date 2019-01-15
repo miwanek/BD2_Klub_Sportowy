@@ -13,7 +13,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lombok.RequiredArgsConstructor;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 
 import java.lang.reflect.Field;
@@ -28,7 +27,7 @@ import static javafx.scene.control.TableView.UNCONSTRAINED_RESIZE_POLICY;
 @RequiredArgsConstructor
 public class FxmlController implements Initializable {
 
-    private final DataController dataController;
+    private final FetchController fetchController;
 
     private final DeleteController deleteController;
 
@@ -75,7 +74,7 @@ public class FxmlController implements Initializable {
         String selectedColumn = tableFieldList.getValue() != null ? tableFieldList.getValue().toString() : null;
         String columnValue = elementTextField.getText();
 
-        List<? extends Object> data = dataController.getDataFromSelectedTable(selectedTable, selectedColumn, columnValue);
+        List<? extends Object> data = fetchController.getDataFromSelectedTable(selectedTable, selectedColumn, columnValue);
 
         if (data != null) {
             data = data.stream().map(x -> FlatEntityService.getFlatEntity(selectedTable, x)).collect(Collectors.toList());
