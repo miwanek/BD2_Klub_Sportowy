@@ -1,7 +1,9 @@
 package bd2.app.sport.controllers;
 
 import bd2.app.sport.services.entity.DictionariesService;
+import bd2.app.sport.services.entity.GameService;
 import bd2.app.sport.services.entity.PlayerService;
+import bd2.app.sport.services.entity.SectionService;
 import bd2.app.sport.services.entity.SportFacilityService;
 import bd2.app.sport.services.entity.TeamService;
 import bd2.app.sport.services.entity.TournamentService;
@@ -17,8 +19,10 @@ public class DataController {
     private final SportFacilityService sportFacilityService;
     private final PlayerService playerService;
     private final DictionariesService dictionariesService;
+    private final GameService gameService;
     private final TeamService teamService;
     private final TournamentService tournamentService;
+    private final SectionService sectionService;
 
     public List<? extends Object> getDataFromSelectedTable(String selectedTable, String selectedColumn, String columnValue) {
 
@@ -38,6 +42,12 @@ public class DataController {
             case "Hall" :
                 return sportFacilityService.getHalls(selectedColumn,columnValue);
 
+            case "Game" :
+                return gameService.getGames(selectedColumn,columnValue);
+
+            case "GameParticipation" :
+                return gameService.getGameParticipation(selectedColumn,columnValue);
+
             case "SportFacility" :
                 return sportFacilityService.getSportFacilities(selectedColumn, columnValue);
 
@@ -52,6 +62,9 @@ public class DataController {
 
             case "PlayerTeam" :
                 return playerService.getPlayerTeams(selectedColumn, columnValue);
+
+            case "Section" :
+                return sectionService.getSections(selectedColumn, columnValue);
 
             case "Tier" :
                 return dictionariesService.getTiers();

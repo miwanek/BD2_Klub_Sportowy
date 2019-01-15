@@ -2,13 +2,18 @@ package bd2.app.sport.controllers;
 
 import bd2.app.sport.entities.Address;
 import bd2.app.sport.entities.Tournament;
+import bd2.app.sport.flatEntities.FlatGame;
+import bd2.app.sport.flatEntities.FlatGameParticipation;
 import bd2.app.sport.flatEntities.FlatPlayer;
 import bd2.app.sport.flatEntities.FlatPlayerDiscipline;
 import bd2.app.sport.flatEntities.FlatPlayerGroup;
 import bd2.app.sport.flatEntities.FlatPlayerTeam;
+import bd2.app.sport.flatEntities.FlatSection;
 import bd2.app.sport.flatEntities.FlatSportFacility;
 import bd2.app.sport.flatEntities.FlatTeam;
+import bd2.app.sport.services.entity.GameService;
 import bd2.app.sport.services.entity.PlayerService;
+import bd2.app.sport.services.entity.SectionService;
 import bd2.app.sport.services.entity.SportFacilityService;
 import bd2.app.sport.services.entity.TeamService;
 import bd2.app.sport.services.entity.TournamentService;
@@ -22,8 +27,10 @@ import org.springframework.stereotype.Controller;
 public class DeleteController {
 
     private final PlayerService playerService;
+    private final GameService gameService;
     private final SportFacilityService sportFacilityService;
     private final TeamService teamService;
+    private final SectionService sectionService;
     private final TournamentService tournamentService;
 
     public void deleteRowFromTable(String selectedTable, Object toDelete)  {
@@ -43,6 +50,18 @@ public class DeleteController {
                     sportFacilityService.deleteSportFacility(id);
                     break;
 
+                case "Game":
+                    id = ((FlatGame) toDelete).getGameId();
+                    gameService.deleteGame(id);
+                    break;
+
+                case "GameParticipation":
+                    FlatGameParticipation flatGameParticipation = (FlatGameParticipation) toDelete;
+                    Long gameId = flatGameParticipation.getGameId();
+                    String representationId = flatGameParticipation.getRepresentationId();
+                    gameService.deleteGameParticipation(gameId, representationId);
+                    break;
+
                 case "Player":
                     stringId = ((FlatPlayer) toDelete).getId();
                     playerService.deletePlayer(stringId);
@@ -59,6 +78,11 @@ public class DeleteController {
 
                 case "PlayerTeam":
                     playerService.deletePlayerTeam(((FlatPlayerTeam) toDelete));
+                    break;
+
+                case "Section":
+                    id = ((FlatSection) toDelete).getSectionId();
+                    sectionService.deleteSection(id);
                     break;
 
                 case "Team":
