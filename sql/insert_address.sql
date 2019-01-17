@@ -1,0 +1,32 @@
+INSERT INTO address
+	(city, street, building_number)
+VALUES
+    ('Warszawa', 'Pulawska', '130'),
+    ('Warszawa', 'Jana Pawla II', '53'),
+	('Warszawa', 'Konwiktorska', '16A'),
+	('Warszawa', 'Batorego', '67'),
+	('Warszawa', 'Wolska', '92B'),
+	('Warszawa', 'Wawelska', '162'),
+	('Wroclaw', 'Sienkiewicza', '58'),
+	('Wroclaw', 'Mala', '79B'),
+	('Wroclaw', 'Bonifraterska', '69'),
+	('Wroclaw', 'Rozana', '120'),
+	('Wroclaw', 'Legionow', '29'),
+	('Wroclaw', 'Poznanska', '73'),
+	('Poznan', 'Wroclawska', '49'),
+	('Poznan', 'Wielkopolska', '89'),
+	('Poznan', 'Biskupinska', '11A'),
+	('Poznan', 'Kondratowicza', '123'),
+	('Gdansk', 'Gdynska', '51'),
+	('Gdansk', 'Sopocka', '10'),
+	('Gdansk', 'Pomorska', '98'),
+	('Gdansk', 'Neptuna', '67'),
+	('Gdansk', 'Aleja Niepodleglosci', '97'),
+	('Gdansk', 'Mickiewicza', '23'),
+	('Krakow', 'Lema', '7'),
+	('Krakow', 'Monte Cassino', '31'),
+	('Krakow', 'Reymonta', '53'),
+	('Krakow', 'Pilsudskiego', '79'),
+	('Krakow', 'Armii Krajowej', '161'),
+	('Zakopane' 'Wislanska', '1');
+	('Zakopane' 'Zimowa', '51');
