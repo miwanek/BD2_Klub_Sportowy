@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 //@Access(AccessType.PROPERTY)
 @Entity
@@ -25,12 +26,12 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long addressId;
 
-    @Column(nullable = false, length = 30)
+    @Size(min = 1, max = 30)
     private String city;
 
-    @Column(length = 30)
+    @Size(min = 1, max = 30)
     private String street;
 
-    @Column(length = 30)
+    @Size(min = 1, max = 30)
     private String buildingNumber;
 }

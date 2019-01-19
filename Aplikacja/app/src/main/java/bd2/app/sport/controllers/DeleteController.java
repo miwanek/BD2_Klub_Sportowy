@@ -36,7 +36,6 @@ public class DeleteController {
     private final SportFacilityService sportFacilityService;
     private final TeamService teamService;
     private final SectionService sectionService;
-    private final TrainerService trainerService;
     private final TournamentService tournamentService;
 
     public void deleteRowFromTable(String selectedTable, Object toDelete)  {
@@ -95,20 +94,10 @@ public class DeleteController {
                     teamService.deleteTeam(id);
                     break;
 
-                case "Tournament":
-                    id = ((Tournament) toDelete).getTournamentId();
-                    tournamentService.deleteTournament(id);
-                    break;
-
                 case "TournamentDiscipline":
                     Long disciplineId = ((FlatTournamentDiscipline) toDelete).getDisciplineId();
                     Long tournamentId = ((FlatTournamentDiscipline) toDelete).getTournamentId();
                     tournamentService.deleteTournamentDiscipline(disciplineId, tournamentId);
-                    break;
-
-                case "RepresentationTrainer":
-                    id = ((FlatRepresentationTrainer) toDelete).getContractNumber();
-                    trainerService.deleteRepresentationTrainer(id);
                     break;
             }
         }

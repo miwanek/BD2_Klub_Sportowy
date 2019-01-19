@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Size;
 
 @Entity
 @Getter
@@ -25,7 +26,7 @@ public class PlayerGroup {
   @Column(nullable = false)
   private Character sex;
 
-  @Column(length = 30)
+  @Size(min = 1, max = 30)
   private String name;
 
   @ManyToOne

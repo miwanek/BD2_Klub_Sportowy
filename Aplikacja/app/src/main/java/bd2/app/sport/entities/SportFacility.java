@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
 @Getter
@@ -18,10 +19,10 @@ public class SportFacility {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long facilityId ;
 
-    @Column(length = 30, nullable = false)
+    @Size(min = 1, max = 30)
     private String name ;
 
-    @Column(length = 30)
+    @Size(max = 30)
     private String type ;
 
     @OneToOne(optional = false)

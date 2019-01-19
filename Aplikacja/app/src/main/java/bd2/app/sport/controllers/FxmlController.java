@@ -20,6 +20,7 @@ import org.springframework.stereotype.Controller;
 import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
@@ -33,7 +34,6 @@ public class FxmlController implements Initializable {
     private final DeleteController deleteController;
     private final EditController editController;
     private final AddController addController;
-    private final AddDialogFactory addDialogFactory;
 
     @FXML
     private TextField elementTextField;
@@ -73,8 +73,22 @@ public class FxmlController implements Initializable {
 
     @FXML
     void addEntityButtonPressed() {
-        Dialog  dialog = addDialogFactory.createDialog();
-        dialog.showAndWait();
+        Class selectedClass;
+        String selectedTable = tableList.getValue() != null ? tableList.getValue().toString() : null;
+
+        try {
+            selectedClass = Class.forName("bd2.app.sport.entities." + selectedTable);
+        } catch (ClassNotFoundException exception) {
+            return ;
+        }
+
+        selectedClass = FlatEntityService.getClass(selectedClass, selectedTable);
+
+        Dialog  dialog = AddDialogFactory.createDialog(selectedClass, selectedTable);
+
+        Optional<List<String>> result = dialog.showAndWait();
+
+        result.ifPresent(list -> addController.addRowToTable(selectedTable, list));
     }
 
     @FXML
@@ -120,14 +134,17 @@ public class FxmlController implements Initializable {
 
         for (int i = 0; i < fields.length; i++) {
             TableColumn tableColumn = new TableColumn(fields[i].getName());
-            System.out.println(fields[i].getName());
 
             tableColumn.setCellValueFactory(new PropertyValueFactory<>(fields[i].getName()));
             mainTable.getColumns().add(tableColumn);
         }
 
-        if (!CommonFlags.READ_ONLY_ENTITIES.contains(selectedTable)) {
-            add(selectedTable);
+        if (CommonFlags.ADD_ENTITIES.contains(selectedTable)) {
+            addInsertButton(selectedTable);
+        }
+
+        if (CommonFlags.DELETE_ENTITIES.contains(selectedTable)) {
+            addDeleteColumn(selectedTable);
         }
     }
     
@@ -143,12 +160,11 @@ public class FxmlController implements Initializable {
         }));
     }
 
-    private void add(String selectedTable) {
+    private void addInsertButton(String selectedTable) {
 
-        TableColumn deleteColumn = new TableColumn("delete");
         TableColumn editColumn = new TableColumn("edit");
 
-        mainTable.getColumns().addAll(deleteColumn, editColumn);
+        mainTable.getColumns().add(editColumn);
 
         editColumn.setCellFactory(ActionButtonTableCell.forTableColumn("edit", (Object p) -> {
             deleteController.deleteRowFromTable(selectedTable, p);

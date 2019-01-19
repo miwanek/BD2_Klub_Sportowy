@@ -40,4 +40,10 @@ public class GameService {
         gameParticipationRepository.deleteByGame_GameIdAndRepresentation_RepresentationId(gameId, representationId);
     }
 
+    public void addGame(List<String> columnValuesList) {
+
+    }
+
+    public void addGameParticipation(List<String> columnValuesList) {
+    }
 }

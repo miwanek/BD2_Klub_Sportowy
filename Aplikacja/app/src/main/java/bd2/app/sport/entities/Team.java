@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Entity
@@ -31,7 +32,7 @@ public class Team implements Serializable {
   @JoinColumn(name = "representation_id", nullable = false)
   private Representation representation;
 
-  @Column(length = 30)
+  @Size(max = 30)
   private String name;
 
   @ManyToOne

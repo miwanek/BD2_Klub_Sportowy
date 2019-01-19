@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
 @Getter
@@ -17,10 +18,10 @@ public class Hall {
   @Id
   private Long hallId;
 
-  @Column(length = 30, nullable = false)
+  @Size(min = 1, max = 30)
   private String type;
 
-  @Column(nullable = false)
+  @Size(min = 1, max = 30)
   private Character active;
 
   private Long maxPlayers;

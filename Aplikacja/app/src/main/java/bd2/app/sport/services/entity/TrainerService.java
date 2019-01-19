@@ -46,4 +46,6 @@ public class TrainerService {
     }
 
 
+    public void addRepresentationTrainer(List<String> columnValuesList) {
+    }
 }
