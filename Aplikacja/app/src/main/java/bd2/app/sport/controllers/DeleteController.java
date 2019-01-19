@@ -12,6 +12,7 @@ import bd2.app.sport.flatEntities.FlatRepresentationTrainer;
 import bd2.app.sport.flatEntities.FlatSection;
 import bd2.app.sport.flatEntities.FlatSportFacility;
 import bd2.app.sport.flatEntities.FlatTeam;
+import bd2.app.sport.services.AlertFactory;
 import bd2.app.sport.services.entity.GameService;
 import bd2.app.sport.services.entity.PlayerService;
 import bd2.app.sport.services.entity.SectionService;
@@ -104,11 +105,7 @@ public class DeleteController {
             }
         }
         catch (DataIntegrityViolationException exception) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Database error");
-            alert.setContentText("Data integrity violation. \nForeign key in another table may block operation");
-            alert.showAndWait();
+            AlertFactory.createAlert("Data integrity violation. \nForeign key in another table may block operation");
         }
     }
 }
