@@ -20,7 +20,7 @@ public class TeamService {
         return null;
     }
 
-    public void deleteTeam(String id) throws DataIntegrityViolationException {
+    public void deleteTeam(Long id) throws DataIntegrityViolationException {
         teamRepository.deleteById(id);
     }
 }

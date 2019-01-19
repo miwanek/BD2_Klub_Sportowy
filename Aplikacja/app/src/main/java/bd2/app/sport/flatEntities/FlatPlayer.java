@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Getter
 public class FlatPlayer {
 
-    private String id;
+    private Long id;
 
     private String name;
 

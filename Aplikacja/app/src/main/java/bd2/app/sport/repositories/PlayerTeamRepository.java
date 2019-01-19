@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PlayerTeamRepository extends JpaRepository<PlayerTeam, PlayerTeamId> {
 
-    void deleteByPlayer_IdAndTeam_Id(String playerId, String teamId);
+    void deleteByPlayer_IdAndTeam_Id(Long playerId, Long teamId);
 }

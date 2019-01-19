@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class Team implements Serializable {
 
   @Id
-  private String id;
+  private Long id;
 
   @OneToOne
   @MapsId

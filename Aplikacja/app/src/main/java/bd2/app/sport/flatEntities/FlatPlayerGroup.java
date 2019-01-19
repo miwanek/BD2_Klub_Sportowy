@@ -10,7 +10,7 @@ public class FlatPlayerGroup {
     private Character sex;
     private String name;
     private Long sectionId;
-    private String tierId;
+    private Long tierId;
 
     public FlatPlayerGroup(PlayerGroup playerGroup) {
         groupId = playerGroup.getGroupId();

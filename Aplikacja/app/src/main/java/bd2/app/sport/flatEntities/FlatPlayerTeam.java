@@ -8,8 +8,8 @@ import lombok.Getter;
 @EqualsAndHashCode
 public class FlatPlayerTeam {
 
-    private String playerId;
-    private String teamId;
+    private Long playerId;
+    private Long teamId;
 
     public FlatPlayerTeam(PlayerTeam playerTeam) {
         playerId = playerTeam.getPlayer().getId();

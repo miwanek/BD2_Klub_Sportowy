@@ -7,7 +7,7 @@ import lombok.Getter;
 public class FlatPlayerDiscipline {
 
     private Long disciplineId;
-    private String playerId;
+    private Long playerId;
 
     public FlatPlayerDiscipline(PlayerDiscipline playerDiscipline) {
         disciplineId = playerDiscipline.getDiscipline().getDisciplineId();

@@ -15,6 +15,7 @@ import javax.persistence.*;
 public class SportFacility {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long facilityId ;
 
     @Column(length = 30, nullable = false)

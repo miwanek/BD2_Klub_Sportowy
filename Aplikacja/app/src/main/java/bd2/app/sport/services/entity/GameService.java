@@ -36,7 +36,7 @@ public class GameService {
     }
 
     @Transactional
-    public void deleteGameParticipation(Long gameId, String representationId) throws DataIntegrityViolationException {
+    public void deleteGameParticipation(Long gameId, Long representationId) throws DataIntegrityViolationException {
         gameParticipationRepository.deleteByGame_GameIdAndRepresentation_RepresentationId(gameId, representationId);
     }
 

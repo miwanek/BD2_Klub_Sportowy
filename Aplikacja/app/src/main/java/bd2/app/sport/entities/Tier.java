@@ -4,6 +4,8 @@ import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -14,8 +16,8 @@ import javax.persistence.Id;
 public class Tier {
 
   @Id
-  @Column(length = 30)
-  private String tierId;
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long tierId;
 
   @Column(length = 30, nullable = false)
   private String name;

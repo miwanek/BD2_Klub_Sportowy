@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 @Getter
 public class FlatGameParticipation {
     private Long gameId;
-    private String representationId;
+    private Long representationId;
     private Long place;
     private BigDecimal result;
     private BigDecimal score;

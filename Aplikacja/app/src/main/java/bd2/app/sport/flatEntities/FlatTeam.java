@@ -6,10 +6,10 @@ import lombok.Getter;
 @Getter
 public class FlatTeam {
 
-        private String id;
+        private Long id;
         private String name;
         private Long sectionId;
-        private String tierId;
+        private Long tierId;
 
         public FlatTeam(Team team) {
             id = team.getId();

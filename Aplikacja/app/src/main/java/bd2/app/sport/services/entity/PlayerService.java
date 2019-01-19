@@ -32,7 +32,7 @@ public class PlayerService {
         return null;
     }
 
-    public void deletePlayer(String id) throws DataIntegrityViolationException {
+    public void deletePlayer(Long id) throws DataIntegrityViolationException {
         playerRepository.deleteById(id);
     }
 

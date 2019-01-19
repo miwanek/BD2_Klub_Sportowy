@@ -36,7 +36,6 @@ public class DeleteController {
     public void deleteRowFromTable(String selectedTable, Object toDelete)  {
 
         Long id;
-        String stringId;
 
         try {
             switch (selectedTable) {
@@ -58,13 +57,13 @@ public class DeleteController {
                 case "GameParticipation":
                     FlatGameParticipation flatGameParticipation = (FlatGameParticipation) toDelete;
                     Long gameId = flatGameParticipation.getGameId();
-                    String representationId = flatGameParticipation.getRepresentationId();
+                    Long representationId = flatGameParticipation.getRepresentationId();
                     gameService.deleteGameParticipation(gameId, representationId);
                     break;
 
                 case "Player":
-                    stringId = ((FlatPlayer) toDelete).getId();
-                    playerService.deletePlayer(stringId);
+                    id = ((FlatPlayer) toDelete).getId();
+                    playerService.deletePlayer(id);
                     break;
 
                 case "PlayerGroup":
@@ -86,8 +85,8 @@ public class DeleteController {
                     break;
 
                 case "Team":
-                    stringId = ((FlatTeam) toDelete).getId();
-                    teamService.deleteTeam(stringId);
+                    id = ((FlatTeam) toDelete).getId();
+                    teamService.deleteTeam(id);
                     break;
 
                 case "Tournament":
