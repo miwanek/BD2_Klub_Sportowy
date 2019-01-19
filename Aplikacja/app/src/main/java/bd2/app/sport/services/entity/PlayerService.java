@@ -12,7 +12,6 @@ import bd2.app.sport.repositories.PlayerGroupRepository;
 import bd2.app.sport.repositories.PlayerRepository;
 import bd2.app.sport.repositories.PlayerTeamRepository;
 import bd2.app.sport.repositories.RepresentationRepository;
-import bd2.app.sport.services.AddDialogFactory;
 import bd2.app.sport.services.AlertFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -143,5 +142,17 @@ public class PlayerService {
     }
 
     public void addPlayerTeam(List<String> columnValuesList) {
+    }
+
+    public void editPlayerTeam(List<String> columnValuesList) {
+    }
+
+    public void editPlayerDiscipline(List<String> columnValuesList) {
+    }
+
+    public void editPlayerGroup(List<String> columnValuesList) {
+    }
+
+    public void editPlayer(List<String> columnValuesList) {
     }
 }

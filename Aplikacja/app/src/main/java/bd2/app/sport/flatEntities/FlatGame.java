@@ -15,7 +15,7 @@ public class FlatGame {
         private LocalDateTime endDate;
         private String type;
         private String referee;
-        private String sex;
+        private Character sex;
         private Long hallId;
         private Long tournamentId;
         private Long disciplineId;
