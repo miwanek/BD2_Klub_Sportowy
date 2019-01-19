@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TournamentParticipationRepository extends JpaRepository<TournamentParticipation, TournamentParticipationId> {
+
+    void deleteByTournament_TournamentIdAndRepresentation_RepresentationId(Long tournamentId, Long representationId);
 }

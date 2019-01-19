@@ -74,6 +74,12 @@ public class FetchController {
             case "Tournament" :
                 return tournamentService.getTournaments(selectedColumn, columnValue);
 
+            case "TournamentDiscipline" :
+                return tournamentService.getTournamentDisciplines(selectedColumn, columnValue);
+
+            case "TournamentParticipation" :
+                return tournamentService.getTournamentParticipation(selectedColumn, columnValue);
+
             case "Trainer" :
                 return trainerService.getTrainers(selectedColumn, columnValue);
 

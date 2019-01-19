@@ -2,6 +2,7 @@ package bd2.app.sport.controllers;
 
 import bd2.app.sport.entities.Address;
 import bd2.app.sport.entities.Tournament;
+import bd2.app.sport.entities.TournamentDiscipline;
 import bd2.app.sport.flatEntities.FlatGame;
 import bd2.app.sport.flatEntities.FlatGameParticipation;
 import bd2.app.sport.flatEntities.FlatPlayer;
@@ -12,6 +13,7 @@ import bd2.app.sport.flatEntities.FlatRepresentationTrainer;
 import bd2.app.sport.flatEntities.FlatSection;
 import bd2.app.sport.flatEntities.FlatSportFacility;
 import bd2.app.sport.flatEntities.FlatTeam;
+import bd2.app.sport.flatEntities.FlatTournamentDiscipline;
 import bd2.app.sport.services.AlertFactory;
 import bd2.app.sport.services.entity.GameService;
 import bd2.app.sport.services.entity.PlayerService;
@@ -96,6 +98,12 @@ public class DeleteController {
                 case "Tournament":
                     id = ((Tournament) toDelete).getTournamentId();
                     tournamentService.deleteTournament(id);
+                    break;
+
+                case "TournamentDiscipline":
+                    Long disciplineId = ((FlatTournamentDiscipline) toDelete).getDisciplineId();
+                    Long tournamentId = ((FlatTournamentDiscipline) toDelete).getTournamentId();
+                    tournamentService.deleteTournamentDiscipline(disciplineId, tournamentId);
                     break;
 
                 case "RepresentationTrainer":

@@ -127,16 +127,13 @@ public class FxmlController implements Initializable {
         }
 
         if (!CommonFlags.READ_ONLY_ENTITIES.contains(selectedTable)) {
-            addExtraColumns(selectedTable);
+            add(selectedTable);
         }
     }
-
-    private void addExtraColumns(String selectedTable) {
-
+    
+    private void addDeleteColumn(String selectedTable) {
         TableColumn deleteColumn = new TableColumn("delete");
-        TableColumn editColumn = new TableColumn("edit");
-
-        mainTable.getColumns().addAll(deleteColumn, editColumn);
+        mainTable.getColumns().add(deleteColumn);
 
         deleteColumn.setCellFactory(ActionButtonTableCell.forTableColumn("delete", (Object p) -> {
             deleteController.deleteRowFromTable(selectedTable, p);
@@ -144,6 +141,14 @@ public class FxmlController implements Initializable {
             searchButtonPressed();
             return p;
         }));
+    }
+
+    private void add(String selectedTable) {
+
+        TableColumn deleteColumn = new TableColumn("delete");
+        TableColumn editColumn = new TableColumn("edit");
+
+        mainTable.getColumns().addAll(deleteColumn, editColumn);
 
         editColumn.setCellFactory(ActionButtonTableCell.forTableColumn("edit", (Object p) -> {
             deleteController.deleteRowFromTable(selectedTable, p);
