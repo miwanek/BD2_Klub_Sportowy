@@ -8,6 +8,7 @@ import bd2.app.sport.flatEntities.FlatPlayer;
 import bd2.app.sport.flatEntities.FlatPlayerDiscipline;
 import bd2.app.sport.flatEntities.FlatPlayerGroup;
 import bd2.app.sport.flatEntities.FlatPlayerTeam;
+import bd2.app.sport.flatEntities.FlatRepresentationTrainer;
 import bd2.app.sport.flatEntities.FlatSection;
 import bd2.app.sport.flatEntities.FlatSportFacility;
 import bd2.app.sport.flatEntities.FlatTeam;
@@ -17,6 +18,7 @@ import bd2.app.sport.services.entity.SectionService;
 import bd2.app.sport.services.entity.SportFacilityService;
 import bd2.app.sport.services.entity.TeamService;
 import bd2.app.sport.services.entity.TournamentService;
+import bd2.app.sport.services.entity.TrainerService;
 import javafx.scene.control.Alert;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -31,6 +33,7 @@ public class DeleteController {
     private final SportFacilityService sportFacilityService;
     private final TeamService teamService;
     private final SectionService sectionService;
+    private final TrainerService trainerService;
     private final TournamentService tournamentService;
 
     public void deleteRowFromTable(String selectedTable, Object toDelete)  {
@@ -92,6 +95,11 @@ public class DeleteController {
                 case "Tournament":
                     id = ((Tournament) toDelete).getTournamentId();
                     tournamentService.deleteTournament(id);
+                    break;
+
+                case "RepresentationTrainer":
+                    id = ((FlatRepresentationTrainer) toDelete).getContractNumber();
+                    trainerService.deleteRepresentationTrainer(id);
                     break;
             }
         }

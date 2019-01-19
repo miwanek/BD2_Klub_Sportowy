@@ -7,6 +7,7 @@ import bd2.app.sport.services.entity.SectionService;
 import bd2.app.sport.services.entity.SportFacilityService;
 import bd2.app.sport.services.entity.TeamService;
 import bd2.app.sport.services.entity.TournamentService;
+import bd2.app.sport.services.entity.TrainerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 
@@ -23,6 +24,7 @@ public class FetchController {
     private final TeamService teamService;
     private final TournamentService tournamentService;
     private final SectionService sectionService;
+    private final TrainerService trainerService;
 
     public List<? extends Object> getDataFromSelectedTable(String selectedTable, String selectedColumn, String columnValue) {
 
@@ -71,6 +73,15 @@ public class FetchController {
 
             case "Tournament" :
                 return tournamentService.getTournaments(selectedColumn, columnValue);
+
+            case "Trainer" :
+                return trainerService.getTrainers(selectedColumn, columnValue);
+
+            case "TrainerDiscipline" :
+                return trainerService.getTrainerDisciplines(selectedColumn, columnValue);
+
+            case "RepresentationTrainer" :
+                return trainerService.getRepresentationsTrainers(selectedColumn, columnValue);
 
             case "Unit" :
                 return dictionariesService.getUnits();
