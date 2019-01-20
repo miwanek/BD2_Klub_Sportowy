@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
 @Getter
@@ -20,13 +21,13 @@ public class Trainer {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long trainerId;
 
-  @Column(length = 30, nullable = false)
+  @Size(min = 1, max = 30)
   private String name;
 
-  @Column(length = 30, nullable = false)
+  @Size(min = 1, max = 30)
   private String surname;
 
-  @Column(length = 30, nullable = false)
+  @Size(max = 30)
   private String powers;
 
 }

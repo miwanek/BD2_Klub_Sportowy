@@ -1,6 +1,11 @@
 package bd2.app.sport.entities;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -17,6 +22,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@Builder
 public class RepresentationTrainer {
 
   @Id
@@ -32,7 +38,7 @@ public class RepresentationTrainer {
   private Representation representation;
 
   @Column(nullable = false)
-  private LocalDateTime startDate;
+  private LocalDate startDate;
 
-  private LocalDateTime endDate;
+  private LocalDate endDate;
 }

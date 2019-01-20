@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
 @Getter
@@ -20,6 +21,6 @@ public class Unit {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long unitId;
 
-  @Column(length = 30, nullable = false)
+  @Size(min = 1, max = 30)
   private String name;
 }

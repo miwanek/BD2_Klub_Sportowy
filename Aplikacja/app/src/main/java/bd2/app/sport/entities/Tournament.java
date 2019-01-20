@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
@@ -21,16 +24,16 @@ public class Tournament {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long tournamentId;
 
-  @Column(length = 30, nullable = false)
+  @Size(min = 1, max = 30)
   private String name;
 
-  @Column(length = 30)
+  @Size(max = 30)
   private String type;
 
-  @Column(nullable = false)
+  @NotBlank
   private Character sex;
 
-  @Column(nullable = false)
+  @NotNull
   private LocalDateTime startDate;
 
   private LocalDateTime endDate;

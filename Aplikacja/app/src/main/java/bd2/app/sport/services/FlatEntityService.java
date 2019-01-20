@@ -11,6 +11,8 @@ import bd2.app.sport.entities.RepresentationTrainer;
 import bd2.app.sport.entities.Section;
 import bd2.app.sport.entities.SportFacility;
 import bd2.app.sport.entities.Team;
+import bd2.app.sport.entities.TournamentDiscipline;
+import bd2.app.sport.entities.TournamentParticipation;
 import bd2.app.sport.entities.TrainerDiscipline;
 import bd2.app.sport.flatEntities.FlatGame;
 import bd2.app.sport.flatEntities.FlatGameParticipation;
@@ -23,6 +25,8 @@ import bd2.app.sport.flatEntities.FlatRepresentationTrainer;
 import bd2.app.sport.flatEntities.FlatSection;
 import bd2.app.sport.flatEntities.FlatSportFacility;
 import bd2.app.sport.flatEntities.FlatTeam;
+import bd2.app.sport.flatEntities.FlatTournamentDiscipline;
+import bd2.app.sport.flatEntities.FlatTournamentParticipation;
 import bd2.app.sport.flatEntities.FlatTrainerDiscipline;
 
 public class FlatEntityService {
@@ -62,6 +66,12 @@ public class FlatEntityService {
 
             case "TrainerDiscipline":
                 return new FlatTrainerDiscipline((TrainerDiscipline) entity);
+
+            case "TournamentDiscipline":
+                return new FlatTournamentDiscipline((TournamentDiscipline) entity);
+
+            case "TournamentParticipation":
+                return new FlatTournamentParticipation((TournamentParticipation) entity);
 
             case "RepresentationTrainer":
                 return new FlatRepresentationTrainer((RepresentationTrainer) entity);
@@ -105,6 +115,12 @@ public class FlatEntityService {
 
             case "TrainerDiscipline":
                 return FlatTrainerDiscipline.class;
+
+            case "TournamentParticipation":
+                return FlatTournamentParticipation.class;
+
+            case "TournamentDiscipline":
+                return FlatTournamentDiscipline.class;
 
             case "RepresentationTrainer":
                 return FlatRepresentationTrainer.class;

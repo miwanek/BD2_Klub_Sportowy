@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -19,6 +21,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @EqualsAndHashCode
 public class Player implements Serializable {
 
@@ -31,13 +34,13 @@ public class Player implements Serializable {
   @JoinColumn(name = "representation_id", nullable = false)
   private Representation representation;
 
-  @Column(length = 30, nullable = false)
+  @Size(min = 1, max = 30)
   private String name;
 
-  @Column(length = 30, nullable = false)
+  @Size(min = 1, max = 30)
   private String surname;
 
-  @Column(nullable = false)
+  @NotBlank
   private Character sex;
 
   private LocalDateTime birthDate;
