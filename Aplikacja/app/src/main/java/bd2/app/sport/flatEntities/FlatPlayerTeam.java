@@ -12,7 +12,7 @@ public class FlatPlayerTeam {
     private Long teamId;
 
     public FlatPlayerTeam(PlayerTeam playerTeam) {
-        playerId = playerTeam.getPlayer().getId();
-        teamId = playerTeam.getTeam().getId();
+        playerId = playerTeam.getId().getPlayer().getId();
+        teamId = playerTeam.getId().getTeam().getId();
     }
 }

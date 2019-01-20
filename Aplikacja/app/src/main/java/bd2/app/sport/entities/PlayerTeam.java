@@ -7,11 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
 @Entity
@@ -20,16 +17,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-@IdClass(PlayerTeamId.class)
 public class PlayerTeam implements Serializable {
 
-    @Id
-    @ManyToOne
-    @JoinColumn(name = "team_representation_id", nullable = false)
-    private Team team;
+    @EmbeddedId
+    private PlayerTeamId id;
 
-    @Id
-    @ManyToOne
-    @JoinColumn(name = "player_representation_id", nullable = false)
-    private Player player;
 }

@@ -10,14 +10,14 @@ public class CommonFlags {
 
 
     public static final ImmutableList<String> DELETE_ENTITIES =
-            ImmutableList.of("Game", "GameParticipation", "Player", "PlayerGroup", "PlayerDiscipline",
+            ImmutableList.of("Game", "GameParticipation", "Player", "PlayerGroup",
                     "PlayerTeam", "Team");
 
 
     public static final ImmutableList<String> EDIT_ENTITIES =
             ImmutableList.of("Game", "GameParticipation", "Player", "PlayerGroup",
-                     "Team", "TournamentParticipation", "RepresentationTrainer");
+                    "Team", "TournamentParticipation", "RepresentationTrainer");
 
     public static final ImmutableList<String> COMPOSED_ENTITIES_TO_ADD =
-            ImmutableList.of("GameParticipation", "PlayerTeam");
+            ImmutableList.of("GameParticipation", "PlayerTeam", "PlayerDiscipline", "TournamentParticipation");
 }

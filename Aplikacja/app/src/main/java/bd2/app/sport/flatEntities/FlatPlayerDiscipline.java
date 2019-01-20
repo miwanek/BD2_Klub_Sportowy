@@ -10,7 +10,7 @@ public class FlatPlayerDiscipline {
     private Long playerId;
 
     public FlatPlayerDiscipline(PlayerDiscipline playerDiscipline) {
-        disciplineId = playerDiscipline.getDiscipline().getDisciplineId();
-        playerId = playerDiscipline.getPlayer().getId();
+        disciplineId = playerDiscipline.getId().getDiscipline().getDisciplineId();
+        playerId = playerDiscipline.getId().getPlayer().getId();
     }
 }

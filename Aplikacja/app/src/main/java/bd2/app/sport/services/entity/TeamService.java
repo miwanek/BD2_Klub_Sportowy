@@ -19,6 +19,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+@SuppressWarnings("ALL")
 @Service
 @RequiredArgsConstructor
 public class TeamService {
