@@ -22,10 +22,6 @@ public class EditController {
 
     public void editTableRow(String selectedTable, List<String> columnValuesList, Object entity) {
         switch (selectedTable) {
-            case "Game":
-                gameService.editGame(columnValuesList, entity);
-                break;
-
             case "GameParticipation":
                 gameService.editGameParticipation(columnValuesList, entity);
                 break;
