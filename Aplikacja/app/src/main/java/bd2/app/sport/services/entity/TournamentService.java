@@ -87,17 +87,20 @@ public class TournamentService {
             builder = validateTournamentParticipationData(columnValuesList);
         } catch (ConditionNotSatisfiedException exception) {
             return;
-        } catch (Exception exception ) {
+        }
+        catch (Exception exception ) {
             AlertFactory.createAlert("Something went wrong");
             return;
         }
 
         TournamentParticipation temporary = builder.build();
-        Representation newRepresentation = temporary.getId().getRepresentation();
-        Tournament newTournament = temporary.getId().getTournament();
+        Long newRepresentationId = temporary.getId().getRepresentation().getRepresentationId();
+        Long newTournamentId = temporary.getId().getTournament().getTournamentId();
+        Long oldRepresentationId = flatTournamentParticipation.getRepresentationId();
+        Long oldTournamentId = flatTournamentParticipation.getTournamentId();
 
-        if(newRepresentation.getRepresentationId().equals(flatTournamentParticipation.getRepresentationId())
-                && newTournament.getTournamentId().equals(flatTournamentParticipation.getTournamentId())) {
+        if(!(newRepresentationId.equals(oldRepresentationId))
+                || !(newTournamentId.equals(oldTournamentId))) {
             AlertFactory.createAlert("You can only modify place and score");
             return;
         }
@@ -122,7 +125,7 @@ public class TournamentService {
         }
 
         if (!columnValuesList.get(1).isEmpty()) {
-            Long tournamentId = Long.parseLong(columnValuesList.get(3));
+            Long tournamentId = Long.parseLong(columnValuesList.get(1));
             tournament = tournamentRepository.findById(tournamentId);
 
             if (!tournament.isPresent()) {
@@ -140,7 +143,7 @@ public class TournamentService {
             }
         }
         if (!columnValuesList.get(3).isEmpty()) {
-            score = new BigDecimal(columnValuesList.get(2));
+            score = new BigDecimal(columnValuesList.get(3));
 
             if (score.intValue() < 0) {
                 AlertFactory.createAlert("Score can not be less than 0");
