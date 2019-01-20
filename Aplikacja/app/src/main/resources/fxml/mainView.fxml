@@ -51,8 +51,8 @@
                         <Button fx:id="searchButton" layoutX="85.0" layoutY="173.0" mnemonicParsing="false" onAction="#searchButtonPressed" prefHeight="31.0" prefWidth="178.0" text="Search" />
                         <Button fx:id="addButton" layoutX="85.0" layoutY="317.0" mnemonicParsing="false" onAction="#addEntityButtonPressed" prefHeight="31.0" prefWidth="178.0" text="Add" />
                         <Label layoutX="21.0" layoutY="39.0" text="Table:" />
-                        <Button fx:id="groupReportButton" layoutX="85.0" layoutY="221.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="178.0" text="Groups report" />
-                        <Button fx:id="sectionReportButton" layoutX="85.0" layoutY="270.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="178.0" text="Sections report" />
+                        <Button fx:id="groupReportButton" layoutX="85.0" layoutY="221.0" mnemonicParsing="false" onAction="#groupReportButtonPressed" prefHeight="31.0" prefWidth="178.0" text="Groups report" />
+                        <Button fx:id="sectionReportButton" layoutX="85.0" layoutY="270.0" mnemonicParsing="false" onAction="#sectionReportButtonPressed" prefHeight="31.0" prefWidth="178.0" text="Sections report" />
                      </children></AnchorPane>
                </children>
             </AnchorPane>

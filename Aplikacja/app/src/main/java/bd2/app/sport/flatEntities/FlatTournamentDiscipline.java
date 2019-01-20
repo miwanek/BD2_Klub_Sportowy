@@ -10,7 +10,7 @@ public class FlatTournamentDiscipline {
     private Long tournamentId;
 
     public FlatTournamentDiscipline(TournamentDiscipline tournamentDiscipline) {
-        disciplineId = tournamentDiscipline.getDiscipline().getDisciplineId();
-        tournamentId = tournamentDiscipline.getTournament().getTournamentId();
+        disciplineId = tournamentDiscipline.getId().getDiscipline().getDisciplineId();
+        tournamentId = tournamentDiscipline.getId().getTournament().getTournamentId();
     }
 }

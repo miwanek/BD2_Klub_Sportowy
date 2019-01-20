@@ -72,6 +72,16 @@ public class FxmlController implements Initializable {
     }
 
     @FXML
+    void groupReportButtonPressed() {
+
+    }
+
+    @FXML
+    void sectionReportButtonPressed() {
+
+    }
+
+    @FXML
     void addEntityButtonPressed() {
         String selectedTable = tableList.getValue() != null ? tableList.getValue().toString() : null;
         Optional<List<String>> result;

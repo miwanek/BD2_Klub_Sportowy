@@ -1,13 +1,16 @@
 package bd2.app.sport.services.entity;
 
 import bd2.app.sport.ConditionNotSatisfiedException;
+import bd2.app.sport.classId.TournamentDisciplinesId;
 import bd2.app.sport.classId.TournamentParticipationId;
+import bd2.app.sport.entities.Discipline;
 import bd2.app.sport.entities.Game;
 import bd2.app.sport.entities.Representation;
 import bd2.app.sport.entities.Tournament;
 import bd2.app.sport.entities.TournamentDiscipline;
 import bd2.app.sport.entities.TournamentParticipation;
 import bd2.app.sport.flatEntities.FlatTournamentParticipation;
+import bd2.app.sport.repositories.DisciplineRepository;
 import bd2.app.sport.repositories.GameRepository;
 import bd2.app.sport.repositories.RepresentationRepository;
 import bd2.app.sport.repositories.TournamentDisciplineRepository;
@@ -31,8 +34,7 @@ public class TournamentService {
     private final TournamentParticipationRepository tournamentParticipationRepository;
     private final RepresentationRepository representationRepository;
     private final GameRepository gameRepository;
-
-
+    private final DisciplineRepository disciplineRepository;
 
     public List<Tournament> getTournaments(String selectedColumn, String columnValue) {
         if(selectedColumn == null || columnValue == null) {
@@ -52,7 +54,7 @@ public class TournamentService {
     public void deleteTournamentDiscipline(Long disciplineId, Long tournamentId) throws DataIntegrityViolationException {
         List<Game> blockingGames = gameRepository.findByDiscipline_DisciplineIdAndTournament_TournamentId(disciplineId,tournamentId);
         if(blockingGames.isEmpty()) {
-            tournamentDisciplineRepository.deleteByDiscipline_DisciplineIdAndAndTournament_TournamentId(disciplineId, tournamentId);
+            tournamentDisciplineRepository.deleteById_Discipline_DisciplineIdAndId_Tournament_TournamentId(disciplineId, tournamentId);
         }
         else {
             AlertFactory.createAlert("There are still some games in the tournament connected with this discipline");
@@ -158,5 +160,39 @@ public class TournamentService {
                 .score(score);
 
         return builder;
+    }
+
+    public void addTournamentDiscipline(List<String> columnValuesList) {
+
+        Optional<Discipline> discipline = Optional.empty();
+        Optional<Tournament> tournament = Optional.empty();
+
+
+        if (!columnValuesList.get(0).isEmpty()) {
+            Long disciplineId = Long.parseLong(columnValuesList.get(0));
+            discipline = disciplineRepository.findById(disciplineId);
+
+            if (!discipline.isPresent()) {
+                AlertFactory.createAlert("No discipline with given id exists");
+                return;
+            }
+        }
+
+        if (!columnValuesList.get(1).isEmpty()) {
+            Long tournamentId = Long.parseLong(columnValuesList.get(1));
+            tournament = tournamentRepository.findById(tournamentId);
+
+            if (!tournament.isPresent()) {
+                AlertFactory.createAlert("No tournament with given id exists");
+                return;
+            }
+        }
+
+        TournamentDisciplinesId id = new TournamentDisciplinesId(discipline.get(), tournament.get());
+
+        TournamentDiscipline.TournamentDisciplineBuilder builder = TournamentDiscipline.builder()
+                .id(id);
+
+        tournamentDisciplineRepository.save(builder.build());
     }
 }

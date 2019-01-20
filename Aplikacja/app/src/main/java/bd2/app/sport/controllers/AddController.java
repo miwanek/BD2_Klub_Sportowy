@@ -35,6 +35,10 @@ public class AddController {
                 tournamentService.addTournamentParticipation(columnValuesList);
                 break;
 
+            case "TournamentDiscipline":
+                tournamentService.addTournamentDiscipline(columnValuesList);
+                break;
+
             case "Player":
                 playerService.addPlayer(columnValuesList);
                 break;

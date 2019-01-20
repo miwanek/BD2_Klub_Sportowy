@@ -6,12 +6,12 @@ public class CommonFlags {
     public static final ImmutableList<String> READ_ONLY_ENTITIES =
             ImmutableList.of("Address", "Unit", "Tier", "Discipline", "Hall",
                     "SportFacility", "Section", "Trainer", "TrainerDiscipline",
-                    "Tournament", "TournamentDiscipline");
+                    "Tournament");
 
 
     public static final ImmutableList<String> DELETE_ENTITIES =
             ImmutableList.of("Game", "GameParticipation", "Player", "PlayerGroup",
-                    "PlayerTeam", "Team");
+                    "PlayerTeam", "Team", "TournamentDiscipline");
 
 
     public static final ImmutableList<String> EDIT_ENTITIES =
@@ -19,5 +19,6 @@ public class CommonFlags {
                     "Team", "TournamentParticipation", "RepresentationTrainer");
 
     public static final ImmutableList<String> COMPOSED_ENTITIES_TO_ADD =
-            ImmutableList.of("GameParticipation", "PlayerTeam", "PlayerDiscipline", "TournamentParticipation");
+            ImmutableList.of("GameParticipation", "PlayerTeam", "PlayerDiscipline", "TournamentParticipation",
+                    "TournamentDiscipline");
 }
