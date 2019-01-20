@@ -11,6 +11,7 @@ import bd2.app.sport.repositories.DisciplineRepository;
 import bd2.app.sport.repositories.GameParticipationRepository;
 import bd2.app.sport.repositories.GameRepository;
 import bd2.app.sport.repositories.HallRepository;
+import bd2.app.sport.repositories.TournamentDisciplineRepository;
 import bd2.app.sport.repositories.TournamentRepository;
 import bd2.app.sport.repositories.UnitRepository;
 import bd2.app.sport.services.AlertFactory;
@@ -24,6 +25,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -34,6 +36,7 @@ public class GameService {
     private final DisciplineRepository disciplineRepository;
     private final TournamentRepository tournamentRepository;
     private final UnitRepository unitRepository;
+    private final TournamentDisciplineRepository tournamentDisciplineRepository;
 
 
     public List<Game> getGames(String selectedColumn, String columnValue) {
@@ -84,9 +87,9 @@ public class GameService {
 
         if (!columnValuesList.get(0).isEmpty()) {
             try {
-                startDate = LocalDateTime.parse(columnValuesList.get(0), DateTimeFormatter.ofPattern("yyyyy-mm-dd hh:mm"));
+                startDate = LocalDateTime.parse(columnValuesList.get(0), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
             } catch (DateTimeParseException exception) {
-                AlertFactory.createAlert("Provide proper start date with correct format: \"yyyyy-mm-dd hh:mm\"");
+                AlertFactory.createAlert("Provide proper start date with correct format: \"yyyy-MM-dd HH:mm:ss\"");
                 throw new ConditionNotSatisfiedException();
             }
         } else {
@@ -96,9 +99,9 @@ public class GameService {
 
         if (!columnValuesList.get(1).isEmpty()) {
             try {
-                endDate = LocalDateTime.parse(columnValuesList.get(1), DateTimeFormatter.ofPattern("yyyyy-mm-dd hh:mm"));
+                endDate = LocalDateTime.parse(columnValuesList.get(1), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
             } catch (DateTimeParseException exception) {
-                AlertFactory.createAlert("Provide proper start date with correct format: \"yyyyy-mm-dd hh:mm\"");
+                AlertFactory.createAlert("Provide proper start date with correct format: \"yyyy-MM-dd HH:mm:ss\"");
                 throw new ConditionNotSatisfiedException();
             }
         }
@@ -123,9 +126,9 @@ public class GameService {
         Long disciplineId;
         Long unitId;
 
-        Optional<Hall> hall = Optional.empty();
+        Optional<Hall> hall;
         Optional<Tournament> tournament = Optional.empty();
-        Optional<Discipline> discipline = Optional.empty();
+        Optional<Discipline> discipline;
         Optional<Unit> unit = Optional.empty();
 
         if (!columnValuesList.get(5).isEmpty()) {
@@ -189,6 +192,23 @@ public class GameService {
             if (tournament.get().getStartDate().isAfter(startDate)) {
                 AlertFactory.createAlert("Match can not start before start of tournament");
                 throw new ConditionNotSatisfiedException();
+            }
+
+            List<Discipline> disciplineList = tournamentDisciplineRepository.findById_Tournament(tournament.get())
+                    .stream()
+                    .map(x -> x.getId().getDiscipline())
+                    .collect(Collectors.toList());
+
+            if(!disciplineList.contains(discipline.get())) {
+                AlertFactory.createAlert("Game discipline does not match tournament discipline");
+                throw new ConditionNotSatisfiedException();
+            }
+
+            if(!tournament.get().getSex().equals('O')) {
+                if(!tournament.get().getSex().equals(sex)) {
+                    AlertFactory.createAlert("Game sex does not match tournament sex");
+                    throw new ConditionNotSatisfiedException();
+                }
             }
         }
 

@@ -23,6 +23,9 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Optional;
 
@@ -194,5 +197,74 @@ public class TournamentService {
                 .id(id);
 
         tournamentDisciplineRepository.save(builder.build());
+    }
+
+    public void addTournament(List<String> columnValuesList) {
+        Tournament.TournamentBuilder builder;
+        try {
+            builder = validateTournament(columnValuesList);
+        } catch (ConditionNotSatisfiedException exception) {
+            return;
+        } catch (Exception exception ) {
+            AlertFactory.createAlert("Something went wrong");
+            return;
+        }
+        tournamentRepository.save(builder.build());
+    }
+
+    private Tournament.TournamentBuilder validateTournament(List<String> columnValuesList) throws ConditionNotSatisfiedException, StringIndexOutOfBoundsException {
+        String name;
+        String type = null;
+        Character sex = null;
+        LocalDateTime startDate;
+        LocalDateTime endDate = null;
+
+        if (!columnValuesList.get(0).isEmpty()) {
+            name = columnValuesList.get(0);
+        } else  {
+            AlertFactory.createAlert("Name is obligatory for tournament");
+            throw new ConditionNotSatisfiedException();
+        }
+
+        if (!columnValuesList.get(1).isEmpty()) {
+            type = columnValuesList.get(1);
+        }
+
+        if (!columnValuesList.get(2).isEmpty()) {
+            sex = columnValuesList.get(2).charAt(0);
+            if(!sex.equals('M') && !sex.equals('K') && !sex.equals('O')) {
+                AlertFactory.createAlert("Sex can only be male(M), female(K) or both(O)");
+                throw new ConditionNotSatisfiedException();
+            }
+        }
+
+        if (!columnValuesList.get(3).isEmpty()) {
+            try {
+                startDate = LocalDateTime.parse(columnValuesList.get(3), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+            } catch (DateTimeParseException exception) {
+                AlertFactory.createAlert("Provide proper start date with correct format: \"yyyy-MM-dd HH:mm:ss\"");
+                throw new ConditionNotSatisfiedException();
+            }
+        }
+        else {
+            AlertFactory.createAlert("Tournament start date cannot be null");
+            throw new ConditionNotSatisfiedException();
+        }
+
+        if (!columnValuesList.get(4).isEmpty()) {
+            try {
+                endDate = LocalDateTime.parse(columnValuesList.get(4), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+            } catch (DateTimeParseException exception) {
+                AlertFactory.createAlert("Provide proper end date with correct format: \"yyyy-MM-dd HH:mm:ss\"");
+                throw new ConditionNotSatisfiedException();
+            }
+        }
+
+        return Tournament.builder()
+                .name(name)
+                .type(type)
+                .sex(sex)
+                .startDate(startDate)
+                .endDate(endDate);
     }
 }
