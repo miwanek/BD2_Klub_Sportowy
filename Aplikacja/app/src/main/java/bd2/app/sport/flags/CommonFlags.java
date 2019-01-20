@@ -16,7 +16,7 @@ public class CommonFlags {
 
     public static final ImmutableList<String> EDIT_ENTITIES =
             ImmutableList.of("Game", "GameParticipation", "Player", "PlayerGroup",
-                     "Team", "TournamentParticipation");
+                     "Team", "TournamentParticipation", "RepresentationTrainer");
 
     public static final ImmutableList<String> COMPOSED_ENTITIES_TO_ADD =
             ImmutableList.of("GameParticipation", "PlayerTeam");

@@ -61,7 +61,9 @@ public class TeamService {
         Team.TeamBuilder teamBuilder;
         try {
             teamBuilder = validateTeamData(columnValuesList, team.getRepresentation());
-        } catch (StringIndexOutOfBoundsException | ConditionNotSatisfiedException exception) {
+        } catch (ConditionNotSatisfiedException exception) {
+            return;
+        } catch (StringIndexOutOfBoundsException exception) {
             AlertFactory.createAlert("Name, sex must not be null");
             return;
         }

@@ -3,7 +3,7 @@ package bd2.app.sport.flatEntities;
 import bd2.app.sport.entities.RepresentationTrainer;
 import lombok.Getter;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Getter
 public class FlatRepresentationTrainer {
@@ -11,8 +11,8 @@ public class FlatRepresentationTrainer {
     private Long contractNumber;
     private Long trainerId;
     private Long representationId;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
 
     public FlatRepresentationTrainer(RepresentationTrainer representationTrainer) {
         contractNumber = representationTrainer.getContractNumber();
