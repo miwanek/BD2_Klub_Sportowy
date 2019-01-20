@@ -30,7 +30,7 @@ public class AddController {
                 break;
 
             case "Player":
-                    playerService.addPlayer(columnValuesList);
+                playerService.addPlayer(columnValuesList);
                 break;
 
             case "PlayerGroup":

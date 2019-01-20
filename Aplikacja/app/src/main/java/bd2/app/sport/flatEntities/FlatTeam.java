@@ -6,15 +6,17 @@ import lombok.Getter;
 @Getter
 public class FlatTeam {
 
-        private Long id;
-        private String name;
-        private Long sectionId;
-        private Long tierId;
+    private Long id;
+    private String name;
+    private Character sex;
+    private Long sectionId;
+    private Long tierId;
 
-        public FlatTeam(Team team) {
-            id = team.getId();
-            name = team.getName();
-            sectionId = team.getSection().getSectionId();
-            tierId = team.getTier().getTierId();
-        }
+    public FlatTeam(Team team) {
+        id = team.getId();
+        name = team.getName();
+        sex = team.getSex();
+        sectionId = team.getSection().getSectionId();
+        tierId = team.getTier().getTierId();
+    }
 }

@@ -32,10 +32,6 @@ public class TournamentService {
         return null;
     }
 
-    public void deleteTournament(Long id) throws DataIntegrityViolationException {
-        tournamentRepository.deleteById(id);
-    }
-
    public List<TournamentDiscipline> getTournamentDisciplines(String selectedColumn, String columnValue) {
         if(selectedColumn == null || columnValue == null) {
             return tournamentDisciplineRepository.findAll();
