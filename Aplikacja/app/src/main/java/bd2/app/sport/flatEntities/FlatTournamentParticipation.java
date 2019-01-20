@@ -1,6 +1,5 @@
 package bd2.app.sport.flatEntities;
 
-import bd2.app.sport.entities.TournamentDiscipline;
 import bd2.app.sport.entities.TournamentParticipation;
 import lombok.Getter;
 
@@ -15,8 +14,8 @@ public class FlatTournamentParticipation {
     private BigDecimal score;
 
     public FlatTournamentParticipation(TournamentParticipation tournamentParticipation) {
-        representationId = tournamentParticipation.getRepresentation().getRepresentationId();
-        tournamentId = tournamentParticipation.getTournament().getTournamentId();
+        representationId = tournamentParticipation.getId().getRepresentation().getRepresentationId();
+        tournamentId = tournamentParticipation.getId().getTournament().getTournamentId();
         place = tournamentParticipation.getPlace();
         score = tournamentParticipation.getScore();
     }

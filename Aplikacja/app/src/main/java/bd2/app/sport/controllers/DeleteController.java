@@ -1,15 +1,11 @@
 package bd2.app.sport.controllers;
 
 import bd2.app.sport.entities.Address;
-import bd2.app.sport.entities.Tournament;
-import bd2.app.sport.entities.TournamentDiscipline;
 import bd2.app.sport.flatEntities.FlatGame;
 import bd2.app.sport.flatEntities.FlatGameParticipation;
 import bd2.app.sport.flatEntities.FlatPlayer;
-import bd2.app.sport.flatEntities.FlatPlayerDiscipline;
 import bd2.app.sport.flatEntities.FlatPlayerGroup;
 import bd2.app.sport.flatEntities.FlatPlayerTeam;
-import bd2.app.sport.flatEntities.FlatRepresentationTrainer;
 import bd2.app.sport.flatEntities.FlatSection;
 import bd2.app.sport.flatEntities.FlatSportFacility;
 import bd2.app.sport.flatEntities.FlatTeam;
@@ -21,8 +17,6 @@ import bd2.app.sport.services.entity.SectionService;
 import bd2.app.sport.services.entity.SportFacilityService;
 import bd2.app.sport.services.entity.TeamService;
 import bd2.app.sport.services.entity.TournamentService;
-import bd2.app.sport.services.entity.TrainerService;
-import javafx.scene.control.Alert;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
@@ -74,10 +68,6 @@ public class DeleteController {
                 case "PlayerGroup":
                     id = ((FlatPlayerGroup) toDelete).getGroupId();
                     playerService.deletePlayerGroup(id);
-                    break;
-
-                case "PlayerDiscipline":
-                    playerService.deletePlayerDiscipline((FlatPlayerDiscipline) toDelete);
                     break;
 
                 case "PlayerTeam":

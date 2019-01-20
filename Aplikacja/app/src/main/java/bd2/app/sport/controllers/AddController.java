@@ -3,6 +3,7 @@ package bd2.app.sport.controllers;
 import bd2.app.sport.services.entity.GameService;
 import bd2.app.sport.services.entity.PlayerService;
 import bd2.app.sport.services.entity.TeamService;
+import bd2.app.sport.services.entity.TournamentService;
 import bd2.app.sport.services.entity.TrainerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ public class AddController {
     private final GameService gameService;
     private final TeamService teamService;
     private final TrainerService trainerService;
+    private final TournamentService tournamentService;
 
     public void addRowToTable(String selectedTable, List<String> columnValuesList) {
 
@@ -27,6 +29,10 @@ public class AddController {
 
             case "GameParticipation":
                 gameService.addGameParticipation(columnValuesList);
+                break;
+
+            case "TournamentParticipation":
+                tournamentService.addTournamentParticipation(columnValuesList);
                 break;
 
             case "Player":

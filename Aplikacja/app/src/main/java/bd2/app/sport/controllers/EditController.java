@@ -3,6 +3,7 @@ package bd2.app.sport.controllers;
 import bd2.app.sport.services.entity.GameService;
 import bd2.app.sport.services.entity.PlayerService;
 import bd2.app.sport.services.entity.TeamService;
+import bd2.app.sport.services.entity.TournamentService;
 import bd2.app.sport.services.entity.TrainerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ public class EditController {
     private final GameService gameService;
     private final TeamService teamService;
     private final TrainerService trainerService;
+    private final TournamentService tournamentService;
 
     public void editTableRow(String selectedTable, List<String> columnValuesList, Object entity) {
         switch (selectedTable) {
@@ -43,6 +45,11 @@ public class EditController {
             case "RepresentationTrainer":
                 trainerService.editRepresentationTrainer(columnValuesList, entity);
                 break;
+
+            case "TournamentParticipation":
+                tournamentService.editTournamentParticipation(columnValuesList, entity);
+                break;
+
         }
     }
 }
