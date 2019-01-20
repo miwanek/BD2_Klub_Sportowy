@@ -4,12 +4,9 @@ import bd2.app.sport.flags.CommonFlags;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.layout.GridPane;
-import javafx.util.Pair;
-import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -19,12 +16,12 @@ import java.util.stream.IntStream;
 
 public class AddDialogFactory {
 
-    public static Dialog createDialog(Class selectedClass, String selectedTable) {
+    public static Dialog createDialog(Class selectedClass, String selectedTable, String title) {
 
         Field[] fields = selectedClass.getDeclaredFields();
 
         Dialog<List<String>> dialog = new Dialog<>();
-        dialog.setTitle("Add new record");
+        dialog.setTitle(title);
         dialog.setHeaderText("Insert all necessary data for given entity");
 
         List<TextField> textFieldList = new ArrayList<>();

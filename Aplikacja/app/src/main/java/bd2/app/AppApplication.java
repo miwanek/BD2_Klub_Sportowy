@@ -34,7 +34,7 @@ public class AppApplication extends Application {
 		rootNode = fxmlLoader.load();
 
 		primaryStage.setTitle("Sport tournaments app");
-		Scene scene = new Scene(rootNode, 1200, 680);
+		Scene scene = new Scene(rootNode, 1400, 700);
 		primaryStage.setScene(scene);
 		primaryStage.getIcons().add(new Image(getClass().getClassLoader().getResourceAsStream("icon.png")));
 		primaryStage.show();

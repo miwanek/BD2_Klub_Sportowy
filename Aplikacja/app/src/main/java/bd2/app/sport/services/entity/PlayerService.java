@@ -1,10 +1,12 @@
 package bd2.app.sport.services.entity;
 
+import bd2.app.sport.ConditionNotSatisfiedException;
 import bd2.app.sport.entities.Player;
 import bd2.app.sport.entities.PlayerDiscipline;
 import bd2.app.sport.entities.PlayerGroup;
 import bd2.app.sport.entities.PlayerTeam;
 import bd2.app.sport.entities.Representation;
+import bd2.app.sport.flatEntities.FlatPlayer;
 import bd2.app.sport.flatEntities.FlatPlayerDiscipline;
 import bd2.app.sport.flatEntities.FlatPlayerTeam;
 import bd2.app.sport.repositories.PlayerDisciplineRepository;
@@ -84,58 +86,42 @@ public class PlayerService {
         Representation representation = new Representation();
         representationRepository.save(representation);
 
-        Optional<PlayerGroup> group = Optional.empty();
-
+        Player.PlayerBuilder playerBuilder;
         try {
-
-            if (!columnValuesList.get(4).isEmpty()) {
-                Long groupId = Long.parseLong(columnValuesList.get(4));
-                group = playerGroupRepository.findById(groupId);
-
-                if (!group.isPresent()) {
-                    AlertFactory.createAlert("No group with given id exists");
-                    return;
-                }
-            }
-
-
-            String name = columnValuesList.get(0);
-            String surname = columnValuesList.get(1);
-            Character sex = columnValuesList.get(2).charAt(0);
-
-            if (!sex.equals('M') && !sex.equals('K')) {
-                AlertFactory.createAlert("Sex can only be male(M) or female(K)");
-                return;
-            }
-
-            LocalDateTime birthDate = null;
-
-            if (!columnValuesList.get(3).isEmpty()) {
-                try {
-                    birthDate = LocalDateTime.parse(columnValuesList.get(3), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
-                } catch (DateTimeParseException exception) {
-                    AlertFactory.createAlert("Provide proper data with correct format: \"yyyy-MM-dd HH:mm\"");
-                    return;
-                }
-            }
-
-            Player.PlayerBuilder playerBuilder = Player.builder()
-                    .representation(representation)
-                    .name(name)
-                    .surname(surname)
-                    .sex(sex)
-                    .birthDate(birthDate);
-
-            group.ifPresent(playerBuilder::playerGroup);
-
-            playerRepository.save(playerBuilder.build());
-        }
-        catch (StringIndexOutOfBoundsException exception) {
+            playerBuilder = validatePlayerData(columnValuesList, representation);
+        } catch (StringIndexOutOfBoundsException | ConditionNotSatisfiedException exception) {
             AlertFactory.createAlert("Name, surname and sex must not be null");
+            return;
         }
+        playerRepository.save(playerBuilder.build());
+    }
+
+    @Transactional
+    public void editPlayer(List<String> columnValuesList, Object entity) {
+        FlatPlayer flatPlayer = (FlatPlayer) entity;
+
+        Player player = playerRepository.findById(flatPlayer.getId()).orElseGet(null);
+
+        Player.PlayerBuilder playerBuilder;
+        try {
+            playerBuilder = validatePlayerData(columnValuesList, player.getRepresentation());
+        } catch (StringIndexOutOfBoundsException | ConditionNotSatisfiedException exception) {
+            AlertFactory.createAlert("Name, surname and sex must not be null");
+            return;
+        }
+
+        Player temporaryPlayer = playerBuilder.build();
+
+        player.setBirthDate(temporaryPlayer.getBirthDate());
+        player.setSurname(temporaryPlayer.getSurname());
+        player.setName(temporaryPlayer.getName());
+        player.setPlayerGroup(temporaryPlayer.getPlayerGroup());
+        player.setSex(temporaryPlayer.getSex());
+        player.setPlayerGroup(temporaryPlayer.getPlayerGroup());
     }
 
     public void addPlayerGroup(List<String> columnValuesList) {
+
     }
 
     public void addPlayerDiscipline(List<String> columnValuesList) {
@@ -144,15 +130,51 @@ public class PlayerService {
     public void addPlayerTeam(List<String> columnValuesList) {
     }
 
-    public void editPlayerTeam(List<String> columnValuesList) {
+    public void editPlayerGroup(List<String> columnValuesList, Object entity) {
     }
 
-    public void editPlayerDiscipline(List<String> columnValuesList) {
-    }
+    private Player.PlayerBuilder validatePlayerData(List<String> columnValuesList, Representation representation) throws ConditionNotSatisfiedException, StringIndexOutOfBoundsException {
+        Optional<PlayerGroup> group = Optional.empty();
 
-    public void editPlayerGroup(List<String> columnValuesList) {
-    }
+        if (!columnValuesList.get(4).isEmpty()) {
+            Long groupId = Long.parseLong(columnValuesList.get(4));
+            group = playerGroupRepository.findById(groupId);
 
-    public void editPlayer(List<String> columnValuesList) {
+            if (!group.isPresent()) {
+                AlertFactory.createAlert("No group with given id exists");
+                throw new ConditionNotSatisfiedException();
+            }
+        }
+
+        String name = columnValuesList.get(0);
+        String surname = columnValuesList.get(1);
+        Character sex = columnValuesList.get(2).charAt(0);
+
+        if (!sex.equals('M') && !sex.equals('K')) {
+            AlertFactory.createAlert("Sex can only be male(M) or female(K)");
+            throw new ConditionNotSatisfiedException();
+        }
+
+        LocalDateTime birthDate = null;
+
+        if (!columnValuesList.get(3).isEmpty()) {
+            try {
+                birthDate = LocalDateTime.parse(columnValuesList.get(3), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+            } catch (DateTimeParseException exception) {
+                AlertFactory.createAlert("Provide proper data with correct format: \"yyyy-MM-dd HH:mm\"");
+                throw new ConditionNotSatisfiedException();
+            }
+        }
+
+        Player.PlayerBuilder playerBuilder = Player.builder()
+                .representation(representation)
+                .name(name)
+                .surname(surname)
+                .sex(sex)
+                .birthDate(birthDate);
+
+        group.ifPresent(playerBuilder::playerGroup);
+
+        return playerBuilder;
     }
 }

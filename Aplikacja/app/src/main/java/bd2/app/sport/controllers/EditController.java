@@ -13,44 +13,35 @@ import java.util.List;
 @RequiredArgsConstructor
 public class EditController {
 
-
     private final PlayerService playerService;
     private final GameService gameService;
     private final TeamService teamService;
     private final TrainerService trainerService;
 
-    public void editTableRow(String selectedTable, List<String> columnValuesList) {
+    public void editTableRow(String selectedTable, List<String> columnValuesList, Object entity) {
         switch (selectedTable) {
             case "Game":
-                gameService.editGame(columnValuesList);
+                gameService.editGame(columnValuesList, entity);
                 break;
 
             case "GameParticipation":
-                gameService.editGameParticipation(columnValuesList);
+                gameService.editGameParticipation(columnValuesList, entity);
                 break;
 
             case "Player":
-                playerService.editPlayer(columnValuesList);
+                playerService.editPlayer(columnValuesList, entity);
                 break;
 
             case "PlayerGroup":
-                playerService.editPlayerGroup(columnValuesList);
-                break;
-
-            case "PlayerDiscipline":
-                playerService.editPlayerDiscipline(columnValuesList);
-                break;
-
-            case "PlayerTeam":
-                playerService.editPlayerTeam(columnValuesList);
+                playerService.editPlayerGroup(columnValuesList, entity);
                 break;
 
             case "Team":
-                teamService.editTeam(columnValuesList);
+                teamService.editTeam(columnValuesList, entity);
                 break;
 
             case "RepresentationTrainer":
-                trainerService.editRepresentationTrainer(columnValuesList);
+                trainerService.editRepresentationTrainer(columnValuesList, entity);
                 break;
         }
     }

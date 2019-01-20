@@ -28,6 +28,6 @@ public class TeamService {
 
     }
 
-    public void editTeam(List<String> columnValuesList) {
+    public void editTeam(List<String> columnValuesList, Object entity) {
     }
 }

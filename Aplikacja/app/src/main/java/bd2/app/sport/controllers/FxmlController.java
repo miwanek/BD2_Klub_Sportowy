@@ -73,22 +73,19 @@ public class FxmlController implements Initializable {
 
     @FXML
     void addEntityButtonPressed() {
-        Class selectedClass;
         String selectedTable = tableList.getValue() != null ? tableList.getValue().toString() : null;
+        Optional<List<String>> result;
 
         try {
-            selectedClass = Class.forName("bd2.app.sport.entities." + selectedTable);
-        } catch (ClassNotFoundException exception) {
-            return ;
+            result = prepareDialog(selectedTable, "Add new record");
+        }
+        catch (ClassNotFoundException exception) {
+            return;
         }
 
-        selectedClass = FlatEntityService.getClass(selectedClass, selectedTable);
-
-        Dialog  dialog = AddDialogFactory.createDialog(selectedClass, selectedTable);
-
-        Optional<List<String>> result = dialog.showAndWait();
-
         result.ifPresent(list -> addController.addRowToTable(selectedTable, list));
+
+        searchButtonPressed();
     }
 
     @FXML
@@ -139,8 +136,8 @@ public class FxmlController implements Initializable {
             mainTable.getColumns().add(tableColumn);
         }
 
-        if (CommonFlags.ADD_ENTITIES.contains(selectedTable)) {
-            addInsertButton(selectedTable);
+        if (CommonFlags.EDIT_ENTITIES.contains(selectedTable)) {
+            addEditColumn(selectedTable);
         }
 
         if (CommonFlags.DELETE_ENTITIES.contains(selectedTable)) {
@@ -160,17 +157,34 @@ public class FxmlController implements Initializable {
         }));
     }
 
-    private void addInsertButton(String selectedTable) {
+    private void addEditColumn(String selectedTable) {
 
         TableColumn editColumn = new TableColumn("edit");
-
         mainTable.getColumns().add(editColumn);
-
         editColumn.setCellFactory(ActionButtonTableCell.forTableColumn("edit", (Object p) -> {
-            deleteController.deleteRowFromTable(selectedTable, p);
-            mainTable.getItems().remove(p);
+
+            Optional<List<String>> result;
+
+            try {
+                result = prepareDialog(selectedTable, "Edit record");
+            }
+            catch (ClassNotFoundException exception) {
+                return p;
+            }
+
+            result.ifPresent(list -> editController.editTableRow(selectedTable, list, p));
+
             searchButtonPressed();
             return p;
         }));
+    }
+
+    private Optional<List<String>> prepareDialog(String selectedTable, String title) throws ClassNotFoundException  {
+
+        Class selectedClass = Class.forName("bd2.app.sport.entities." + selectedTable);
+        selectedClass = FlatEntityService.getClass(selectedClass, selectedTable);
+        Dialog  dialog = AddDialogFactory.createDialog(selectedClass, selectedTable, title);
+
+        return (Optional<List<String>>) dialog.showAndWait();
     }
 }

@@ -47,9 +47,11 @@ public class GameService {
     public void addGameParticipation(List<String> columnValuesList) {
     }
 
-    public void editGameParticipation(List<String> columnValuesList) {
+    public void editGameParticipation(List<String> columnValuesList, Object entity) {
     }
 
-    public void editGame(List<String> columnValuesList) {
+    public void editGame(List<String> columnValuesList, Object entity) {
+
+
     }
 }
