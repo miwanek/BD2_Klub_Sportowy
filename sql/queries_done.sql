@@ -47,38 +47,35 @@ FROM
 GROUP BY year, name;
 
 
-
-
--- nie przetestowane (brak danych):
-
 --lista rozegranych rozgrywek wraz z wynikami w ramach Mistrzostw Świata w Piłkę Nożną w 2005 roku
-SELECT g.game_id, g.start_date, g.end_date, g.referee, team.name, gp.place, gp.score
+SELECT g.game_id, g.start_date, g.end_date, g.referee, r.representation_id, team.name, gp.place, gp.score
 FROM tournament t
 	JOIN game g ON (t.tournament_id = g.tournament_id)
 	JOIN game_participation gp ON (gp.game_id = g.game_id)
 	JOIN representation r ON (r.representation_id = gp.representation_id)
 	JOIN team ON (team.representation_id = r.representation_id)
-WHERE t.name = 'Mistrzostwa Swiata w Pilke Nozna' AND YEAR(t.start_date) = '2005';
+WHERE t.name = 'Mistrzostwa Świata Piłkę Nożną' AND YEAR(t.start_date) = 2005;
 
 
---lista playerów drużyny tenisa chłopców z poziomu początkującego
-SELECT p.surname, p.name, p.birth_date, 
+-- lista playerów drużyny tenisa chłopców z poziomu początkującego
+SELECT p.surname, p.name, p.birth_date
 FROM player p
-	JOIN player_group pg ON (p.group_id = pg.group_id)
-	JOIN tier ON (pg.tier_tier_id = tier.tier_id)
-	JOIN section s ON (pg.section_id = s.section_id)
+	JOIN player_team pt ON (p.representation_id = pt.player_representation_id)
+	JOIN team ON (team.representation_id = pt.team_representation_id)
+	JOIN tier ON (team.tier_id = tier.tier_id)
+	JOIN section s ON (team.section_id = s.section_id)
 	JOIN discipline d ON (s.discipline_id = d.discipline_id)
-WHERE player_group.sex = 'M' AND tier.name = 'początkujący' AND discipline.name = 'Tenis ziemny';
+WHERE p.sex = 'M' AND tier.name = 'początkujący' AND d.name = 'Tenis ziemny';
 
 
-
-
---JESZCZE RAZ NAPISAĆ
---średni wynik dziewczynek do lat 15 w podnoszeniu ciężarów w roku 2017
-SELECT AVG(game_participation.score)
-FROM player, player_group, tier, discipline, player_discipline, game_participation, representation, game
-WHERE player_group.sex = 'K' AND tier.name = 'do lat 15' AND tier.tier_id = player_group.tier_id AND discipline = 'podnoszenie ciezarow' AND discipline.discipline_id = player_discipline.discipline_id AND player_discipline.player_representation_id = player.representation_id AND game_participation.representation_id = representation.representation_id AND representation.representation_id = player.representation_id AND game_participation.game_id = game.game_id AND YEAR(game.start_date) = '2017';
---GROUP BY 
-
-
-
+--średni wynik dziewczynek z poziomu zaawansowanego w podnoszeniu ciężarów w roku 2017
+SELECT AVG(gp.score)
+FROM discipline d
+       JOIN player_discipline pd ON (d.discipline_id = pd.discipline_id)
+       JOIN player p ON (p.representation_id = pd.player_representation_id)
+       JOIN player_group pg ON (p.group_id = pg.group_id)
+       JOIN tier ON (pg.tier_id = tier.tier_id)
+       JOIN representation r ON (r.representation_id = p.representation_id)
+       JOIN game_participation gp ON (gp.representation_id = r.representation_id)
+       JOIN game g ON (g.game_id = gp.game_id)
+WHERE pg.sex = 'K' AND tier.name = 'zaawansowany' AND d.name = 'Podnoszenie ciężarów'
