@@ -14,10 +14,10 @@ public class FlatGameParticipation {
     private BigDecimal score;
 
     public FlatGameParticipation(GameParticipation gameParticipation) {
-        gameId = gameParticipation.getGame().getGameId();
-        representationId = gameParticipation.getRepresentation().getRepresentationId();
+        gameId = gameParticipation.getId().getGame().getGameId();
+        representationId = gameParticipation.getId().getRepresentation().getRepresentationId();
         place = gameParticipation.getPlace();
-        result = getResult();
-        score = getScore();
+        result = gameParticipation.getResult();
+        score = gameParticipation.getScore();
     }
 }

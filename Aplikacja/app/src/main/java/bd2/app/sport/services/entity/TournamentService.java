@@ -40,14 +40,14 @@ public class TournamentService {
     private final DisciplineRepository disciplineRepository;
 
     public List<Tournament> getTournaments(String selectedColumn, String columnValue) {
-        if(selectedColumn == null || columnValue == null) {
+        if (selectedColumn == null || columnValue == null) {
             return tournamentRepository.findAll();
         }
         return null;
     }
 
-   public List<TournamentDiscipline> getTournamentDisciplines(String selectedColumn, String columnValue) {
-        if(selectedColumn == null || columnValue == null) {
+    public List<TournamentDiscipline> getTournamentDisciplines(String selectedColumn, String columnValue) {
+        if (selectedColumn == null || columnValue == null) {
             return tournamentDisciplineRepository.findAll();
         }
         return null;
@@ -55,17 +55,16 @@ public class TournamentService {
 
     @Transactional
     public void deleteTournamentDiscipline(Long disciplineId, Long tournamentId) throws DataIntegrityViolationException {
-        List<Game> blockingGames = gameRepository.findByDiscipline_DisciplineIdAndTournament_TournamentId(disciplineId,tournamentId);
-        if(blockingGames.isEmpty()) {
+        List<Game> blockingGames = gameRepository.findByDiscipline_DisciplineIdAndTournament_TournamentId(disciplineId, tournamentId);
+        if (blockingGames.isEmpty()) {
             tournamentDisciplineRepository.deleteById_Discipline_DisciplineIdAndId_Tournament_TournamentId(disciplineId, tournamentId);
-        }
-        else {
+        } else {
             AlertFactory.createAlert("There are still some games in the tournament connected with this discipline");
         }
     }
 
     public List<TournamentParticipation> getTournamentParticipation(String selectedColumn, String columnValue) {
-        if(selectedColumn == null || columnValue == null) {
+        if (selectedColumn == null || columnValue == null) {
             return tournamentParticipationRepository.findAll();
         }
         return null;
@@ -77,7 +76,7 @@ public class TournamentService {
             builder = validateTournamentParticipationData(columnValuesList);
         } catch (ConditionNotSatisfiedException exception) {
             return;
-        } catch (Exception exception ) {
+        } catch (Exception exception) {
             AlertFactory.createAlert("Something went wrong");
             return;
         }
@@ -92,8 +91,7 @@ public class TournamentService {
             builder = validateTournamentParticipationData(columnValuesList);
         } catch (ConditionNotSatisfiedException exception) {
             return;
-        }
-        catch (Exception exception ) {
+        } catch (Exception exception) {
             AlertFactory.createAlert("Something went wrong");
             return;
         }
@@ -104,7 +102,7 @@ public class TournamentService {
         Long oldRepresentationId = flatTournamentParticipation.getRepresentationId();
         Long oldTournamentId = flatTournamentParticipation.getTournamentId();
 
-        if(!(newRepresentationId.equals(oldRepresentationId))
+        if (!(newRepresentationId.equals(oldRepresentationId))
                 || !(newTournamentId.equals(oldTournamentId))) {
             AlertFactory.createAlert("You can only modify place and score");
             return;
@@ -117,7 +115,7 @@ public class TournamentService {
         Optional<Representation> representation = Optional.empty();
         Optional<Tournament> tournament = Optional.empty();
         Long place = null;
-        BigDecimal score= null;
+        BigDecimal score = null;
 
         if (!columnValuesList.get(0).isEmpty()) {
             Long representationId = Long.parseLong(columnValuesList.get(0));
@@ -165,6 +163,7 @@ public class TournamentService {
         return builder;
     }
 
+    @Transactional
     public void addTournamentDiscipline(List<String> columnValuesList) {
 
         Optional<Discipline> discipline = Optional.empty();
@@ -199,13 +198,14 @@ public class TournamentService {
         tournamentDisciplineRepository.save(builder.build());
     }
 
+    @Transactional
     public void addTournament(List<String> columnValuesList) {
         Tournament.TournamentBuilder builder;
         try {
             builder = validateTournament(columnValuesList);
         } catch (ConditionNotSatisfiedException exception) {
             return;
-        } catch (Exception exception ) {
+        } catch (Exception exception) {
             AlertFactory.createAlert("Something went wrong");
             return;
         }
@@ -221,7 +221,7 @@ public class TournamentService {
 
         if (!columnValuesList.get(0).isEmpty()) {
             name = columnValuesList.get(0);
-        } else  {
+        } else {
             AlertFactory.createAlert("Name is obligatory for tournament");
             throw new ConditionNotSatisfiedException();
         }
@@ -232,7 +232,7 @@ public class TournamentService {
 
         if (!columnValuesList.get(2).isEmpty()) {
             sex = columnValuesList.get(2).charAt(0);
-            if(!sex.equals('M') && !sex.equals('K') && !sex.equals('O')) {
+            if (!sex.equals('M') && !sex.equals('K') && !sex.equals('O')) {
                 AlertFactory.createAlert("Sex can only be male(M), female(K) or both(O)");
                 throw new ConditionNotSatisfiedException();
             }
@@ -245,8 +245,7 @@ public class TournamentService {
                 AlertFactory.createAlert("Provide proper start date with correct format: \"yyyy-MM-dd HH:mm:ss\"");
                 throw new ConditionNotSatisfiedException();
             }
-        }
-        else {
+        } else {
             AlertFactory.createAlert("Tournament start date cannot be null");
             throw new ConditionNotSatisfiedException();
         }

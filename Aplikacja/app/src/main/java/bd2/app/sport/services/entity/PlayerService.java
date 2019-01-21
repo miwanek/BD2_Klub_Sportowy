@@ -142,6 +142,7 @@ public class PlayerService {
         playerGroupRepository.save(builder.build());
     }
 
+    @Transactional
     public void addPlayerDiscipline(List<String> columnValuesList) {
         Optional<Discipline> discipline = Optional.empty();
         Optional<Player> player = Optional.empty();
@@ -172,6 +173,7 @@ public class PlayerService {
         playerDisciplineRepository.save(playerDiscipline);
     }
 
+    @Transactional
     public void addPlayerTeam(List<String> columnValuesList) {
         Optional<Team> team = Optional.empty();
         Optional<Player> player = Optional.empty();

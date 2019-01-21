@@ -58,4 +58,38 @@ public class AddDialogFactory {
 
         return dialog;
     }
+
+    public static Dialog createSectionReportDialog() {
+
+        Dialog<List<String>> dialog = new Dialog<>();
+        dialog.setTitle("Section report");
+        dialog.setHeaderText("Insert all necessary data for report");
+
+        List<TextField> textFieldList = new ArrayList<>();
+
+        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
+
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+
+//        TextField newTextField = new TextField();
+//        String fieldName = fields[i].getName();
+//        newTextField.setPromptText(fieldName);
+//        grid.add(new Label(fieldName), 0, i);
+//        grid.add(newTextField, 1, i);
+//        textFieldList.add(newTextField);
+
+
+        dialog.getDialogPane().setContent(grid);
+
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == ButtonType.OK) {
+                return textFieldList.stream().map(TextInputControl::getText).collect(Collectors.toList());
+            }
+            return null;
+        });
+
+        return dialog;
+    }
 }
