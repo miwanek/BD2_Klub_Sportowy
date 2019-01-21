@@ -59,10 +59,10 @@ public class AddDialogFactory {
         return dialog;
     }
 
-    public static Dialog createSectionReportDialog() {
+    public static Dialog createReportDialog(String title, String type) {
 
         Dialog<List<String>> dialog = new Dialog<>();
-        dialog.setTitle("Section report");
+        dialog.setTitle(title);
         dialog.setHeaderText("Insert all necessary data for report");
 
         List<TextField> textFieldList = new ArrayList<>();
@@ -73,13 +73,29 @@ public class AddDialogFactory {
         grid.setHgap(10);
         grid.setVgap(10);
 
-//        TextField newTextField = new TextField();
-//        String fieldName = fields[i].getName();
-//        newTextField.setPromptText(fieldName);
-//        grid.add(new Label(fieldName), 0, i);
-//        grid.add(newTextField, 1, i);
-//        textFieldList.add(newTextField);
+        TextField typeNameField = new TextField();
+        TextField startDateField = new TextField();
+        TextField endDateField = new TextField();
 
+        typeNameField.setPromptText(type);
+
+        String startFieldName = "Start date";
+        startDateField.setPromptText(startFieldName);
+
+        String endFieldName = "End date";
+        endDateField.setPromptText(endFieldName);
+
+        grid.add(new Label(type), 0, 0);
+        grid.add(new Label(startFieldName), 0, 1);
+        grid.add(new Label(endFieldName), 0, 2);
+
+        grid.add(typeNameField, 1, 0);
+        grid.add(startDateField, 1, 1);
+        grid.add(endDateField, 1, 2);
+
+        textFieldList.add(typeNameField);
+        textFieldList.add(startDateField);
+        textFieldList.add(endDateField);
 
         dialog.getDialogPane().setContent(grid);
 

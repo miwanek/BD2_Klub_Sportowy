@@ -2,9 +2,14 @@ package bd2.app.sport.controllers;
 
 
 import bd2.app.cell.ActionButtonTableCell;
+import bd2.app.sport.ConditionNotSatisfiedException;
 import bd2.app.sport.flags.CommonFlags;
+import bd2.app.sport.report.GroupReport;
+import bd2.app.sport.report.SectionReport;
 import bd2.app.sport.services.AddDialogFactory;
+import bd2.app.sport.services.AlertFactory;
 import bd2.app.sport.services.FlatEntityService;
+import bd2.app.sport.services.ReportService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -19,10 +24,15 @@ import org.springframework.stereotype.Controller;
 
 import java.lang.reflect.Field;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static javafx.scene.control.TableView.UNCONSTRAINED_RESIZE_POLICY;
 
@@ -34,6 +44,7 @@ public class FxmlController implements Initializable {
     private final DeleteController deleteController;
     private final EditController editController;
     private final AddController addController;
+    private final ReportService reportService;
 
     @FXML
     private TextField elementTextField;
@@ -73,12 +84,44 @@ public class FxmlController implements Initializable {
 
     @FXML
     void groupReportButtonPressed() {
+        cleanTableViewAndResizeColumns();
+        Dialog dialog = AddDialogFactory.createReportDialog("Group report", "Group name");
 
+        Optional<List<String>> inputParameters = dialog.showAndWait();
+        List<GroupReport> reportData = new ArrayList<>();
+
+        try {
+            if (inputParameters.isPresent()) {
+                reportData = getGroupReportData(inputParameters.get());
+            }
+        } catch (ConditionNotSatisfiedException exception) {
+            return;
+        }
+
+        prepareReportColumns(GroupReport.class);
+
+        if (!reportData.isEmpty()) reportData.forEach(row -> mainTable.getItems().add(row));
     }
 
     @FXML
     void sectionReportButtonPressed() {
+        cleanTableViewAndResizeColumns();
+        Dialog dialog = AddDialogFactory.createReportDialog("Section report", "Section name");
 
+        Optional<List<String>> inputParameters = dialog.showAndWait();
+        List<SectionReport> reportData = new ArrayList<>();
+
+        try {
+            if (inputParameters.isPresent()) {
+                reportData = getSectionReportData(inputParameters.get());
+            }
+        } catch (ConditionNotSatisfiedException exception) {
+            return;
+        }
+
+        prepareReportColumns(SectionReport.class);
+
+        if (!reportData.isEmpty()) reportData.forEach(row -> mainTable.getItems().add(row));
     }
 
     @FXML
@@ -88,8 +131,7 @@ public class FxmlController implements Initializable {
 
         try {
             result = prepareDialog(selectedTable, "Add new record");
-        }
-        catch (ClassNotFoundException exception) {
+        } catch (ClassNotFoundException exception) {
             return;
         }
 
@@ -154,7 +196,7 @@ public class FxmlController implements Initializable {
             addDeleteColumn(selectedTable);
         }
     }
-    
+
     private void addDeleteColumn(String selectedTable) {
         TableColumn deleteColumn = new TableColumn("delete");
         mainTable.getColumns().add(deleteColumn);
@@ -177,8 +219,7 @@ public class FxmlController implements Initializable {
 
             try {
                 result = prepareDialog(selectedTable, "Edit record");
-            }
-            catch (ClassNotFoundException exception) {
+            } catch (ClassNotFoundException exception) {
                 return p;
             }
 
@@ -189,12 +230,57 @@ public class FxmlController implements Initializable {
         }));
     }
 
-    private Optional<List<String>> prepareDialog(String selectedTable, String title) throws ClassNotFoundException  {
+    private Optional<List<String>> prepareDialog(String selectedTable, String title) throws ClassNotFoundException {
 
         Class selectedClass = Class.forName("bd2.app.sport.entities." + selectedTable);
         selectedClass = FlatEntityService.getClass(selectedClass, selectedTable);
-        Dialog  dialog = AddDialogFactory.createDialog(selectedClass, selectedTable, title);
+        Dialog dialog = AddDialogFactory.createDialog(selectedClass, selectedTable, title);
 
         return (Optional<List<String>>) dialog.showAndWait();
+    }
+
+    private void prepareReportColumns(Class reportClass) {
+
+        Field[] columnNames = reportClass.getDeclaredFields();
+
+        IntStream.range(0, columnNames.length).forEachOrdered(i -> {
+            TableColumn tableColumn = new TableColumn(columnNames[i].getName());
+            tableColumn.setCellValueFactory(new PropertyValueFactory<>(columnNames[i].getName()));
+            mainTable.getColumns().add(tableColumn);
+        });
+    }
+
+    private List<SectionReport> getSectionReportData(List<String> inputParameters) throws ConditionNotSatisfiedException {
+
+        String sectionName = inputParameters.get(0);
+        LocalDate startDate;
+        LocalDate endDate;
+
+        try {
+            startDate = LocalDate.parse(inputParameters.get(1), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            endDate = LocalDate.parse(inputParameters.get(2), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        } catch (DateTimeParseException exception) {
+            AlertFactory.createAlert("Provide proper start date with correct format: \"yyyy-MM-dd\"");
+            throw new ConditionNotSatisfiedException();
+        }
+
+        return reportService.getSectionReportResults(sectionName, startDate, endDate);
+    }
+
+    private List<GroupReport> getGroupReportData(List<String> inputParameters) throws ConditionNotSatisfiedException {
+
+        String groupName = inputParameters.get(0);
+        LocalDate startDate;
+        LocalDate endDate;
+
+        try {
+            startDate = LocalDate.parse(inputParameters.get(1), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            endDate = LocalDate.parse(inputParameters.get(2), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        } catch (DateTimeParseException exception) {
+            AlertFactory.createAlert("Provide proper start date with correct format: \"yyyy-MM-dd\"");
+            throw new ConditionNotSatisfiedException();
+        }
+
+        return reportService.getGroupReportResults(groupName, startDate, endDate);
     }
 }
