@@ -53,9 +53,23 @@ public class GameService {
     private final PlayerDisciplineRepository playerDisciplineRepository;
 
     public List<Game> getGames(String selectedColumn, String columnValue) {
-        if (selectedColumn == null || columnValue == null) {
-            return gameRepository.findAll();
+        try {
+            if (selectedColumn == null || columnValue == null) {
+                return gameRepository.findAll();
+            }
+
+            if (selectedColumn.equals("tournamentId")) {
+                return gameRepository.findByTournament_TournamentId(Long.parseLong(columnValue));
+            }
+
+            if (selectedColumn.equals("disciplineId")) {
+                return gameRepository.findByDiscipline_DisciplineId(Long.parseLong(columnValue));
+            }
+
+        } catch (java.lang.NumberFormatException exception) {
+            AlertFactory.createAlert("Selected field requires proper number without any letters");
         }
+
         return null;
     }
 
@@ -64,9 +78,23 @@ public class GameService {
     }
 
     public List<GameParticipation> getGameParticipation(String selectedColumn, String columnValue) {
-        if (selectedColumn == null || columnValue == null) {
-            return gameParticipationRepository.findAll();
+        try {
+            if (selectedColumn == null || columnValue == null) {
+                return gameParticipationRepository.findAll();
+            }
+
+            if (selectedColumn.equals("gameId")) {
+                return gameParticipationRepository.findById_Game_GameId(Long.parseLong(columnValue));
+            }
+
+            if (selectedColumn.equals("representationId")) {
+                return gameParticipationRepository.findById_Representation_RepresentationId(Long.parseLong(columnValue));
+            }
+
+        } catch (java.lang.NumberFormatException exception) {
+            AlertFactory.createAlert("Selected field requires proper number without any letters");
         }
+
         return null;
     }
 
@@ -111,7 +139,7 @@ public class GameService {
 
         GameParticipation newGameParticipation = builder.build();
 
-        if(!oldGameParticipation.getId().equals(newGameParticipation.getId())) {
+        if (!oldGameParticipation.getId().equals(newGameParticipation.getId())) {
             AlertFactory.createAlert("Primary key should not be changed");
             return;
         }

@@ -51,9 +51,27 @@ public class PlayerService {
     private final TeamRepository teamRepository;
 
     public List<Player> getPlayers(String selectedColumn, String columnValue) {
-        if (selectedColumn == null || columnValue == null) {
-            return playerRepository.findAll();
+        try {
+            if (selectedColumn == null || columnValue == null) {
+                return playerRepository.findAll();
+            }
+
+            if (selectedColumn.equals("name")) {
+                return playerRepository.findByName(columnValue);
+            }
+
+            if (selectedColumn.equals("surname")) {
+                return playerRepository.findBySurname(columnValue);
+            }
+
+            if (selectedColumn.equals("groupId")) {
+                return playerRepository.findByPlayerGroup_GroupId(Long.parseLong(columnValue));
+            }
+
+        } catch (java.lang.NumberFormatException exception) {
+            AlertFactory.createAlert("Selected field requires proper number without any letters");
         }
+
         return null;
     }
 

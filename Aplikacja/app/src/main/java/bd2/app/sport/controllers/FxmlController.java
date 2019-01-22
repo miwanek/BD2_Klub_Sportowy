@@ -50,7 +50,7 @@ public class FxmlController implements Initializable {
     private TextField elementTextField;
 
     @FXML
-    private ComboBox<?> tableFieldList;
+    private ComboBox tableFieldList;
 
     @FXML
     private Button groupReportButton;
@@ -76,9 +76,37 @@ public class FxmlController implements Initializable {
     void tableChanged() {
         addButton.setVisible(true);
 
+        tableFieldList.getSelectionModel().clearSelection();
+        tableFieldList.getItems().clear();
+
         if (tableList.getValue() == null || CommonFlags.READ_ONLY_ENTITIES
                 .contains(tableList.getValue().toString())) {
             addButton.setVisible(false);
+        }
+        setTableFieldList(tableList.getValue().toString());
+    }
+
+    private void setTableFieldList(String currentTable) {
+        switch(currentTable) {
+            case "GameParticipation": {
+                tableFieldList.getItems().addAll(
+                        "gameId",
+                        "representationId");
+                break;
+            }
+            case "Player": {
+                tableFieldList.getItems().addAll(
+                        "name",
+                        "surname",
+                        "groupId");
+                break;
+            }
+            case "Game": {
+                tableFieldList.getItems().addAll(
+                        "tournamentId",
+                        "disciplineId");
+                break;
+            }
         }
     }
 
@@ -156,6 +184,12 @@ public class FxmlController implements Initializable {
         if (!tryDisplayTableWithValues(selectedTable)) return;
 
         if (data != null) data.forEach(row -> mainTable.getItems().add(row));
+
+        elementTextField.clear();
+        tableFieldList.getSelectionModel().clearSelection();
+        tableFieldList.getItems().clear();
+
+        setTableFieldList(selectedTable);
     }
 
     private void cleanTableViewAndResizeColumns() {
@@ -178,8 +212,6 @@ public class FxmlController implements Initializable {
         Class selectedClass = Class.forName("bd2.app.sport.entities." + selectedTable);
         selectedClass = FlatEntityService.getClass(selectedClass, selectedTable);
         Field[] fields = selectedClass.getDeclaredFields();
-
-        System.out.println(fields.length);
 
         for (int i = 0; i < fields.length; i++) {
             TableColumn tableColumn = new TableColumn(fields[i].getName());

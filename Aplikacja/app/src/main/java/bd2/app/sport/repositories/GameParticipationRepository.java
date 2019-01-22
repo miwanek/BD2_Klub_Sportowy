@@ -16,4 +16,8 @@ public interface GameParticipationRepository extends JpaRepository<GameParticipa
     List<GameParticipation> findById_Representation(Representation representation);
 
     Optional<GameParticipation> findById_Representation_RepresentationIdAndId_Game_GameId(Long representationId, Long gameId);
+
+    List<GameParticipation> findById_Game_GameId(Long gameId);
+
+    List<GameParticipation> findById_Representation_RepresentationId(Long representationId);
 }

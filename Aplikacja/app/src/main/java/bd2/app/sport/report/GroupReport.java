@@ -21,10 +21,10 @@ public class GroupReport {
     private Integer highestPlace;
     private BigDecimal averagePlace;
     private Integer worstPlace;
-    private BigDecimal worstResult;
-    private BigDecimal averageResult;
     private BigDecimal bestResult;
-    private BigDecimal lowestScore;
-    private BigDecimal averageScore;
+    private BigDecimal averageResult;
+    private BigDecimal worstResult;
     private BigDecimal highestScore;
+    private BigDecimal averageScore;
+    private BigDecimal lowestScore;
 }

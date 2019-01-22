@@ -12,4 +12,8 @@ public interface GameRepository extends JpaRepository<Game, Long> {
     List<Game> findByDiscipline_DisciplineIdAndTournament_TournamentId(Long disciplineId, Long tournamentId);
 
     List<Game> findByHall(Hall hall);
+
+    List<Game> findByTournament_TournamentId(Long tournamentId);
+
+    List<Game> findByDiscipline_DisciplineId(Long disciplineId);
 }
