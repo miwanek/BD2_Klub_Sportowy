@@ -1,5 +1,5 @@
---Wyświetlanie maksymalnej/ średniej/ minimalnej liczby punktów, rezultatów  oraz miejsc zawodników z podanej grupy w rozgrywkach w danym okresie czasu.
 CREATE PROCEDURE
+-- Wyświetlanie maksymalnej/ średniej/ minimalnej liczby punktów, rezultatów  oraz miejsc zawodników z podanej grupy w rozgrywkach w danym okresie czasu.
 	raport1(player_group_name varchar, start_date date, end_date date)
 BEGIN
 	SELECT p.surname, p.name, p.birth_date, MIN(gp.place), AVG(gp.place), MAX(gp.place),
